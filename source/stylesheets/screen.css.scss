@@ -336,6 +336,10 @@ html, body {
 
     @extend %left-col;
   }
+  
+  &>ul {
+    margin-left: 1.5rem;
+  }
 
   &>ul, &>ol {
     padding-left: $main-padding + 15px;
@@ -348,14 +352,11 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
+    font-size: 30px;
+    font-weight: 500;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    margin-bottom: $h1-margin-bottom;
-    margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    margin: 2em 0 0.2em;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -365,12 +366,12 @@ html, body {
 
   h2 {
     @extend %header-font;
-    font-size: 19px;
-    margin-top: 4em;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 3em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
+    padding-top: 0.7em;
+    padding-bottom: 0.5em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
   }
 
@@ -409,24 +410,17 @@ html, body {
 
     th {
       padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #ddd;
       vertical-align: bottom;
+      font-weight: 600;
     }
 
     td {
       padding: 10px;
     }
-
-    tr:last-child {
-      border-bottom: 1px solid #ccc;
-    }
-
-    tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
-    }
-
-    tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
+    
+    tr strong {
+      display: block;
     }
   }
 
@@ -448,10 +442,9 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
+    background-color: transparent;
     padding: 3px;
     border-radius: 3px;
-    @extend %break-words;
     @extend %code-font;
   }
 
@@ -612,3 +605,12 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+/* custom */
+
+// #status, #data, #message {
+//   border-top: 0;
+//   padding: 0 28px;
+//   margin-top: 2.5em;
+//   margin-bottom: 0.8em;
+// }
