@@ -34,7 +34,7 @@ Providing an URL as input, we can detect the following information:
 Additionally, we can perform the following actions
 
 - Take an screenshot of the website
-- Get Dominant & Palette colors of the image detected.
+- Get palette colors of all images detected.
 
 The following documentation is related about all you need to know about the API, like response format, rate limit and configurable parameters.
 
@@ -184,14 +184,12 @@ Parameter    | Description                                           |
 `isLandscape`          | **boolean** Specifies if viewport is in landscape mode (defaults to `false`). |
 `deviceScaleFactor`          | **number** Specify device scale factor (defaults to `1`). |
   
-## paletteColors
+## palette
 
-**type**: `boolean`|`number`<br>
+**type**: `boolean`<br>
 **default** `false`
 
-Get dominant and palette colors from the images detected.
-
-Providing a numeric value you setup the number of color for create the palette colors
+Get palette colors from the images detected.
 
 # API endpoint
 
