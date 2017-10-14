@@ -189,7 +189,7 @@ Parameter    | Description                                           |
 **type**: `boolean`<br>
 **default** `false`
 
-Get palette colors from the images detected.
+Get palette colors from the images detected. It will returns an `Array` of colors sorted from most dominant colour to least.
 
 # API endpoint
 
