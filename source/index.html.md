@@ -38,6 +38,22 @@ Additionally, we can perform the following actions
 
 The following documentation is related about all you need to know about the API, like response format, rate limit and configurable parameters.
 
+# Authentication
+
+If you are using **Community** plan, then you don't have any kind of authentication, but be careful about reach daily [rate limit](#rate-limit).
+
+For **Professional** plan, authentication will be done providing your `API_KEY_SECRET` as `key` parameter into your query request:
+
+```bash
+$ curl custom.microlink.io?key=yeahboi&url=https://kikobeats.com
+```
+
+# Rate limit
+
+For **Community** plan, we allow a maximum of 100 requests per 24h hours per each client connection.
+
+Under **Professional** plan, there is not rate limit.
+
 # Response Format
 
 All the responses as serve as **JSON** using [JSend](https://labs.omniti.com/labs/jsend) format specification.
@@ -73,22 +89,19 @@ Your API response payload. Here you can found all the information related with t
 
 An optional field to attach extra information, like error message or explanation.
 
-# Rate limit
-
-We applied a temporal window rate limit for avoid DDoS attack.
-
 # Caching level
 
 We follow a query caching politic for successive and same parameters request in order to provide fast response after the first request.
 
-The first time that you make a request, it takes a little of time to response, but next requests will be resolved instanly. 
+The first time that you make a request, it takes a little of time to response, but next requests will be resolved instanly.
 
 The order of the query parameters no matters, we serve successive requests based on the first request result.
 
-We cached the original request as a maximum time of 24 hours, so every day we reset our caching layer for be possible fetch new content.
+For the **Community** plan, we cached the original request as a maximum time of 24 hours, so every day we reset our caching layer for be possible fetch new content.
+
+If you have **Professional** plan, caching time can be adapted, just contact with [hello@microlink.io](mailto:hello@microlink.io).
 
 # API Parameters
-
 
 ## url
 
