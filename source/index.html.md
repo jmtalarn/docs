@@ -1,18 +1,51 @@
 ---
-title: API Reference
+title: API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
+  - Shell
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
-search: true
+  - <a href='https://microlink.io'>microlink.io</a>
+search: false
 ---
 
 # Getting Started
 
 [microlink.io](https://microlink.io) is an API for get information fron any URL.
+
+```shell
+$ curl https://api.microlink.io/1.0?url=https://vimeo.com/188175573
+```
+
+> The above API request generate the following response:
+
+```json
+{
+  "status": "success",
+  "data": {
+    "author": null,
+    "date": null,
+    "description":
+      "Converse has spent a good part of this year updating some of their classics. Our past is constantly catching up to us, but we rarely get to see the relationship…",
+    "favicon": {
+      "width": 180,
+      "height": 180,
+      "type": "png",
+      "url": "https://i.vimeocdn.com/favicon/main-touch_180"
+    },
+    "image": {
+      "width": 1280,
+      "height": 720,
+      "type": "jpg",
+      "url": "https://i.vimeocdn.com/video/598160082_1280x720.jpg"
+    },
+    "logo": null,
+    "publisher": "Vimeo",
+    "title": "Converse - Past meets Present - Montage",
+    "url": "https://vimeo.com/188175573"
+  }
+}
+```
 
 The service is oriented for build embebed previsualizations of third party links in your website.
 
@@ -31,33 +64,83 @@ Providing an URL as input, we can detect the following information:
 Additionally, we can perform the following actions
 
 - Take an screenshot of the website
-- Get palette colours of all images detected.
+- Get palette colors of all images detected.
 
 The following documentation is related about all you need to know about the API, like response format, rate limit and configurable parameters.
 
 # Authentication
 
-If you are using **Community** plan, then you don't have any kind of authentication, but be careful about reach daily [rate limit](#rate-limit).
-
-For **Professional** plan, authentication will be done providing your `API_KEY_SECRET` as `key` parameter into your query request.
-
 ```shell
 $ curl https://api.microlink.io/1.0?key=yeahboi
 ```
 
-# Versioning
+> If you don't provide the `key` you will see a response like:
 
-The API version is specified in the url before query params.
+```json
+{
+  "status": "fail",
+  "data": {
+    "key": "<required<; API secret key."
+  }
+}
+```
+
+If you are using **Community** plan, then you don't have any kind of authentication, but be careful about reach daily [rate limit](#rate-limit).
+
+For **Professional** plan, authentication is required. It will be done providing your `API_KEY_SECRET` as `key` parameter into your query request.
+
+# Versioning
 
 ```shell
 $ curl https://api.microlink.io/1.0
 ```
 
+> Always need to specify the version, otherwise the API doesn't identify the request:
+
+```json
+{
+  "status": "fail",
+  "message": "HTTP Method Not Allowed"
+}
+```
+
+The API version is specified in the url before query params.
+
 Currently version supported is **1.0**.
 
 # Rate limit
 
+```bash
+$ curl http://localhost:3000/1.0?url=https://github.com -i
+```
+
+```text
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Request-Method: GET
+Access-Control-Allow-Credentials: true
+Content-Type: application/json; charset=utf-8
+X-Rate-Limit-Limit: 300
+X-Rate-Limit-Remaining: 299
+X-Rate-Limit-Reset: 86400
+X-Cache: NOHIT
+Content-Length: 753
+Vary: Accept-Encoding
+Date: Thu, 19 Oct 2017 15:05:38 GMT
+Connection: keep-alive
+```
+
 For **Community** plan, we allow a maximum of **3000 requests per 24h hours**.
+
+You can check your rate limit status seeing the HTTP headers we attach to every request.
+
+HTTP Header | Description
+| ----------| ---------- | 
+**X-Rate-limit-limit** | The rate limit time window in milliseconds.
+**X-Rate-limit-remaining** | The number of requests left for the time window.
+**X-Rate-limit-reset** |  The remaining window before the rate limit resets, in milliseconds.
+
+<br>
 
 Under **Professional** plan, there is not rate limit.
 
@@ -95,7 +178,12 @@ Your API response payload. Here you can found all the information related with t
 
 An optional field to attach extra information, like error message or explanation.
 
-# Caching
+# Request Cache
+
+
+<aside class="notice">
+You can check the HTTP header <b>X-Cache</b> for know if the response was or not a cached version.
+</aside>
 
 We follow a query caching politic for successive and same parameters request in order to provide fast response after the first request.
 
@@ -116,45 +204,33 @@ If you have **Professional** plan, caching is custom, just contact with [hello@m
 
 The URL for get information based on the content.
 
-```shell
-$ curl https://api.microlink.io/1.0?url=https://vimeo.com/188175573
-```
-
 ## prerender
 
 **type**: `boolean`<br>
 **default** `false`
 
-<aside class="notice">
+<aside class="warning">
 This parameter can be the response time slow, avoid it if you don't really need it.
 </aside>
 
 Pre load the URL as a browser before extract the data. Sometimes it's necessary if the content of the url is not server side.
-
-```shell
-$ curl https://api.microlink.io/1.0?url=https://www.instagram.com/p/BWUDBntl3_Z&prerender
-```
 
 ## screenshot
 
 **type**: `boolean`|`string`<br>
 **default** `false`
 
-```shell
-$ curl https://api.microlink.io/1.0?url=https://github.com&screenshot
-```
+Take a screenshot of the website. The image will be hosted at [imgur.com](https://imgur.com).
 
-Take a screenshot of the website.
+At **Professional** plan, we can places the images in your own image hosting (S3, Cloudinary, whatever). Just contact with [hello@microlink.io](mailto:hello@microlink.io).
+
+<br>
 
 If you provide the device identifier, the screenshot will be taken according with the device screen dimensions.
 
 <aside class="notice">You can provide device name in lower case.</aside>
 
-### Supported devices
-
-```shell
-$ curl https://api.microlink.io/1.0?url=https://github.com&screenshot=ipad
-```
+### Devices supported
 
 - `Blackberry PlayBook`
 - `Blackberry PlayBook landscape`
@@ -210,50 +286,54 @@ $ curl https://api.microlink.io/1.0?url=https://github.com&screenshot=ipad
 
 ### Specific parameters
 
-```shell
-$ curl https://api.microlink.io/1.0?url=https://github.com&screenshot&fullpage
-```
-
 You can specific options related with the screenshot settings as well.
 
 Parameter    | Description                                           |
 ------------ | ----------------------------------------------------- |
 `type`             | **string** Specify screenshot type, could be either `'jpeg'` or `'png'` (defaults is `'png'`). |
 `quality`  | **number** The quality of the image, between `0` to `100`. Not applicable to `'png'` images. |
-`omitbackground`          | **boolean** Hides default white background and allows capturing screenshots with transparency (default to `true`). |
-`fullpage`          | **boolean** When `true`, takes a screenshot of the full scrollable page. (default to `false`). |
+`omitBackground`          | **boolean** Hides default white background and allows capturing screenshots with transparency (default to `true`). |
+`fullPage`          | **boolean** When `true`, takes a screenshot of the full scrollable page. (default to `false`). |
 `width`          | **number** Page width in pixels. |
 `height`          | **number** Page height in pixels. |
-`ismobile`          | **boolean** Whether the meta viewport tag is taken into account (default to `false`). |
-`hastouch`          | **boolean or string** Specifies if viewport supports touch events. (default to `false`). |
-`islandscape`          | **boolean** Specifies if viewport is in landscape mode (defaults to `false`). |
-`devicescalefactor`          | **number** Specify device scale factor (defaults to `1`). |
+`isMobile`          | **boolean** Whether the meta viewport tag is taken into account (default to `false`). |
+`hasTouch`          | **boolean or string** Specifies if viewport supports touch events. (default to `false`). |
+`isLandscape`          | **boolean** Specifies if viewport is in landscape mode (defaults to `false`). |
+`deviceScaleFactor`          | **number** Specify device scale factor (defaults to `1`). |
   
 ## palette
 
 **type**: `boolean`<br>
 **default** `false`
 
-```shell
-$ https://api.microlink.io/1.0?url=https://news.ycombinator.com&palette
-```
-
-Get palette colors from the images detected. It will returns an `Array` of colors sorted from most dominant colours to least.
+Get palette colors from the images detected. It will returns an `Array` of colors sorted from most dominant colors to least.
 
 # API Endpoint
 
-## Extract information from any link
+This API is a **microservice**. Just  `GET`  method will be used.
 
-**HTTP Request**: `GET http://api.microlink.io/v1/`
+Following this approach, we offer two ways to consume the response.
 
-Given an URL, returns all the information extracted from the content.
+## All data detected
 
-## Embed information from any link
+Given an URL, returns all the information extracted from the content. You can pass all the [API params](#api-params).
 
-Additionally you can embed whatever field of the response.
+## Embeded support
 
-The thing you need to do for enable it is provide `embed` as query parameter, following by the value related to the data.
+```html
+<img 
+  src="https://api.microlink.io/1.0?url=https://news.ycombinator.com&embed=favicon" 
+/>
+```
 
-**HTTP Request**: `GET http://api.microlink.io/v1/{field}/`
+<aside class="notice">
+Use dotted notation for reference nested data of the payload.
+</aside>
 
-Given an URL, it will return the field extracted from the content and specified in the API call.
+Complementary to response with [all data detected](#all-data-detected), **embeded support**.
+
+The only different thing that you need to do for enable it is provide `embed` as query parameter following by the value at path of object data.
+
+For example, if you want to embed an image just provide `embed=image.src` and the image will be rendered.
+
+This is useful when you want to render API content directly from your HTML.

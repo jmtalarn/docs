@@ -161,19 +161,19 @@ html, body {
 
   // this is parent links of the currently selected ToC entry
   .toc-link.active-parent {
-    background-color: $nav-active-parent-bg;
-    color: $nav-active-parent-text;
+    color: $toc-text;
   }
 
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
+    color: $toc-text;
     font-weight: 500;
   }
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .toc-footer {
@@ -182,7 +182,7 @@ html, body {
     border-top: 1px dashed $nav-footer-border-color;
 
     li,a {
-      color: $nav-text;
+      color: $toc-text;
       text-decoration: none;
     }
 
@@ -205,10 +205,12 @@ html, body {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-decoration: none;
-  color: #fff;
+  color: $toc-text;
   transition-property: background;
   transition-timing-function: linear;
   transition-duration: 130ms;
+  font-size: 18px;
+  line-height: 40px;
 }
 
 // button to show navigation on mobile devices
@@ -288,8 +290,10 @@ html, body {
     float:left;
     color: $lang-select-text;
     text-decoration: none;
-    padding: 0 10px;
-    line-height: 30px;
+    padding: 0 40px;
+    line-height: 70px;
+    font-size: 18px;
+    font-weight: 600;
     outline: 0;
 
     &:active, &:focus {
@@ -352,6 +356,7 @@ html, body {
 
   h1 {
     @extend %header-font;
+    @extend %text-gradient;
     font-size: 30px;
     font-weight: 500;
     padding-top: 0.5em;
@@ -503,6 +508,16 @@ html, body {
 // This is all the stuff that appears in the right half of the page
 
 .content {
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid #f4f4f4;
+    color: #4b525b;
+    line-height: normal;
+  }
+  
   pre, blockquote {
     background-color: $code-bg;
     color: #fff;
@@ -531,11 +546,23 @@ html, body {
     padding-top: 2em;
     padding-bottom: 2em;
     padding: 2em $main-padding;
+    display: block;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+  }
+  
+  pre > code {
+    display: block;
+    background-color: #212429;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: rgba(0,0,0,0.2) 0 0 2px inset;
+    white-space: pre-wrap;
+    word-break: break-all;
   }
 
   blockquote {
     &>p {
-      background-color: $code-annotation-bg;
+      background-color: $code-bg;
       padding: $code-annotation-padding 2em;
       color: #eee;
     }
@@ -603,7 +630,7 @@ html, body {
 }
 
 .highlight, .highlight .w {
-  background-color: $code-bg;
+  background-color: transparent;
 }
 
 /* custom */
