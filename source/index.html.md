@@ -1,5 +1,5 @@
 ---
-title: API Documentation
+title: Microlink API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - Shell
