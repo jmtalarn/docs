@@ -11,7 +11,7 @@ search: false
 
 # Getting Started
 
-[microlink.io](https://microlink.io) is an API for get information fron any URL.
+[microlink.io](https://microlink.io) is an API for get information from any URL.
 
 ```shell
 $ curl https://api.microlink.io/1.0?url=https://vimeo.com/188175573
