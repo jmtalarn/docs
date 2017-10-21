@@ -111,7 +111,7 @@ Currently version supported is **1.0**.
 # Rate limit
 
 ```bash
-$ curl http://localhost:3000/1.0?url=https://github.com -i
+$ curl https://api.microlink.io/1.0?url=https://github.com -i
 ```
 
 ```text
@@ -130,7 +130,7 @@ Date: Thu, 19 Oct 2017 15:05:38 GMT
 Connection: keep-alive
 ```
 
-For **Community** plan, we allow a maximum of **3000 requests per 24h hours**.
+For **Community** plan, we allow a maximum of **250 requests per 24h hours**.
 
 You can check your rate limit status seeing the HTTP headers we attach to every request.
 
