@@ -116,7 +116,7 @@ For **Community** plan, we allow a maximum of **250 requests per 24h hours**.
 You can check your rate limit status seeing the HTTP headers we attach to every request.
 
 HTTP Header | Description
-| ----------| ---------- | 
+| ----------| ---------- |
 **X-Rate-limit-limit** | The rate limit time window in milliseconds.
 **X-Rate-limit-remaining** | The number of requests left for the time window.
 **X-Rate-limit-reset** |  The remaining window before the rate limit resets, in milliseconds.
@@ -143,7 +143,7 @@ Status          | HTTP Status | Description                                     
 -------------------| -------------------- | -------------------------------------------------------------------- |
 `success`   | `2xx`             | The request was resolved successfully. This is the expected behavior.        |
 `fail`         | `4xx`             | The request failed. Probably a missing or wrong value for a parameter. |
-`error`       | `5xx`             | Oh oh. Something not expected happened.    | 
+`error`       | `5xx`             | Oh oh. Something not expected happened.    |
 
 A simple rule here is, if the request was resolved successful, then `success` status will be associated. In other case check for `fail` or `error`.
 
@@ -273,15 +273,15 @@ Parameter    | Description                                           |
 ------------ | ----------------------------------------------------- |
 `type`             | **string** Specify screenshot type, could be either `'jpeg'` or `'png'` (defaults is `'png'`). |
 `quality`  | **number** The quality of the image, between `0` to `100`. Not applicable to `'png'` images. |
-`omitBackground`          | **boolean** Hides default white background and allows capturing screenshots with transparency (default to `true`). |
-`fullPage`          | **boolean** When `true`, takes a screenshot of the full scrollable page. (default to `false`). |
+`omit_background`          | **boolean** Hides default white background and allows capturing screenshots with transparency (default to `true`). |
+`full_page`          | **boolean** When `true`, takes a screenshot of the full scrollable page. (default to `false`). |
 `width`          | **number** Page width in pixels. |
 `height`          | **number** Page height in pixels. |
-`isMobile`          | **boolean** Whether the meta viewport tag is taken into account (default to `false`). |
-`hasTouch`          | **boolean or string** Specifies if viewport supports touch events. (default to `false`). |
-`isLandscape`          | **boolean** Specifies if viewport is in landscape mode (defaults to `false`). |
-`deviceScaleFactor`          | **number** Specify device scale factor (defaults to `1`). |
-  
+`is_mobile`          | **boolean** Whether the meta viewport tag is taken into account (default to `false`). |
+`has_touch`          | **boolean or string** Specifies if viewport supports touch events. (default to `false`). |
+`is_landscape`          | **boolean** Specifies if viewport is in landscape mode (defaults to `false`). |
+`device_scale_factor`          | **number** Specify device scale factor (defaults to `1`). |
+
 ## palette
 
 **type**: `boolean`<br>
@@ -302,7 +302,7 @@ Given an URL, returns all the information extracted from the content. You can pa
 ## Embeded support
 
 ```html
-<img 
+<img
   src="https://api.microlink.io?url=https://news.ycombinator.com&embed=favicon"
 />
 ```
