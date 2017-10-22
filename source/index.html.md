@@ -14,7 +14,7 @@ search: false
 [microlink.io](https://microlink.io) is an API for get information from any URL.
 
 ```shell
-$ curl https://api.microlink.io/1.0?url=https://vimeo.com/188175573
+$ curl https://api.microlink.io?url=https://vimeo.com/188175573
 ```
 
 > The above API request generate the following response:
@@ -71,7 +71,7 @@ The following documentation is related about all you need to know about the API,
 # Authentication
 
 ```shell
-$ curl https://api.microlink.io/1.0?key=yeahboi
+$ curl https://api.microlink.io?key=yeahboi
 ```
 
 > If you don't provide the `key` you will see a response like:
@@ -89,29 +89,10 @@ If you are using **Community** plan, then you don't have any kind of authenticat
 
 For **Professional** plan, authentication is required. It will be done providing your `API_KEY_SECRET` as `key` parameter into your query request.
 
-# Versioning
-
-```shell
-$ curl https://api.microlink.io/1.0
-```
-
-> Always need to specify the version, otherwise the API doesn't identify the request:
-
-```json
-{
-  "status": "fail",
-  "message": "HTTP Method Not Allowed"
-}
-```
-
-The API version is specified in the url before query params.
-
-Currently version supported is **1.0**.
-
 # Rate limit
 
 ```bash
-$ curl https://api.microlink.io/1.0?url=https://github.com -i
+$ curl http://api.microlink.io?url=https://github.com -i
 ```
 
 ```text
@@ -322,7 +303,7 @@ Given an URL, returns all the information extracted from the content. You can pa
 
 ```html
 <img 
-  src="https://api.microlink.io/1.0?url=https://news.ycombinator.com&embed=favicon" 
+  src="https://api.microlink.io?url=https://news.ycombinator.com&embed=favicon"
 />
 ```
 
