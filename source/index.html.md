@@ -5,7 +5,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - Shell
 
 toc_footers:
-  - <a href='https://microlink.io'>microlink.io</a>
+  - <a href='https://github.com/microlinkhq/support' target="_blank">Report an issue</a>
+  - <a href='https://microlink.io' target="_blank">microlink.io</a>
 search: false
 ---
 
