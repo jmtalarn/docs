@@ -23,7 +23,8 @@ under the License.
 // GENERAL STUFF
 ////////////////////////////////////////////////////////////////////////////////
 
-html, body {
+html,
+body {
   color: $main-text;
   padding: 0;
   margin: 0;
@@ -41,7 +42,7 @@ html, body {
 
 #toc > ul > li > a > span {
   float: right;
-  background-color: #2484FF;
+  background-color: #2484ff;
   border-radius: 40px;
   width: 20px;
 }
@@ -71,12 +72,12 @@ html, body {
   }
 
   // This is the logo at the top of the ToC
-  &>img {
+  & > img {
     display: block;
     max-width: 100%;
   }
 
-  &>.search {
+  & > .search {
     position: relative;
 
     input {
@@ -137,11 +138,11 @@ html, body {
     }
   }
 
-
   // The Table of Contents is composed of multiple nested
   // unordered lists.  These styles remove the default
   // styling of an unordered list because it is ugly.
-  ul, li {
+  ul,
+  li {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -183,7 +184,8 @@ html, body {
     margin-top: 1em;
     border-top: 1px dashed $nav-footer-border-color;
 
-    li,a {
+    li,
+    a {
       color: $toc-text;
       text-decoration: none;
     }
@@ -200,7 +202,8 @@ html, body {
   }
 }
 
-.toc-link, .toc-footer li {
+.toc-link,
+.toc-footer li {
   padding: 0 $nav-padding 0 $nav-padding;
   display: block;
   overflow-x: hidden;
@@ -244,10 +247,13 @@ html, body {
 
   transition: left 0.3s ease-in-out;
 
-  &:hover { opacity: 1; }
-  &.open {left: $nav-width}
+  &:hover {
+    opacity: 1;
+  }
+  &.open {
+    left: $nav-width;
+  }
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // PAGE LAYOUT AND CODE SAMPLE BACKGROUND
@@ -289,7 +295,7 @@ html, body {
   font-weight: bold;
   a {
     display: block;
-    float:left;
+    float: left;
     color: $lang-select-text;
     text-decoration: none;
     padding: 0 40px;
@@ -298,7 +304,8 @@ html, body {
     font-weight: 600;
     outline: 0;
 
-    &:active, &:focus {
+    &:active,
+    &:focus {
       background-color: $lang-select-pressed-bg;
       color: $lang-select-pressed-text;
     }
@@ -334,7 +341,18 @@ html, body {
     clear: both;
   }
 
-  &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6,
+  & > p,
+  & > table,
+  & > ul,
+  & > ol,
+  & > aside,
+  & > dl {
     margin-right: $examples-width;
     padding: 0 $main-padding;
     box-sizing: border-box;
@@ -342,18 +360,21 @@ html, body {
 
     @extend %left-col;
   }
-  
-  &>ul {
+
+  & > ul {
     margin-left: 1.5rem;
   }
 
-  &>ul, &>ol {
+  & > ul,
+  & > ol {
     padding-left: $main-padding + 15px;
   }
 
   // the div is the tocify hidden div for placeholding stuff
-  &>h1, &>h2, &>div {
-    clear:both;
+  & > h1,
+  & > h2,
+  & > div {
+    clear: both;
   }
 
   h1 {
@@ -366,7 +387,8 @@ html, body {
     margin: 2em 0 0.2em;
   }
 
-  h1:first-child, div:first-child + h1 {
+  h1:first-child,
+  div:first-child + h1 {
     border-top-width: 0;
     margin-top: 0;
   }
@@ -384,19 +406,25 @@ html, body {
 
   // h2s right after h1s should bump right up
   // against the h1s.
-  h1 + h2, h1 + div + h2 {
+  h1 + h2,
+  h1 + div + h2 {
     margin-top: $h1-margin-bottom * -1;
     border-top: none;
   }
 
-  h3, h4, h5, h6 {
+  h3,
+  h4,
+  h5,
+  h6 {
     @extend %header-font;
     font-size: 15px;
     margin-top: 2.5em;
     margin-bottom: 0.8em;
   }
 
-  h4, h5, h6 {
+  h4,
+  h5,
+  h6 {
     font-size: 10px;
   }
 
@@ -409,7 +437,8 @@ html, body {
   table {
     margin-bottom: 1em;
     overflow: auto;
-    th,td {
+    th,
+    td {
       text-align: left;
       vertical-align: top;
       line-height: 1.6;
@@ -425,7 +454,7 @@ html, body {
     td {
       padding: 10px;
     }
-    
+
     tr strong {
       display: block;
     }
@@ -439,7 +468,10 @@ html, body {
     margin-left: 15px;
   }
 
-  p, li, dt, dd {
+  p,
+  li,
+  dt,
+  dd {
     line-height: 1.6;
     margin-top: 0;
   }
@@ -455,7 +487,7 @@ html, body {
     @extend %code-font;
   }
 
-  pre>code {
+  pre > code {
     background-color: transparent;
     padding: 0;
   }
@@ -499,8 +531,8 @@ html, body {
     padding: 2px;
     margin: -2px;
     border-radius: 4px;
-    border: 1px solid #F7E633;
-    background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
+    border: 1px solid #f7e633;
+    background: linear-gradient(to top left, #f7e633 0%, #f1d32f 100%);
   }
 }
 
@@ -510,31 +542,59 @@ html, body {
 // This is all the stuff that appears in the right half of the page
 
 .content {
-  
+  $border-width: 2px;
+
   a {
-    display: inline-block;
+    display: inline;
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 2px solid $gray2;
-    color: gray8;
+    border-bottom: $border-width solid $gray2;
+    color: $gray8;
     line-height: normal;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: $border-width;
+      bottom: -$border-width;
+      left: 0;
+      background-color: $gray9;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.1s ease-in-out 0s;
+    }
+
+    &:hover:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+
+    &:active,
+    &:hover {
+      outline-width: 0;
+    }
   }
-  
-  pre, blockquote {
+
+  pre,
+  blockquote {
     background-color: $code-bg;
     color: #fff;
 
     margin: 0;
     width: $examples-width;
 
-    float:right;
-    clear:right;
+    float: right;
+    clear: right;
 
     box-sizing: border-box;
 
     @extend %right-col;
 
-    &>p { margin: 0; }
+    & > p {
+      margin: 0;
+    }
 
     a {
       color: #fff;
@@ -549,21 +609,21 @@ html, body {
     padding-bottom: 2em;
     padding: 2em $main-padding;
     display: block;
-    text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
   }
-  
+
   pre > code {
     display: block;
     background-color: #212429;
     padding: 20px;
     border-radius: 4px;
-    box-shadow: rgba(0,0,0,0.2) 0 0 2px inset;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 2px inset;
     white-space: pre-wrap;
     word-break: break-all;
   }
 
   blockquote {
-    &>p {
+    & > p {
       background-color: $code-bg;
       padding: $code-annotation-padding 2em;
       color: #eee;
@@ -627,11 +687,15 @@ html, body {
   }
 }
 
-.highlight .c, .highlight .cm, .highlight .c1, .highlight .cs {
+.highlight .c,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs {
   color: #909090;
 }
 
-.highlight, .highlight .w {
+.highlight,
+.highlight .w {
   background-color: transparent;
 }
 
