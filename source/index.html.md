@@ -302,11 +302,19 @@ Given an URL, returns all the information extracted from the content. You can pa
 
 ## Embeded support
 
+> You can call the API directly from an html img tag - images are returned inline. For example:
+
 ```html
 <img
   src="https://api.microlink.io?url=https://news.ycombinator.com&embed=favicon"
 />
 ```
+
+> Return’s Hackers News favicon:
+
+> <img
+  src="https://api.microlink.io?url=https://news.ycombinator.com&embed=favicon"
+/>
 
 <aside class="notice">
 Use dotted notation for reference nested data of the payload.
