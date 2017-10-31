@@ -86,7 +86,7 @@ $ curl https://api.microlink.io?key=yeahboi
 }
 ```
 
-If you are using **Community** plan, then you don't have any kind of authentication, but be careful about reach daily [rate limit](#rate-limit).
+If you are using **Free** plan, then you don't have any kind of authentication, but be careful about reach daily [rate limit](#rate-limit).
 
 For **Professional** plan, authentication is required. It will be done providing your `API_KEY_SECRET` as `key` parameter into your query request.
 
@@ -112,7 +112,7 @@ Date: Thu, 19 Oct 2017 15:05:38 GMT
 Connection: keep-alive
 ```
 
-For **Community** plan, we allow a maximum of **250 requests per 24h hours**.
+For **Free** plan, we allow a maximum of **250 requests per 24h hours**.
 
 You can check your rate limit status seeing the HTTP headers we attach to every request.
 
@@ -162,7 +162,6 @@ An optional field to attach extra information, like error message or explanation
 
 # Request Cache
 
-
 <aside class="notice">
 You can check the HTTP header <b>X-Cache</b> for know if the response was or not a cached version.
 </aside>
@@ -173,9 +172,9 @@ The first time that you make a request, it takes a little of time to response, b
 
 The order of the query parameters no matters, we serve successive requests based on the first request result.
 
-For the **Community** plan, the first request will be cached for the next 24 hours.
+For the **Free** plan, the first request will be cached for the next 24 hours.
 
-If you have **Professional** plan, caching is custom, just contact with [hello@microlink.io](mailto:hello@microlink.io).
+If you have **Professional** plan, caching is custom. Just contact with [hello@microlink.io](mailto:hello@microlink.io?subject=Adjust request cache).
 
 # API Parameters
 
