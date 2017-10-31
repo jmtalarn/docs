@@ -12,9 +12,11 @@ search: false
 
 # Getting Started
 
-[microlink.io](https://microlink.io) is an API for get information from any URL.
+Welcome to [microlink.io](https://microlink.io) API. You can use it for get relevant information from any link. The service is oriented for build embed previsualizations of third party links in your site.
 
-```shell
+> Entering an URL, you will receive the information behind the link. Easy peasy.
+
+```bash
 $ curl https://api.microlink.io?url=https://vimeo.com/188175573
 ```
 
@@ -48,9 +50,7 @@ $ curl https://api.microlink.io?url=https://vimeo.com/188175573
 }
 ```
 
-The service is oriented for build embebed previsualizations of third party links in your website.
-
-Providing an URL as input, we can detect the following information:
+From the [url](#url) provided as input, we can detect the following information:
 
 - Author
 - Date
@@ -62,12 +62,19 @@ Providing an URL as input, we can detect the following information:
 - Url
 - Title
 
-Additionally, we can perform the following actions
+Complementing the information obtained, we provide you a set of extra features to enrich more your links previsualizations and improve your engagement:
 
-- Take an screenshot of the website
-- Get palette colors of all images detected.
+- Take an [screenshot](#screenshot) of the website (partial or full page).
+- Get predominant [palette](#palette) colors per each image detected.
+- Make easy [embed](#embeded-support) content directly in your HTML markup.
+- [Prerendering](#prerender) mode, useful for get more information from website that uses client sides frameworks.
+- Export to PDF (*soon*, [ping us](https://twitter.com/microlinkio) if you are interested!)
 
-The following documentation is related about all you need to know about the API, like response format, rate limit and configurable parameters.
+</br>
+
+The API is shipped as microservice. Just call `/` with method `GET`. Nothing else.
+
+All requests should be made over SSL. All request and response bodies, including errors, are encoded in JSON.
 
 # Authentication
 
@@ -112,7 +119,7 @@ Date: Thu, 19 Oct 2017 15:05:38 GMT
 Connection: keep-alive
 ```
 
-For **Free** plan, we allow a maximum of **250 requests per 24h hours**.
+For **Free** plan, we allow a maximum of **1,000 requests per each 24h hours**.
 
 You can check your rate limit status seeing the HTTP headers we attach to every request.
 
@@ -120,24 +127,26 @@ HTTP Header | Description
 | ----------| ---------- |
 **X-Rate-limit-limit** | The rate limit time window in milliseconds.
 **X-Rate-limit-remaining** | The number of requests left for the time window.
-**X-Rate-limit-reset** |  The remaining window before the rate limit resets, in milliseconds.
+**X-Rate-limit-reset** | The remaining window before the rate limit resets, in milliseconds.
 
 <br>
 
-Under **Professional** plan, there is not rate limit.
+Under **Professional** plan, rate limits start from **10,000 requests per each 24h**.
 
 # Response Format
 
-All the responses as served as **JSON** – unless you use the [embedded support](#embedded-support) – using [JSend](https://labs.omniti.com/labs/jsend) format specification.
+All the responses as served as **JSON** – unless you use the [embedded support](#embedded-support).
 
-The API will be response with  `status` and `data` and `message` fields.
+Our response format is based on [JSend](https://labs.omniti.com/labs/jsend) specification.
+
+This means sthat every API call generate a response with `status`, `data` and `message` fields.
 
 ## status
 
 *required*<br>
 **type**: `string`
 
-The status associated with the response. The value can be
+The status associated with the response. The value can be:
 
 
 Status          | HTTP Status | Description                                                        |
@@ -166,15 +175,15 @@ An optional field to attach extra information, like error message or explanation
 You can check the HTTP header <b>X-Cache</b> for know if the response was or not a cached version.
 </aside>
 
-We follow a query caching politic for successive and same parameters request in order to provide fast response after the first request.
+We follow a query caching politic for successive API calls based on query requests, in order to provide fast response and server a cached version from the first request.
 
-The first time that you make a request, it takes a little of time to response, but next requests will be resolved instantly.
+This means that maybe the first requests can take more time, but, after that, the next successive API calls will be resolved instantly.
 
 The order of the query parameters no matters, we serve successive requests based on the first request result.
 
-For the **Free** plan, the first request will be cached for the next 24 hours.
+For the **Free** plan, the first request will be cached for the next 5 days.
 
-If you have **Professional** plan, caching is custom. Just contact with [hello@microlink.io](mailto:hello@microlink.io?subject=Adjust request cache).
+If you have **Professional** plan, caching politic can be customize, adapting your user case. Please, contact with [hello@microlink.io](mailto:hello@microlink.io?subject=Adjust request cache) for that.
 
 # API Parameters
 
@@ -191,10 +200,10 @@ The URL for get information based on the content.
 **default** `false`
 
 <aside class="warning">
-This parameter can be the response time slow, avoid it if you don't really need it.
+This parameter can do response time slow, avoid it if you don't really need it.
 </aside>
 
-Pre load the URL as a browser before extract the data. Sometimes it's necessary if the content of the url is not server side.
+Preload all elements from the URL in preparation for extract the data.
 
 ## screenshot
 
@@ -298,6 +307,8 @@ Following this approach, we offer two ways to consume the response.
 ## All data detected
 
 Given an URL, returns all the information extracted from the content. You can pass all the [API params](#api-params).
+
+This is the default behavior.
 
 ## Embeded support
 
