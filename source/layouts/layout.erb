@@ -50,6 +50,14 @@ under the License.
       gtag('js', new Date());
       gtag('config', 'UA-108549225-2');
     </script>
+
+    <script>
+      var HW_config = {
+        selector: ".changelog",
+        account:  "xMYKgx"
+      }
+    </script>
+    <script async src="//cdn.headwayapp.co/widget.js"></script>
   </head>
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">
@@ -61,6 +69,9 @@ under the License.
     </a>
     <div class="toc-wrapper">
       <%= image_tag "logo.png", class: 'logo' %>
+      <div class="site-info changelog">
+        <p class="site-name">microlink.io</p>
+      </div>
       <% if language_tabs.any? %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>

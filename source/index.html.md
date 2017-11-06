@@ -5,8 +5,9 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - Shell
 
 toc_footers:
-  - <a href='https://github.com/microlinkhq/support' target="_blank">Report an issue</a>
-  - <a href='https://microlink.io' target="_blank">microlink.io</a>
+  - <a href='https://headwayapp.co/microlink-changelog' target="_blank">see changelog</a>
+  - <a href='https://github.com/microlinkhq/support' target="_blank">report an issue</a>
+  - <a href='https://microlink.io' target="_blank">visit website</a>
 search: false
 ---
 
@@ -356,7 +357,7 @@ $ curl https://api.microlink.io/?url=https://news.ycombinator.com&filter=url,tit
 
 **type**: `array`<br>
 
-A comma separate list of the requested values. 
+A comma separate list of the requested values.
 
 Probably you don't want to consume all the response data, so this parameter is designed for make the response as tiny as possible.
 

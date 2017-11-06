@@ -105,7 +105,22 @@ body {
   .logo {
     height: 4rem;
     margin: auto;
-    padding: 1rem;
+    padding-top: 1rem;
+  }
+
+  .site-info {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .site-name {
+    margin-top: 0;
+  }
+
+  #HW_badge {
+    top: 0;
+    left: 4px;
   }
 
   .search-results {
