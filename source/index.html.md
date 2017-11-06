@@ -59,7 +59,7 @@ From the [url](#url) provided as input, we can detect the following information:
 - Logo
 - Favicon
 - Publisher
-- Url
+- URL
 - Title
 
 Complementing the information obtained, we provide you a set of extra features to enrich more your links previsualizations and improve your engagement:
@@ -293,10 +293,46 @@ Parameter    | Description                                           |
 
 ## palette
 
+> Add `palette` parameter as query string in your API call make possible get more information about your images color composition:
+
+```bash
+$ curl https://api.microlink.io/?url=https://news.ycombinator.com&palette&filter=image
+```
+
+```json
+{
+  "status": "success",
+  "data": {
+    "image": {
+      "width": 18,
+      "height": 18,
+      "type": "gif",
+      "url": "https://news.ycombinator.com/y18.gif",
+      "palette": [
+        "#fc6404",
+        "#fca46c",
+        "#833301"
+      ],
+      "background_color": "#FCA46C",
+      "color": "#712D01",
+      "alternative_color": "#813201"
+    }
+  }
+}
+```
+
 **type**: `boolean`<br>
 **default** `false`
 
-Get palette colors from the images detected. It will returns an `Array` of colors sorted from most dominant colors to least.
+Enabling it will be return you more information related with color schema of the images detected:
+
+- **palette** A collection of hexadecimal colors from most dominant color to least.
+
+- **background_color** The best color with good [WCAG contrast ratio](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) that can be used as background color representation of the image.
+
+- **color**  The best color  overlayed over `background_color`.
+
+- **alternative_color** It will be the second best color. If there are only two colors parsed, it will default to `color`.
 
 # API Endpoint
 
