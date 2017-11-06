@@ -293,7 +293,7 @@ Parameter    | Description                                           |
 
 ## palette
 
-> Add `palette` parameter as query string in your API call make possible get more information about your images color composition:
+> Adding `palette` as query string parameter in your API call make possible get more information about your images color composition:
 
 ```bash
 $ curl https://api.microlink.io/?url=https://news.ycombinator.com&palette&filter=image
@@ -326,13 +326,39 @@ $ curl https://api.microlink.io/?url=https://news.ycombinator.com&palette&filter
 
 Enabling it will be return you more information related with color schema of the images detected:
 
-- **palette** A collection of hexadecimal colors from most dominant color to least.
+- **palette**: A collection of hexadecimal colors from most dominant color to least.
 
-- **background_color** The best color with good [WCAG contrast ratio](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) that can be used as background color representation of the image.
+- **background_color**: The best color with good [WCAG contrast ratio](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) that can be used as background color representation of the image.
 
-- **color**  The best color  overlayed over `background_color`.
+- **color**:  The best color  overlayed over `background_color`.
 
-- **alternative_color** It will be the second best color. If there are only two colors parsed, it will default to `color`.
+- **alternative_color**: It will be the second best color. If there are only two colors parsed, it will default to `color`.
+
+## filter
+
+> It's a good practice filter just the values that you're going to consume:
+
+```bash
+$ curl https://api.microlink.io/?url=https://news.ycombinator.com&filter=url,title
+```
+
+```json
+{
+  "status": "success",
+  "data": {
+    "url": "https://news.ycombinator.com/",
+    "title": "Hacker News"
+  }
+}
+```
+
+> This reduces bandwidth and improves response times.
+
+**type**: `array`<br>
+
+A comma separate list of the requested values. 
+
+Probably you don't want to consume all the response data, so this parameter is designed for make the response as tiny as possible.
 
 # API Endpoint
 
@@ -348,7 +374,7 @@ This is the default behavior.
 
 ## Embeded support
 
-> You can call the API directly from an html img tag - images are returned inline. For example:
+> You can call the API directly from an html `img` tag - images are returned inline. For example:
 
 ```html
 <img
