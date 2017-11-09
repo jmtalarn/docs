@@ -376,6 +376,7 @@ Parameter    | Description                                           |
 `quality`  | **number** The quality of the image, between `0` to `100`. Not applicable to `'png'` images. |
 `type`             | **string** Specify screenshot type, could be either `'jpeg'` or `'png'` (default to `'png'`). |
 `width`          | **number** Page width in pixels. |
+`user_agent` | **string** Specific user agent to use. |
 
 ## palette
 
