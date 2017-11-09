@@ -208,6 +208,28 @@ Preload all elements from the URL in preparation for extract the data.
 
 ## screenshot
 
+> When you take an screenshot snapshot such as
+
+```shell
+$ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&filter=screenshot
+```
+
+> The image will be hosted at  [imgur.com](https://imgur.com) as `png` by default.
+
+```json
+{
+  "status": "success",
+  "data": {
+    "screenshot": {
+      "url": "https://i.imgur.com/Jv9yqlI.png",
+      "type": "png",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}
+```
+
 **type**: `boolean`|`string`<br>
 **default** `false`
 
@@ -215,82 +237,145 @@ Take a screenshot of the website. The image will be hosted at [imgur.com](https:
 
 At **Professional** plan, we can places the images in your own image hosting (S3, Cloudinary, whatever). Just contact with [hello@microlink.io](mailto:hello@microlink.io).
 
-<br>
+### Device emulation
 
-If you provide the device identifier, the screenshot will be taken according with the device screen dimensions.
+> Providing a device name supported as value for `screenshot`, we will take the screenshot using the specific device settings (viewport, width, height, etc).
+
+```html
+<img
+  style="max-width: 250px"
+  src="https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot=iphone%206&embed=screenshot.url"
+```
+
+> <img style="max-width: 250px" src="https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot=iphone%206&embed=screenshot.url"
+/>
+
+The specific parameter `device` is a helper to setup a determinate viewport settings based in a device name.
+
+For use it just provide a device name supported.
 
 <aside class="notice">You can provide device name in lower case.</aside>
 
-### Devices supported
+The devices supported are:
 
-- `Blackberry PlayBook`
-- `Blackberry PlayBook landscape`
-- `BlackBerry Z30`
-- `BlackBerry Z30 landscape`
-- `Galaxy Note 3`
-- `Galaxy Note 3 landscape`
-- `Galaxy Note II`
-- `Galaxy Note II landscape`
-- `Galaxy S III`
-- `Galaxy S III landscape`
-- `Galaxy S5`
-- `Galaxy S5 landscape`
-- `iPad`
-- `iPad landscape`
-- `iPad Mini`
-- `iPad Mini landscape`
-- `iPad Pro`
-- `iPad Pro landscape`
-- `iPhone 4`
-- `iPhone 4 landscape`
-- `iPhone 5`
-- `iPhone 5 landscape`
-- `iPhone 6`
-- `iPhone 6 landscape`
-- `iPhone 6 Plus`
-- `iPhone 6 Plus landscape`
-- `Kindle Fire HDX`
-- `Kindle Fire HDX landscape`
-- `LG Optimus L70`
-- `LG Optimus L70 landscape`
-- `Microsoft Lumia 550`
-- `Microsoft Lumia 950`
-- `Microsoft Lumia 950 landscape`
-- `Nexus 10`
-- `Nexus 10 landscape`
-- `Nexus 4`
-- `Nexus 4 landscape`
-- `Nexus 5`
-- `Nexus 5 landscape`
-- `Nexus 5X`
-- `Nexus 5X landscape`
-- `Nexus 6`
-- `Nexus 6 landscape`
-- `Nexus 6P`
-- `Nexus 6P landscape`
-- `Nexus 7`
-- `Nexus 7 landscape`
-- `Nokia Lumia 520`
-- `Nokia Lumia 520 landscape`
-- `Nokia N9`
-- `Nokia N9 landscape`
+| name | width | height | scale | mobile? | touch? | landscape? |
+|------|-------|--------| ----- |----------|----------|-------------|
+| `BlackBerry Z30` | 360 | 640 | 2 | true | true | false |
+| `BlackBerry Z30 landscape` | 640 | 360 | 2 | true | true | true |
+| `Blackberry PlayBook` | 600 | 1024 | 1 | true | true | false |
+| `Blackberry PlayBook landscape` | 1024 | 600 | 1 | true | true | true |
+| `Galaxy Note 3` | 360 | 640 | 3 | true | true | false |
+| `Galaxy Note 3 landscape` | 640 | 360 | 3 | true | true | true |
+| `Galaxy Note II` | 360 | 640 | 2 | true | true | false |
+| `Galaxy Note II landscape` | 640 | 360 | 2 | true | true | true |
+| `Galaxy S III` | 360 | 640 | 2 | true | true | false |
+| `Galaxy S III landscape` | 640 | 360 | 2 | true | true | true |
+| `Galaxy S5` | 360 | 640 | 3 | true | true | false |
+| `Galaxy S5 landscape` | 640 | 360 | 3 | true | true | true |
+| `Kindle Fire HDX` | 800 | 1280 | 2 | true | true | false |
+| `Kindle Fire HDX landscape` | 1280 | 800 | 2 | true | true | true |
+| `LG Optimus L70` | 384 | 640 | 1.25 | true | true | false |
+| `LG Optimus L70 landscape` | 640 | 384 | 1.25 | true | true | true |
+| `Macbook Pro 13` | 1280 | 800 | 1 | false | false | false |
+| `Macbook Pro 15` | 1440 | 900 | 1 | false | false | false |
+| `Microsoft Lumia 550` | 640 | 360 | 2 | true | true | false |
+| `Microsoft Lumia 950` | 360 | 640 | 4 | true | true | false |
+| `Microsoft Lumia 950 landscape` | 640 | 360 | 4 | true | true | true |
+| `Nexus 10` | 800 | 1280 | 2 | true | true | false |
+| `Nexus 10 landscape` | 1280 | 800 | 2 | true | true | true |
+| `Nexus 4` | 384 | 640 | 2 | true | true | false |
+| `Nexus 4 landscape` | 640 | 384 | 2 | true | true | true |
+| `Nexus 5` | 360 | 640 | 3 | true | true | false |
+| `Nexus 5 landscape` | 640 | 360 | 3 | true | true | true |
+| `Nexus 5X` | 412 | 732 | 2.625 | true | true | false |
+| `Nexus 5X landscape` | 732 | 412 | 2.625 | true | true | true |
+| `Nexus 6` | 412 | 732 | 3.5 | true | true | false |
+| `Nexus 6 landscape` | 732 | 412 | 3.5 | true | true | true |
+| `Nexus 6P` | 412 | 732 | 3.5 | true | true | false |
+| `Nexus 6P landscape` | 732 | 412 | 3.5 | true | true | true |
+| `Nexus 7` | 600 | 960 | 2 | true | true | false |
+| `Nexus 7 landscape` | 960 | 600 | 2 | true | true | true |
+| `Nokia Lumia 520` | 320 | 533 | 1.5 | true | true | false |
+| `Nokia Lumia 520 landscape` | 533 | 320 | 1.5 | true | true | true |
+| `Nokia N9` | 480 | 854 | 1 | true | true | false |
+| `Nokia N9 landscape` | 854 | 480 | 1 | true | true | true |
+| `iMac 21.5` | 1980 | 1080 | 1 | false | false | false |
+| `iMac 27` | 2560 | 1440 | 1 | false | false | false |
+| `iPad` | 768 | 1024 | 2 | true | true | false |
+| `iPad Mini` | 768 | 1024 | 2 | true | true | false |
+| `iPad Mini landscape` | 1024 | 768 | 2 | true | true | true |
+| `iPad Pro` | 1024 | 1366 | 2 | true | true | false |
+| `iPad Pro landscape` | 1366 | 1024 | 2 | true | true | true |
+| `iPad landscape` | 1024 | 768 | 2 | true | true | true |
+| `iPhone 4` | 320 | 480 | 2 | true | true | false |
+| `iPhone 4 landscape` | 480 | 320 | 2 | true | true | true |
+| `iPhone 5` | 320 | 568 | 2 | true | true | false |
+| `iPhone 5 landscape` | 568 | 320 | 2 | true | true | true |
+| `iPhone 6` | 375 | 667 | 2 | true | true | false |
+| `iPhone 6 Plus` | 414 | 736 | 3 | true | true | false |
+| `iPhone 6 Plus landscape` | 736 | 414 | 3 | true | true | true |
+| `iPhone 6 landscape` | 667 | 375 | 2 | true | true | true |
 
 ### Specific parameters
 
-You can specific options related with the screenshot settings as well.
+> Without providing any extra configuration, the screenshot will be taken with a `8:5` aspect ratio resolution. If you want to use a different aspect ratio (for example `16:9`) just provide a resolution for do that as extra parameters:
+
+```shell
+$ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&filter=screenshot&width=2560&height=1440
+```
+
+> The output will be:
+
+```json
+{
+  "status": "success",
+  "data": {
+    "screenshot": {
+      "url": "https://i.imgur.com/CGNezUs.png",
+      "type": "png",
+      "width": 2560,
+      "height": 1440
+    }
+  }
+}
+```
+
+> The screenshot dimensions could be too large but you want to keep aspect ratio resolution. You can scale the dimension using `device_scale_factor`:
+
+```shell
+$ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&filter=screenshot&width=2560&height=1440&device_scale_factor=0.5
+```
+
+> Now screenshot is `16:9` and file size is enough:
+
+```json
+{
+  "status": "success",
+  "data": {
+    "screenshot": {
+      "url": "https://i.imgur.com/kf1D7Gl.png",
+      "type": "png",
+      "width": 1280,
+      "height": 720
+    }
+  }
+}
+```
+
+Additionally you can setup a set of variable related with screenshot properties.
 
 Parameter    | Description                                           |
 ------------ | ----------------------------------------------------- |
-`type`             | **string** Specify screenshot type, could be either `'jpeg'` or `'png'` (defaults is `'png'`). |
-`quality`  | **number** The quality of the image, between `0` to `100`. Not applicable to `'png'` images. |
-`omit_background`          | **boolean** Hides default white background and allows capturing screenshots with transparency (default to `true`). |
-`full_page`          | **boolean** When `true`, takes a screenshot of the full scrollable page. (default to `false`). |
-`width`          | **number** Page width in pixels. |
-`height`          | **number** Page height in pixels. |
-`is_mobile`          | **boolean** Whether the meta viewport tag is taken into account (default to `false`). |
-`has_touch`          | **boolean or string** Specifies if viewport supports touch events. (default to `false`). |
-`is_landscape`          | **boolean** Specifies if viewport is in landscape mode (defaults to `false`). |
 `device_scale_factor`          | **number** Specify device scale factor (defaults to `1`). |
+`full_page`          | **boolean** When `true`, takes a screenshot of the full scrollable page. (default to `false`). |
+`has_touch`          | **boolean or string** Specifies if viewport supports touch events. (default to `false`). |
+`height`          | **number** Page height in pixels. |
+`is_landscape`          | **boolean** Specifies if viewport is in landscape mode (default to `false`). |
+`is_mobile`          | **boolean** Whether the meta viewport tag is taken into account (default to `false`). |
+`omit_background`          | **boolean** Hides default white background and allows capturing screenshots with transparency (default to `true`). |
+`quality`  | **number** The quality of the image, between `0` to `100`. Not applicable to `'png'` images. |
+`type`             | **string** Specify screenshot type, could be either `'jpeg'` or `'png'` (default to `'png'`). |
+`width`          | **number** Page width in pixels. |
 
 ## palette
 
@@ -327,13 +412,12 @@ $ curl https://api.microlink.io/?url=https://news.ycombinator.com&palette&filter
 
 Enabling it will be return you more information related with color schema of the images detected:
 
-- **palette**: A collection of hexadecimal colors from most dominant color to least.
-
-- **background_color**: The best color with good [WCAG contrast ratio](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) that can be used as background color representation of the image.
-
-- **color**:  The best color  overlayed over `background_color`.
-
-- **alternative_color**: It will be the second best color. If there are only two colors parsed, it will default to `color`.
+| Field             | Description                                                                                                                                                                                                |
+| ----------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| palette           | **array** A collection of hexadecimal colors from most dominant color to least.                                                                                                                            |
+| background_color  | **string** The best color with good [WCAG contrast ratio](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) that can be used as background color representation of the image.|
+| color             | **string** The best color  overlayed over `background_color`.                                                                                                                                              |
+| alternative_color | **string** It will be the second best color. If there are only two colors parsed, it will default to `color`.                                                                                              |
 
 ## filter
 
@@ -375,7 +459,7 @@ This is the default behavior.
 
 ## Embeded support
 
-> You can call the API directly from an html `img` tag - images are returned inline. For example:
+> You can call the API directly from an html `img` tag - images are returned inline:
 
 ```html
 <img

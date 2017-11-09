@@ -432,7 +432,7 @@ body {
   h5,
   h6 {
     @extend %header-font;
-    font-size: 15px;
+    font-size: 18px;
     margin-top: 2.5em;
     margin-bottom: 0.8em;
   }
@@ -470,8 +470,16 @@ body {
       padding: 10px;
     }
 
-    tr strong {
-      display: block;
+    tr {
+      transition: background-color 0.15s ease-in;
+
+      strong {
+        display: block;
+      }
+
+      &:hover {
+        background-color: $gray0;
+      }
     }
   }
 
