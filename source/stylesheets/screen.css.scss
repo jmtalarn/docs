@@ -2,6 +2,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
+// @import 'rtl'; // uncomment to switch to RTL format
 
 /*
 Copyright 2008-2013 Concur Technologies, Inc.
@@ -457,6 +458,9 @@ body {
       text-align: left;
       vertical-align: top;
       line-height: 1.6;
+      code {
+        white-space: nowrap;
+      }
     }
 
     th {
@@ -552,7 +556,7 @@ body {
 
   .search-highlight {
     padding: 2px;
-    margin: -2px;
+    margin: -3px;
     border-radius: 4px;
     border: 1px solid #f7e633;
     background: linear-gradient(to top left, #f7e633 0%, #f1d32f 100%);
