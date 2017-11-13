@@ -3,6 +3,7 @@
 .bundle
 .config
 coverage
+node_modules
 InstalledFiles
 lib/bundler/man
 pkg
