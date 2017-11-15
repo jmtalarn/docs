@@ -13,7 +13,7 @@ search: false
 
 # Getting Started
 
-Welcome to [microlink.io](https://microlink.io) API. You can use it for get relevant information from any link. The service is oriented for build embed previsualizations of third party links in your site.
+Welcome to [microlink.io](https://microlink.io) API. You can use it for get relevant information from any website. The service is oriented for build embed previsualizations of third party links in your site.
 
 > Entering an URL, you will receive the information behind the link. Easy peasy.
 
