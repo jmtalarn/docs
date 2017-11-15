@@ -73,7 +73,7 @@ Complementing the information obtained, we provide you a set of extra features t
 
 </br>
 
-The API is shipped as microservice. Just call `/` with method `GET`. Nothing else.
+The API is shipped as **microservice**. Just call `/` with method `GET`. Nothing else.
 
 All requests should be made over SSL. All request and response bodies, including errors, are encoded in JSON.
 
@@ -98,7 +98,7 @@ If you are using **Free** plan, then you don't have any kind of authentication, 
 
 For **Professional** plan, authentication is required. It will be done providing your `API_KEY_SECRET` as `key` parameter into your query request.
 
-# Rate limit
+# Rate Limit
 
 ```bash
 $ curl http://api.microlink.io?url=https://github.com -i
@@ -134,7 +134,7 @@ HTTP Header | Description
 
 Under **Professional** plan, rate limits start from **10,000 requests per each 24h**.
 
-# Response Format
+# Format
 
 All the responses as served as **JSON** – unless you use the [embedded support](#embedded-support).
 
@@ -186,7 +186,7 @@ For the **Free** plan, the first request will be cached for the next 5 days.
 
 If you have **Professional** plan, caching politic can be customize, adapting your user case. Please, contact with [hello@microlink.io](mailto:hello@microlink.io?subject=Adjust request cache) for that.
 
-# API Parameters
+# Parameters
 
 ## url
 
@@ -440,25 +440,13 @@ $ curl https://api.microlink.io/?url=https://news.ycombinator.com&filter=url,tit
 
 > This reduces bandwidth and improves response times.
 
-**type**: `array`<br>
+**type**: `string`
 
 A comma separate list of the requested values.
 
 Probably you don't want to consume all the response data, so this parameter is designed for make the response as tiny as possible.
 
-# API Endpoint
-
-This API is a **microservice**. Just  `GET`  method will be used.
-
-Following this approach, we offer two ways to consume the response.
-
-## All data detected
-
-Given an URL, returns all the information extracted from the content. You can pass all the [API params](#api-params).
-
-This is the default behavior.
-
-## Embeded support
+## embed
 
 > You can call the API directly from an html `img` tag - images are returned inline:
 
@@ -478,10 +466,10 @@ This is the default behavior.
 Use dotted notation for reference nested data of the payload.
 </aside>
 
-Complementary to response with [all data detected](#all-data-detected), **embeded support**.
+**type**: `string`
 
-The only different thing that you need to do for enable it is provide `embed` as query parameter following by the value at path of object data.
+The embed parameters is oriented for embed a field directly in your HTML markup.
+
+It supports dot paths; This means that if you want to embed a nested field, just provide the absolute path of the field using a dots
 
 For example, if you want to embed an image just provide `embed=image.src` and the image will be rendered.
-
-This is useful when you want to render API content directly from your HTML.
