@@ -571,7 +571,7 @@ body {
 .content {
   $border-width: 2px;
 
-  a {
+  a:not(.anchorjs-link) {
     display: inline;
     text-decoration: none;
     font-weight: 600;
