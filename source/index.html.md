@@ -245,6 +245,7 @@ At **Professional** plan, we can places the images in your own image hosting (S3
 <img
   style="max-width: 250px"
   src="https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot=iphone%206&embed=screenshot.url"
+/>
 ```
 
 > <img style="max-width: 250px" src="https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot=iphone%206&embed=screenshot.url"
