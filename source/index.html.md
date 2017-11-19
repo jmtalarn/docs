@@ -140,7 +140,7 @@ All the responses as served as **JSON** – unless you use the [embedded support
 
 Our response format is based on [JSend](https://labs.omniti.com/labs/jsend) specification.
 
-This means sthat every API call generate a response with `status`, `data` and `message` fields.
+This means that every API call generate a response with `status`, `data` and `message` fields.
 
 ## status
 
