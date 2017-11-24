@@ -170,21 +170,82 @@ Your API response payload. Here you can found all the information related with t
 
 An optional field to attach extra information, like error message or explanation.
 
-# Request Cache
+# Cache
 
-<aside class="notice">
-You can check the HTTP header <b>X-Cache</b> for know if the response was or not a cached version.
-</aside>
+> The first time you query for a non previous cached resource, the API will extract the information from the link:
 
-We follow a query caching politic for successive API calls based on query requests, in order to provide fast response and server a cached version from the first request.
+```shell
+$ curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com
+```
 
-This means that maybe the first requests can take more time, but, after that, the next successive API calls will be resolved instantly.
+> You can check that from `X-Cache` headers of the response. Firs time, the value will be `MISS`:
 
-The order of the query parameters no matters, we serve successive requests based on the first request result.
+```text
+< HTTP/1.1 200 OK
+< Date: Fri, 24 Nov 2017 09:37:06 GMT
+< Content-Type: application/json; charset=utf-8
+< Content-Length: 484
+< Connection: keep-alive
+< Access-Control-Expose-Headers: ETag, X-Rate-Limit-Limit, X-Rate-Limit-Remaining, X-Rate-Limit-Reset
+< X-DNS-Prefetch-Control: off
+< X-Frame-Options: SAMEORIGIN
+< Strict-Transport-Security: max-age=15552000; includeSubDomains
+< X-Download-Options: noopen
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< access-control-allow-credentials: true
+< access-control-allow-methods: GET
+< access-control-allow-origin: *
+< X-Rate-Limit-Limit: 1000
+< X-Rate-Limit-Remaining: 958
+< X-Rate-Limit-Reset: 86400
+< Cache-Control: public, max-age=432000, s-maxage=432000
+< X-Cache: MISS
+< ETag: "1e4-MPrhhWpb1TTpoSpTxUW9uF8OhD4"
+< Vary: Accept-Encoding
+< Server: cloudflare-nginx
+< CF-RAY: 3c2b6333fd465450-MAD
+```
+
+> Now, if you query again from the same resource, a cache version will be serve based on the first request and  `X-Cache` value will be `HIT`:
+
+```text
+< HTTP/1.1 200 OK
+< Date: Fri, 24 Nov 2017 09:40:55 GMT
+< Content-Type: application/json; charset=utf-8
+< Content-Length: 484
+< Connection: keep-alive
+< Access-Control-Expose-Headers: ETag, X-Rate-Limit-Limit, X-Rate-Limit-Remaining, X-Rate-Limit-Reset
+< X-DNS-Prefetch-Control: off
+< X-Frame-Options: SAMEORIGIN
+< Strict-Transport-Security: max-age=15552000; includeSubDomains
+< X-Download-Options: noopen
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< access-control-allow-credentials: true
+< access-control-allow-methods: GET
+< access-control-allow-origin: *
+< X-Rate-Limit-Limit: 1000
+< X-Rate-Limit-Remaining: 957
+< X-Rate-Limit-Reset: 86400
+< Cache-Control: public, max-age=431771, s-maxage=431771
+< X-Cache: HIT
+< ETag: "1e4-MPrhhWpb1TTpoSpTxUW9uF8OhD4"
+< Vary: Accept-Encoding
+< Server: cloudflare-nginx
+< CF-RAY: 3c2b68d66bee5450-MAD
+```
+
+In order to improve response timing, we follow a query caching politic for successive API calls:
+
+- The first time you query for a resource that not was previously served, we will created it.
+- The successive requests for the resource will consume the cached version of the resource.
+
+The order of the query parameters no matters.
 
 For the **Free** plan, the first request will be cached for the next 5 days.
 
-If you have **Professional** plan, caching politic can be customize, adapting your user case. Please, contact with [hello@microlink.io](mailto:hello@microlink.io?subject=Adjust request cache) for that.
+If you have **Professional** plan, caching politic can be custom, adapting the expiration to your user case. Please, contact with [hello@microlink.io](mailto:hello@microlink.io?subject=Adjust request cache).
 
 # Parameters
 
