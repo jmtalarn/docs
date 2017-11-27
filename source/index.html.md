@@ -31,12 +31,6 @@ $ curl https://api.microlink.io?url=https://vimeo.com/188175573
     "date": null,
     "description":
       "Converse has spent a good part of this year updating some of their classics. Our past is constantly catching up to us, but we rarely get to see the relationship…",
-    "favicon": {
-      "width": 180,
-      "height": 180,
-      "type": "png",
-      "url": "https://i.vimeocdn.com/favicon/main-touch_180"
-    },
     "image": {
       "width": 1280,
       "height": 720,
@@ -58,7 +52,6 @@ From the [url](#url) provided as input, we can detect the following information:
 - Description
 - Image
 - Logo
-- Favicon
 - Publisher
 - URL
 - Title
@@ -514,14 +507,14 @@ Probably you don't want to consume all the response data, so this parameter is d
 
 ```html
 <img
-  src="https://api.microlink.io?url=https://news.ycombinator.com&embed=favicon"
+  src="https://api.microlink.io?url=https://news.ycombinator.com&embed=logo"
 />
 ```
 
-> Return’s Hackers News favicon:
+> Return’s Hackers News logo:
 
 > <img
-  src="https://api.microlink.io?url=https://news.ycombinator.com&embed=favicon"
+  src="https://api.microlink.io?url=https://news.ycombinator.com&embed=logo"
 />
 
 <aside class="notice">
