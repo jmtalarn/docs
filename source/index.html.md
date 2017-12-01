@@ -255,7 +255,7 @@ The URL for get information based on the content.
 **default** `false`
 
 <aside class="warning">
-This parameter can do response time slow, avoid it if you don't really need it.
+This parameter can make response time slow, avoid it if you don't really need it.
 </aside>
 
 Preload all elements from the URL in preparation for extract the data.
