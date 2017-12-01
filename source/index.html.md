@@ -240,6 +240,8 @@ For the **Free** plan, the first request will be cached for the next 5 days.
 
 If you have **Professional** plan, caching politic can be custom, adapting the expiration to your user case. Please, contact with [hello@microlink.io](mailto:hello@microlink.io?subject=Adjust request cache).
 
+If you want to invalidate a response cache and regenerate the cache value you need to use [force](#force) parameter.
+
 # Parameters
 
 ## url
@@ -528,3 +530,12 @@ The embed parameters is oriented for embed a field directly in your HTML markup.
 It supports dot paths; This means that if you want to embed a nested field, just provide the absolute path of the field using a dots
 
 For example, if you want to embed an image just provide `embed=image.src` and the image will be rendered.
+
+## force
+
+**type**: `boolean`<br>
+**default** `false`
+
+This parameter has been designed to invalidate the cache responses, avoiding the minimum time necessary to revalidate them.
+
+Providing it, you are forcing to invalidate the current state of the cache for the response and generate a new one.
