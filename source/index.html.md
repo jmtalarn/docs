@@ -60,7 +60,7 @@ Complementing the information obtained, we provide you a set of extra features t
 
 - Take an [screenshot](#screenshot) of the website (partial or full page).
 - Get predominant [palette](#palette) colors per each image detected.
-- Make easy [embed](#embeded-support) content directly in your HTML markup.
+- Make easy [embed](#embed) content directly in your HTML markup.
 - [Prerendering](#prerender) mode, useful for get more information from website that uses client sides frameworks.
 - Export to PDF (*soon*, [ping us](https://twitter.com/microlinkio) if you are interested!)
 
@@ -129,7 +129,7 @@ Under **Professional** plan, rate limits start from **10,000 requests per each 2
 
 # Format
 
-All the responses as served as **JSON** – unless you use the [embedded support](#embedded-support).
+All the responses as served as **JSON** – unless you use the [embedded support](#embedded).
 
 Our response format is based on [JSend](https://labs.omniti.com/labs/jsend) specification.
 
