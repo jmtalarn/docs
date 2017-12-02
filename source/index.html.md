@@ -13,9 +13,9 @@ search: false
 
 # Getting Started
 
-Welcome to [microlink.io](https://microlink.io) API. You can use it for get relevant information from any website. The service is oriented for build embed previsualizations of third party links in your site.
+Welcome to the [microlink.io](https://microlink.io) API. You can use it to get relevant information from any website. The service is oriented for building embed previsualizations of third party links on your site.
 
-> Entering an URL, you will receive the information behind the link. Easy peasy.
+> Entering a URL, you will receive the information behind the link. Easy peasy.
 
 ```bash
 $ curl https://api.microlink.io?url=https://vimeo.com/188175573
@@ -56,17 +56,17 @@ From the [url](#url) provided as input, we can detect the following information:
 - URL
 - Title
 
-Complementing the information obtained, we provide you a set of extra features to enrich more your links previsualizations and improve your engagement:
+Complementing the information obtained, we provide you a set of extra features that enrich your links previsualizations and improve your engagement:
 
-- Take an [screenshot](#screenshot) of the website (partial or full page).
-- Get predominant [palette](#palette) colors per each image detected.
+- Take a [screenshot](#screenshot) of the website (partial or full page).
+- Get a predominant color [palette](#palette) per each image detected.
 - Make easy [embed](#embed) content directly in your HTML markup.
-- [Prerendering](#prerender) mode, useful for get more information from website that uses client sides frameworks.
+- [Prerendering](#prerender) mode, useful for getting more information from websites that use client-side frameworks.
 - Export to PDF (*soon*, [ping us](https://twitter.com/microlinkio) if you are interested!)
 
 </br>
 
-The API is shipped as **microservice**. Just call `/` with method `GET`. Nothing else.
+The API is shipped as a **microservice**. Just call `/` with method `GET`. Nothing else.
 
 All requests should be made over SSL. All request and response bodies, including errors, are encoded in JSON.
 
@@ -87,9 +87,9 @@ $ curl https://api.microlink.io?key=yeahboi
 }
 ```
 
-If you are using **Free** plan, then you don't have any kind of authentication, but be careful about reach daily [rate limit](#rate-limit).
+If you are using the **Free** plan, you don't need any form of authentication, but be careful about reaching the daily [rate limit](#rate-limit).
 
-For **Professional** plan, authentication is required. It will be done providing your `API_KEY_SECRET` as `key` parameter into your query request.
+For the **Professional** plan, authentication is required. It will be done providing your `API_KEY_SECRET` via the `key` parameter into your query request.
 
 # Rate Limit
 
@@ -113,7 +113,7 @@ Date: Thu, 19 Oct 2017 15:05:38 GMT
 Connection: keep-alive
 ```
 
-For **Free** plan, we allow a maximum of **1,000 requests per each 24h hours**.
+For the **Free** plan, we allow a maximum of **1,000 requests / 24 hours**.
 
 You can check your rate limit status seeing the HTTP headers we attach to every request.
 
@@ -125,7 +125,7 @@ HTTP Header | Description
 
 <br>
 
-Under **Professional** plan, rate limits start from **10,000 requests per each 24h**.
+Under the **Professional** plan, rate limits start from **10,000 requests / 24 hours**.
 
 # Format
 
@@ -133,7 +133,7 @@ All the responses as served as **JSON** – unless you use the [embedded support
 
 Our response format is based on [JSend](https://labs.omniti.com/labs/jsend) specification.
 
-This means that every API call generate a response with `status`, `data` and `message` fields.
+This means that every API call generates a response with `status`, `data` and `message` fields.
 
 ## status
 
@@ -147,31 +147,31 @@ Status          | HTTP Status | Description                                     
 -------------------| -------------------- | -------------------------------------------------------------------- |
 `success`   | `2xx`             | The request was resolved successfully. This is the expected behavior.        |
 `fail`         | `4xx`             | The request failed. Probably a missing or wrong value for a parameter. |
-`error`       | `5xx`             | Oh oh. Something not expected happened.    |
+`error`       | `5xx`             | Uh oh. Something unexpected happened.    |
 
-A simple rule here is, if the request was resolved successful, then `success` status will be associated. In other case check for `fail` or `error`.
+A simple rule here is, if the request was resolved successfully, then the `success` status will be associated. In other case check for `fail` or `error`.
 
 ## data
 
 **type**: `object`
 
-Your API response payload. Here you can found all the information related with the link provided, like `description`, `title`, `image`, etc.
+Your API response payload. Here you can find all the information related with the link provided, like `description`, `title`, `image`, etc.
 
 ## message
 
 **type**: `string`
 
-An optional field to attach extra information, like error message or explanation.
+An optional field to attach extra information, such as an error message or explanation.
 
 # Cache
 
-> The first time you query for a non previous cached resource, the API will extract the information from the link:
+> The first time an uncached resource is queried, the API will extract the information from the link:
 
 ```shell
 $ curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com
 ```
 
-> You can check that from `X-Cache` headers of the response. Firs time, the value will be `MISS`:
+> You can check that from `X-Cache` headers of the response. First time, the value will be `MISS`:
 
 ```text
 < HTTP/1.1 200 OK
@@ -200,7 +200,7 @@ $ curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com
 < CF-RAY: 3c2b6333fd465450-MAD
 ```
 
-> Now, if you query again from the same resource, a cache version will be serve based on the first request and  `X-Cache` value will be `HIT`:
+> Now if you query again for the same resource, a cached version will be served based on the first request, and `X-Cache` value will be `HIT`:
 
 ```text
 < HTTP/1.1 200 OK
@@ -229,18 +229,18 @@ $ curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com
 < CF-RAY: 3c2b68d66bee5450-MAD
 ```
 
-In order to improve response timing, we follow a query caching politic for successive API calls:
+In order to improve response timing, we follow a query caching policy for successive API calls:
 
-- The first time you query for a resource that not was previously served, we will created it.
+- The first time you query for a resource that not was previously served, we will create it.
 - The successive requests for the resource will consume the cached version of the resource.
 
-The order of the query parameters no matters.
+The order of the query parameters doesn't matter.
 
 For the **Free** plan, the first request will be cached for the next 5 days.
 
-If you have **Professional** plan, caching politic can be custom, adapting the expiration to your user case. Please, contact with [hello@microlink.io](mailto:hello@microlink.io?subject=Adjust request cache).
+If you have the **Professional** plan, your caching policy can be custom, adapting the expiration to your user case. Please, contact with [hello@microlink.io](mailto:hello@microlink.io?subject=Adjust request cache).
 
-If you want to invalidate a response cache and regenerate the cache value you need to use [force](#force) parameter.
+If you want to invalidate a response cache and regenerate the cache value you should use the [force](#force) parameter.
 
 # Parameters
 
@@ -249,7 +249,7 @@ If you want to invalidate a response cache and regenerate the cache value you ne
 *required*<br>
 **type**: `string`
 
-The URL for get information based on the content.
+The URL for getting information based on the content.
 
 ## prerender
 
@@ -260,11 +260,11 @@ The URL for get information based on the content.
 This parameter can make response time slow, avoid it if you don't really need it.
 </aside>
 
-Preload all elements from the URL in preparation for extract the data.
+Preload all elements from the URL in preparation of extracting the data.
 
 ## screenshot
 
-> When you take an screenshot snapshot such as
+> When you take a screenshot snapshot such as
 
 ```shell
 $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&filter=screenshot
@@ -291,7 +291,7 @@ $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&fi
 
 Take a screenshot of the website. The image will be hosted at [imgur.com](https://imgur.com).
 
-At **Professional** plan, we can places the images in your own image hosting (S3, Cloudinary, whatever). Just contact with [hello@microlink.io](mailto:hello@microlink.io).
+With a **Professional** plan, we can store the images in your own image hosting solution (S3, Cloudinary, whatever). Just contact [hello@microlink.io](mailto:hello@microlink.io?subject=Custom image storage).
 
 ### Device emulation
 
@@ -307,9 +307,7 @@ At **Professional** plan, we can places the images in your own image hosting (S3
 > <img style="max-width: 250px" src="https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot=iphone%206&embed=screenshot.url"
 />
 
-The specific parameter `device` is a helper to setup a determinate viewport settings based in a device name.
-
-For use it just provide a device name supported.
+The specific parameter `device` is a helper to setup determinate viewport settings based on a device name. To use it just provide one of the supported device names.
 
 <aside class="notice">You can provide device name in lower case.</aside>
 
@@ -375,7 +373,7 @@ The devices supported are:
 
 ### Specific parameters
 
-> Without providing any extra configuration, the screenshot will be taken with a `8:5` aspect ratio resolution. If you want to use a different aspect ratio (for example `16:9`) just provide a resolution for do that as extra parameters:
+> Without providing any extra configuration, the screenshot will be taken with a `8:5` aspect ratio resolution. If you want to use a different aspect ratio (for example `16:9`) just provide a resolution to do that as extra parameters:
 
 ```shell
 $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&filter=screenshot&width=2560&height=1440
@@ -419,7 +417,7 @@ $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&fi
 }
 ```
 
-Additionally you can setup a set of variable related with screenshot properties.
+Additionally you can setup a set of variables related with screenshot properties.
 
 Parameter    | Description                                           |
 ------------ | ----------------------------------------------------- |
@@ -437,7 +435,7 @@ Parameter    | Description                                           |
 
 ## palette
 
-> Adding `palette` as query string parameter in your API call make possible get more information about your images color composition:
+> Adding `palette` as query string parameter in your API call makes it possible to get more information about your images color composition:
 
 ```bash
 $ curl https://api.microlink.io/?url=https://news.ycombinator.com&palette&filter=image
@@ -468,7 +466,7 @@ $ curl https://api.microlink.io/?url=https://news.ycombinator.com&palette&filter
 **type**: `boolean`<br>
 **default** `false`
 
-Enabling it will be return you more information related with color schema of the images detected:
+Enabling it will return you more information related with color schema of the images detected:
 
 | Field             | Description                                                                                                                                                                                                |
 | ----------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -479,7 +477,7 @@ Enabling it will be return you more information related with color schema of the
 
 ## filter
 
-> It's a good practice filter just the values that you're going to consume:
+> It's a good practice to filter just the values that you're going to consume:
 
 ```bash
 $ curl https://api.microlink.io/?url=https://news.ycombinator.com&filter=url,title
@@ -499,13 +497,13 @@ $ curl https://api.microlink.io/?url=https://news.ycombinator.com&filter=url,tit
 
 **type**: `string`
 
-A comma separate list of the requested values.
+A comma-separated list of the requested values.
 
-Probably you don't want to consume all the response data, so this parameter is designed for make the response as tiny as possible.
+Possibly you don't want to consume all the response data, this parameter is designed to make the response as tiny as possible.
 
 ## embed
 
-> You can call the API directly from an html `img` tag - images are returned inline:
+> You can call the API directly from a html `<img/>` tag - images are returned inline:
 
 ```html
 <img
@@ -513,21 +511,21 @@ Probably you don't want to consume all the response data, so this parameter is d
 />
 ```
 
-> Return’s Hackers News logo:
+> Return’s Hacker News logo:
 
 > <img
   src="https://api.microlink.io?url=https://news.ycombinator.com&embed=logo"
 />
 
 <aside class="notice">
-Use dotted notation for reference nested data of the payload.
+Use dotted notation to reference nested data of the payload.
 </aside>
 
 **type**: `string`
 
-The embed parameters is oriented for embed a field directly in your HTML markup.
+The embed parameter is for embedding a field directly in your HTML markup.
 
-It supports dot paths; This means that if you want to embed a nested field, just provide the absolute path of the field using a dots
+It supports dot paths; This means that if you want to embed a nested field, just provide the absolute path of the field using dotted notation.
 
 For example, if you want to embed an image just provide `embed=image.src` and the image will be rendered.
 
