@@ -543,6 +543,16 @@ body {
     font-size: 14px;
   }
 
+  aside.notice a {
+    color: #fff !important;
+    text-decoration: none !important;
+    border-bottom: dashed 1px #fff !important;
+
+    &:hover::before {
+      visibility: hidden !important;
+    }
+  }
+
   aside.notice:before {
     @extend %icon-info-sign;
   }

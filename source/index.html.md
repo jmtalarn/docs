@@ -13,7 +13,13 @@ search: false
 
 # Getting Started
 
-Welcome to the [microlink.io](https://microlink.io) API. You can use it to get relevant information from any website. The service is oriented for building embed previsualizations of third party links on your site.
+<aside class="notice">
+  Use <a target="blank" href="https://microlink.js.org">microlink.js</a> for create beautiful links previews.
+</aside>
+
+Welcome to microlink API
+
+You can use it for get relevant information from any website. The service is oriented for build embed previsualizations of third party links in your site.
 
 > Entering a URL, you will receive the information behind the link. Easy peasy.
 
