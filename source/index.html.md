@@ -43,7 +43,7 @@ $ curl https://api.microlink.io?url=https://vimeo.com/188175573
       "type": "jpg",
       "url": "https://i.vimeocdn.com/video/598160082_1280x720.jpg"
     },
-    "logo": null,
+    "logo": "https://i.vimeocdn.com/favicon/main-touch_180",
     "publisher": "Vimeo",
     "title": "Converse - Past meets Present - Montage",
     "url": "https://vimeo.com/188175573"
@@ -53,14 +53,29 @@ $ curl https://api.microlink.io?url=https://vimeo.com/188175573
 
 From the [url](#url) provided as input, we can detect the following information:
 
-- Author
-- Date
-- Description
-- Image
-- Logo
-- Publisher
-- URL
-- Title
+- **`author`** — eg. `Noah Kulwin`<br/>
+  A human-readable representation of the author's name.
+
+- **`date`** — eg. `2016-05-27T00:00:00.000Z`<br/>
+  An [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) representation of the date the article was published.
+
+- **`description`** — eg. `Converse has spent a good part…`<br/>
+  The publisher's chosen description of the article.
+
+- **`image`** — eg. `https://i.vimeocdn.com/video/598160082_1280x720.jpg`<br/>
+  An image URL that best represents the article.
+  
+ - **`logo`** — eg. `https://i.vimeocdn.com/favicon/main-touch_180`<br/>
+  An image URL that best represents the article.
+
+- **`publisher`** — eg. `Vimeo`<br/>
+  A human-readable representation of the publisher's name.
+
+- **`title`** — eg. `Converse - Past meets Present - Montage`<br/>
+  The publisher's chosen title of the article.
+
+- **`url`** — eg. `https://vimeo.com/188175573`<br/>
+  The URL of the article.
 
 Complementing the information obtained, we provide you a set of extra features that enrich your links previsualizations and improve your engagement:
 
