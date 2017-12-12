@@ -64,9 +64,9 @@ From the [url](#url) provided as input, we can detect the following information:
 
 - **`image`** — eg. `https://i.vimeocdn.com/video/598160082_1280x720.jpg`<br/>
   An image URL that best represents the article.
-  
+
  - **`logo`** — eg. `https://i.vimeocdn.com/favicon/main-touch_180`<br/>
-  An image URL that best represents the article.
+  An image URL that best represents the publisher brand.
 
 - **`publisher`** — eg. `Vimeo`<br/>
   A human-readable representation of the publisher's name.
