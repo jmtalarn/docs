@@ -103,7 +103,7 @@ $ curl https://api.microlink.io?key=yeahboi
 {
   "status": "fail",
   "data": {
-    "key": "<required<; API secret key."
+    "key": "<required> API secret key."
   }
 }
 ```
