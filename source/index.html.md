@@ -283,6 +283,8 @@ This parameter can make response time slow, avoid it if you don't really need it
 
 Preload all elements from the URL in preparation of extracting the data.
 
+This is necessary in some scenario, specially in client side applications to ensure all script are loaded before parsing the HTML.
+
 ## screenshot
 
 > When you take a screenshot snapshot such as
