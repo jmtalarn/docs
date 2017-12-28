@@ -267,7 +267,7 @@ The URL for getting information based on the content.
 ## prerender
 
 **type**: `boolean`<br>
-**default** `false`
+**default** `true`
 
 <aside class="warning">
 This parameter can make response time slow, avoid it if you don't really need it.
