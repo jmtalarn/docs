@@ -94,23 +94,14 @@ All requests should be made over SSL. All request and response bodies, including
 # Authentication
 
 ```shell
-$ curl https://api.microlink.io?key=yeahboi
+$ curl --header "x-api-key: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda
 ```
 
-> If you don't provide the `key` you will see a response like:
-
-```json
-{
-  "status": "fail",
-  "data": {
-    "key": "<required> API secret key."
-  }
-}
-```
+Authentication is only necessary for **Professional** plans.
 
 If you are using the **Free** plan, you don't need any form of authentication, but be careful about reaching the daily [rate limit](#rate-limit).
 
-For the **Professional** plan, authentication is required. It will be done providing your `API_KEY_SECRET` via the `key` parameter into your query request.
+For the **Professional** plan, authentication is required. It must be done providing your API Key as part of the request header.
 
 # Rate Limit
 
@@ -134,19 +125,20 @@ Date: Thu, 19 Oct 2017 15:05:38 GMT
 Connection: keep-alive
 ```
 
-For the **Free** plan, we allow a maximum of **1,000 requests / 24 hours**.
+For the **Free** plan, we allow a maximum of **500 requests every 24 hours** and **one request per second**.
 
 You can check your rate limit status seeing the HTTP headers we attach to every request.
 
 HTTP Header | Description
 | ----------| ---------- |
-**X-Rate-limit-limit** | The rate limit time window in milliseconds.
-**X-Rate-limit-remaining** | The number of requests left for the time window.
-**X-Rate-limit-reset** | The remaining window before the rate limit resets, in milliseconds.
+**X-Rate-Limit-Limit** | The rate limit time window in milliseconds.
+**X-Rate-Limit-Remaining** | The number of requests left for the time window.
+**X-Rate-Limit-Reset** | The remaining window before the rate limit resets, in milliseconds.
+**X-Pricing-Plan** | The pricing plan associated with the request. It can be `free` or `pro`.
 
 <br>
 
-Under the **Professional** plan, rate limits start from **10,000 requests / 24 hours**.
+Under the **Professional** plan, rate limits start from **1,000 requests every 24 hours** with **unlimited concurrency**. See [pricing](https://microlink.io/#pricing) for more information.
 
 # Format
 
