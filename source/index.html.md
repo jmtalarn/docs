@@ -65,7 +65,10 @@ From the [url](#url) provided as input, we can detect the following information:
 - **`image`** — eg. `https://i.vimeocdn.com/video/598160082_1280x720.jpg`<br/>
   An image URL that best represents the article.
 
- - **`logo`** — eg. `https://i.vimeocdn.com/favicon/main-touch_180`<br/>
+- **`lang`** — eg. `en`<br/>
+  An [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) representation of the url content language.
+
+- **`logo`** — eg. `https://i.vimeocdn.com/favicon/main-touch_180`<br/>
   An image URL that best represents the publisher brand.
 
 - **`publisher`** — eg. `Vimeo`<br/>
