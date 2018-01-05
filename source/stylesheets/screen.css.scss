@@ -526,14 +526,17 @@ body {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
+    color: darken($aside-notice-bg, 45%);
     line-height: 1.6;
 
     &.warning {
       background-color: $aside-warning-bg;
+      color: darken($aside-warning-bg, 45%);
     }
 
     &.success {
       background-color: $aside-success-bg;
+      color: darken($aside-success-bg, 45%);
     }
   }
 
