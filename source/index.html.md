@@ -134,10 +134,10 @@ You can check your rate limit status seeing the HTTP headers we attach to every 
 
 HTTP Header | Description
 | ----------| ---------- |
-**X-Rate-Limit-Limit** | The rate limit time window in milliseconds.
-**X-Rate-Limit-Remaining** | The number of requests left for the time window.
-**X-Rate-Limit-Reset** | The remaining window before the rate limit resets, in milliseconds.
-**X-Pricing-Plan** | The pricing plan associated with the request. It can be `free` or `pro`.
+`X-Rate-Limit-Limit` | The rate limit time window in milliseconds.
+`X-Rate-Limit-Remaining` | The number of requests left for the time window.
+`X-Rate-Limit-Reset` | The remaining window before the rate limit resets, in milliseconds.
+`X-Pricing-Plan` | The pricing plan associated with the request. It can be `free` or `pro`.
 
 <br>
 
@@ -190,59 +190,13 @@ $ curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com
 > You can check that from `X-Cache` headers of the response. First time, the value will be `MISS`:
 
 ```text
-< HTTP/1.1 200 OK
-< Date: Fri, 24 Nov 2017 09:37:06 GMT
-< Content-Type: application/json; charset=utf-8
-< Content-Length: 484
-< Connection: keep-alive
-< Access-Control-Expose-Headers: ETag, X-Rate-Limit-Limit, X-Rate-Limit-Remaining, X-Rate-Limit-Reset
-< X-DNS-Prefetch-Control: off
-< X-Frame-Options: SAMEORIGIN
-< Strict-Transport-Security: max-age=15552000; includeSubDomains
-< X-Download-Options: noopen
-< X-Content-Type-Options: nosniff
-< X-XSS-Protection: 1; mode=block
-< access-control-allow-credentials: true
-< access-control-allow-methods: GET
-< access-control-allow-origin: *
-< X-Rate-Limit-Limit: 1000
-< X-Rate-Limit-Remaining: 958
-< X-Rate-Limit-Reset: 86400
-< Cache-Control: public, max-age=432000, s-maxage=432000
-< X-Cache: MISS
-< ETag: "1e4-MPrhhWpb1TTpoSpTxUW9uF8OhD4"
-< Vary: Accept-Encoding
-< Server: cloudflare-nginx
-< CF-RAY: 3c2b6333fd465450-MAD
+X-Cache: MISS
 ```
 
 > Now if you query again for the same resource, a cached version will be served based on the first request, and `X-Cache` value will be `HIT`:
 
 ```text
-< HTTP/1.1 200 OK
-< Date: Fri, 24 Nov 2017 09:40:55 GMT
-< Content-Type: application/json; charset=utf-8
-< Content-Length: 484
-< Connection: keep-alive
-< Access-Control-Expose-Headers: ETag, X-Rate-Limit-Limit, X-Rate-Limit-Remaining, X-Rate-Limit-Reset
-< X-DNS-Prefetch-Control: off
-< X-Frame-Options: SAMEORIGIN
-< Strict-Transport-Security: max-age=15552000; includeSubDomains
-< X-Download-Options: noopen
-< X-Content-Type-Options: nosniff
-< X-XSS-Protection: 1; mode=block
-< access-control-allow-credentials: true
-< access-control-allow-methods: GET
-< access-control-allow-origin: *
-< X-Rate-Limit-Limit: 1000
-< X-Rate-Limit-Remaining: 957
-< X-Rate-Limit-Reset: 86400
-< Cache-Control: public, max-age=431771, s-maxage=431771
-< X-Cache: HIT
-< ETag: "1e4-MPrhhWpb1TTpoSpTxUW9uF8OhD4"
-< Vary: Accept-Encoding
-< Server: cloudflare-nginx
-< CF-RAY: 3c2b68d66bee5450-MAD
+X-Cache: HIT
 ```
 
 In order to improve response timing, we follow a query caching policy for successive API calls:
