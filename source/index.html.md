@@ -96,37 +96,46 @@ All requests should be made over SSL. All request and response bodies, including
 
 # Authentication
 
+Authentication is only necessary for **Professional** plans.
+
+> The authentication will be done adding your API Key as value of the  `x-api-key` header on your requests:
+
 ```shell
 $ curl --header "x-api-key: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda
 ```
 
-Authentication is only necessary for **Professional** plans.
-
 If you are using the **Free** plan, you don't need any form of authentication, but be careful about reaching the daily [rate limit](#rate-limit).
 
-For the **Professional** plan, authentication is required. It must be done providing your API Key as part of the request header.
+For the **Professional** plan, authentication is required. It must be done providing your API Key as `x-api-key` header.
+
+if you have any trouble, please [contact us](mailto:hello@microlink.io?subject=Problem with API Authentication).
 
 # Rate Limit
 
+> You can check your rate limit quota with `X-Rate` headers on the response:
+
 ```bash
-$ curl http://api.microlink.io?url=https://github.com -i
+$ curl http://api.microlink.io\?url\=https://github.com -i | grep "X-Rate"
 ```
 
+> It should be looks like:
+
 ```text
-HTTP/1.1 200 OK
-Access-Control-Allow-Origin: *
-Access-Control-Request-Method: GET
-Access-Control-Allow-Credentials: true
-Content-Type: application/json; charset=utf-8
-X-Rate-Limit-Limit: 300
-X-Rate-Limit-Remaining: 299
 X-Rate-Limit-Reset: 86400
-X-Cache: NOHIT
-Content-Length: 753
-Vary: Accept-Encoding
-Date: Thu, 19 Oct 2017 15:05:38 GMT
-Connection: keep-alive
+X-Rate-Limit-Remaining: 497
+X-Rate-Limit-Limit: 500
 ```
+
+> When you exceeded your daily quota, you will receive a response like:
+
+```json
+{
+  "status": "fail",
+  "message": "API quota exceeded.
+}
+```
+
+> Then you need to wait until your quota reset or increment your plan.
 
 For the **Free** plan, we allow a maximum of **500 requests every 24 hours** and **one request per second**.
 
@@ -141,7 +150,11 @@ HTTP Header | Description
 
 <br>
 
-Under the **Professional** plan, rate limits start from **1,000 requests every 24 hours** with **unlimited concurrency**. See [pricing](https://microlink.io/#pricing) for more information.
+Under the **Professional** plan, rate limits start from **1,000 requests every 24 hours** with **unlimited concurrency**. 
+
+See [pricing](https://microlink.io/#pricing) for more information.
+
+If you already have a **Professional** plan but you need to increment your daily quota, [contact us](mailto:hello@microlink.io?subject=Increment API quota) for do it.
 
 # Format
 
@@ -184,7 +197,7 @@ An optional field to attach extra information, such as an error message or expla
 > The first time an uncached resource is queried, the API will extract the information from the link:
 
 ```shell
-$ curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com
+$ curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com | grep "X-Cache"
 ```
 
 > You can check that from `X-Cache` headers of the response. First time, the value will be `MISS`:
