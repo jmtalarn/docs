@@ -394,6 +394,10 @@ body {
     clear: both;
   }
 
+  h1 + p + blockquote {
+    margin-top: -47px;
+  }
+
   h1 {
     @extend %header-font;
     @extend %text-gradient;
@@ -401,7 +405,7 @@ body {
     font-weight: 500;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
-    margin: 2em 0 0.2em;
+    margin: 4.5em 0 0.2em;
   }
 
   h1:first-child,

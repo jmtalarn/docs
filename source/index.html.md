@@ -96,21 +96,31 @@ All requests should be made over SSL. All request and response bodies, including
 
 # Authentication
 
-Authentication is only necessary for **Professional** plans.
+We apply different API quota based [pricing](https://microlink.io#pricing) plans.
 
 > The authentication will be done adding your API Key as value of the  `x-api-key` header on your requests:
 
 ```shell
-$ curl --header "x-api-key: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda
+$ curl --header "x-api-key: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda -i | grep "X-Pricing-Plan"
 ```
 
-If you are using the **Free** plan, you don't need any form of authentication, but be careful about reaching the daily [rate limit](#rate-limit).
+> You can check the pricing plan associated with the request with `X-Pricing-Plan` header on the response:
 
-For the **Professional** plan, authentication is required. It must be done providing your API Key as `x-api-key` header.
+```text
+X-Pricing-Plan: pro
+```
 
-if you have any trouble, please [contact us](mailto:hello@microlink.io?subject=Problem with API Authentication).
+Unauthenticated requests use **Free** plans. It doesn't need to do nothing additional.
+
+Under a **Professional** plans, you need to authenticated your requests.
+
+It should be done providing the header `x-api-key` with your API Key as value in all your requests.
+
+If you have any trouble, please [contact us](mailto:hello@microlink.io?subject=Problem with API Authentication).
 
 # Rate Limit
+
+For the **Free** plan, we allow a maximum of **500 requests every 24 hours** and **one request per second**.
 
 > You can check your rate limit quota with `X-Rate` headers on the response:
 
@@ -126,33 +136,17 @@ X-Rate-Limit-Remaining: 497
 X-Rate-Limit-Limit: 500
 ```
 
-> When you exceeded your daily quota, you will receive a response like:
-
-```json
-{
-  "status": "fail",
-  "message": "API quota exceeded.
-}
-```
-
-> Then you need to wait until your quota reset or increment your plan.
-
-For the **Free** plan, we allow a maximum of **500 requests every 24 hours** and **one request per second**.
-
-You can check your rate limit status seeing the HTTP headers we attach to every request.
+You can check your rate limit status seeing the HTTP headers we attach to every response.
 
 HTTP Header | Description
 | ----------| ---------- |
 `X-Rate-Limit-Limit` | The rate limit time window in milliseconds.
 `X-Rate-Limit-Remaining` | The number of requests left for the time window.
 `X-Rate-Limit-Reset` | The remaining window before the rate limit resets, in milliseconds.
-`X-Pricing-Plan` | The pricing plan associated with the request. It can be `free` or `pro`.
 
-<br>
+Under the **Professional** plan, rate limits start from **1,000 requests every 24 hours** with **unlimited concurrency**.
 
-Under the **Professional** plan, rate limits start from **1,000 requests every 24 hours** with **unlimited concurrency**. 
-
-See [pricing](https://microlink.io/#pricing) for more information.
+When you exceeded your daily quota, you need to wait until quota reset or increment your plan. See [pricing](https://microlink.io/#pricing) for more information.
 
 If you already have a **Professional** plan but you need to increment your daily quota, [contact us](mailto:hello@microlink.io?subject=Increment API quota) for do it.
 
@@ -194,6 +188,8 @@ An optional field to attach extra information, such as an error message or expla
 
 # Cache
 
+In order to improve response timing, we follow a query caching policy for successive API calls:
+
 > The first time an uncached resource is queried, the API will extract the information from the link:
 
 ```shell
@@ -211,8 +207,6 @@ X-Cache: MISS
 ```text
 X-Cache: HIT
 ```
-
-In order to improve response timing, we follow a query caching policy for successive API calls:
 
 - The first time you query for a resource that not was previously served, we will create it.
 - The successive requests for the resource will consume the cached version of the resource.
@@ -499,7 +493,7 @@ Possibly you don't want to consume all the response data, this parameter is desi
 > Return’s Hacker News logo:
 
 > <img
-  src="https://api.microlink.io?url=https://news.ycombinator.com&embed=logo"
+  src="https://api.microlink.io?url=https://news.ycombinator.com&embed=logo" style="width:64px; margin-top:.5rem;"
 />
 
 <aside class="notice">
