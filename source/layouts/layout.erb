@@ -134,9 +134,12 @@ under the License.
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js"></script>
+    <script type="text/javascript" src="//unpkg.com/microlinkjs@latest/umd/microlink.min.js"></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function(event) {
         anchors.add('h1, h2, h3, h4, h5, h6');
+        microlink('.link-preview-demo', {round: true})
       });
     </script>
   </body>
