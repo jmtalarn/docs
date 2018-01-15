@@ -386,6 +386,20 @@ The devices supported are:
 
 ### Specific parameters
 
+Parameter    | Description                                           |
+------------ | ----------------------------------------------------- |
+`device_scale_factor`          | **number** Specify device scale factor (defaults to `1`). |
+`full_page`          | **boolean** When `true`, takes a screenshot of the full scrollable page. (default to `false`). |
+`has_touch`          | **boolean or string** Specifies if viewport supports touch events. (default to `false`). |
+`height`          | **number** Page height in pixels. |
+`is_landscape`          | **boolean** Specifies if viewport is in landscape mode (default to `false`). |
+`is_mobile`          | **boolean** Whether the meta viewport tag is taken into account (default to `false`). |
+`omit_background`          | **boolean** Hides default white background and allows capturing screenshots with transparency (default to `true`). |
+`quality`  | **number** The quality of the image, between `0` to `100`. Not applicable to `'png'` images. |
+`type`             | **string** Specify screenshot type, could be either `'jpeg'` or `'png'` (default to `'png'`). |
+`width`          | **number** Page width in pixels. |
+`user_agent` | **string** Specific user agent to use. |
+
 > Without providing any extra configuration, the screenshot will be taken with a `8:5` aspect ratio resolution. 
 
 > If you want to use a different aspect ratio (for example `16:9`) just provide a resolution to do that as extra parameters:
@@ -473,20 +487,6 @@ microlink('.link-preview, {
   }
 }
 ```
-
-Parameter    | Description                                           |
------------- | ----------------------------------------------------- |
-`device_scale_factor`          | **number** Specify device scale factor (defaults to `1`). |
-`full_page`          | **boolean** When `true`, takes a screenshot of the full scrollable page. (default to `false`). |
-`has_touch`          | **boolean or string** Specifies if viewport supports touch events. (default to `false`). |
-`height`          | **number** Page height in pixels. |
-`is_landscape`          | **boolean** Specifies if viewport is in landscape mode (default to `false`). |
-`is_mobile`          | **boolean** Whether the meta viewport tag is taken into account (default to `false`). |
-`omit_background`          | **boolean** Hides default white background and allows capturing screenshots with transparency (default to `true`). |
-`quality`  | **number** The quality of the image, between `0` to `100`. Not applicable to `'png'` images. |
-`type`             | **string** Specify screenshot type, could be either `'jpeg'` or `'png'` (default to `'png'`). |
-`width`          | **number** Page width in pixels. |
-`user_agent` | **string** Specific user agent to use. |
 
 ## palette
 
