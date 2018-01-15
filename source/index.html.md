@@ -2,7 +2,9 @@
 title: Microlink API Documentation
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - Shell
+  - shell
+  - javascript
+  - jsx
 
 toc_footers:
   - <a href='https://headwayapp.co/microlink-changelog' target="_blank">see changelog</a>
@@ -21,10 +23,22 @@ Welcome to microlink API
 
 You can use it for get relevant information from any website. The service is oriented for build embed previsualizations of third party links in your site.
 
-> Entering a URL, you will receive the information behind the link. Easy peasy.
+<a href="https://vimeo.com/188175573" target="_blank" class="link-preview-demo"></a>
 
-```bash
+> Entering a URL, you will receive the information behind the link.
+
+```shell
 $ curl https://api.microlink.io?url=https://vimeo.com/188175573
+```
+
+```javascript
+microlink({
+  url: 'https://vimeo.com/188175573'
+})
+```
+
+```jsx
+<MicrolinkCard url='https://vimeo.com/188175573' />
 ```
 
 > The above API request generate the following response:
@@ -104,15 +118,26 @@ We apply different API quota based [pricing](https://microlink.io#pricing) plans
 $ curl --header "x-api-key: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda -i | grep "X-Pricing-Plan"
 ```
 
-> You can check the pricing plan associated with the request with `X-Pricing-Plan` header on the response:
+```javascript
+microlink({
+  apiKey: 'MyApiToken',
+  apiEndpoint: 'https://pro.microlink.io'
+})
+```
 
-```text
-X-Pricing-Plan: pro
+```jsx  
+<MicrolinkCard apiKey='MyApiToken' apiEndpoint='https://pro.microlink.io' />
 ```
 
 Unauthenticated requests use **Free** plans. It doesn't need to do nothing additional.
 
 Under a **Professional** plans, you need to authenticated your requests.
+
+> You can check the pricing plan associated with the request with `X-Pricing-Plan` header on the response:
+
+```text
+X-Pricing-Plan: pro
+```
 
 It should be done providing the header `x-api-key` with your API Key as value in all your requests.
 
@@ -124,7 +149,7 @@ For the **Free** plan, we allow a maximum of **500 requests every 24 hours** and
 
 > You can check your rate limit quota with `X-Rate` headers on the response:
 
-```bash
+```shell
 $ curl http://api.microlink.io\?url\=https://github.com -i | grep "X-Rate"
 ```
 
@@ -196,6 +221,11 @@ In order to improve response timing, we follow a query caching policy for succes
 $ curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com | grep "X-Cache"
 ```
 
+- The first time you query for a resource that not was previously served, we will create it.
+- The successive requests for the resource will consume the cached version of the resource.
+
+The order of the query parameters doesn't matter.
+
 > You can check that from `X-Cache` headers of the response. First time, the value will be `MISS`:
 
 ```text
@@ -207,11 +237,6 @@ X-Cache: MISS
 ```text
 X-Cache: HIT
 ```
-
-- The first time you query for a resource that not was previously served, we will create it.
-- The successive requests for the resource will consume the cached version of the resource.
-
-The order of the query parameters doesn't matter.
 
 For the **Free** plan, the first request will be cached for the next 5 days.
 
@@ -230,12 +255,12 @@ The URL for getting information based on the content.
 
 ## prerender
 
-**type**: `boolean`<br>
-**default** `true`
-
 <aside class="warning">
 This parameter can make response time slow, avoid it if you don't really need it.
 </aside>
+
+**type**: `boolean`<br>
+**default** `true`
 
 Preload all elements from the URL in preparation of extracting the data.
 
@@ -243,10 +268,26 @@ This is necessary in some scenario, specially in client side applications to ens
 
 ## screenshot
 
+**type**: `boolean`|`string`<br>
+**default** `false`
+
+Take a screenshot of the website. The image will be hosted at [imgur.com](https://imgur.com).
+
 > When you take a screenshot snapshot such as
 
 ```shell
 $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&filter=screenshot
+```
+
+```javascript  
+microlink('.link-preview', {
+  url: 'https://producthunt.com',
+  screenshot: true
+})
+```
+
+```jsx
+<MicrolinkCard 	url='https://producthunt.com' screenshot />
 ```
 
 > The image will be hosted at  [imgur.com](https://imgur.com) as `png` by default.
@@ -265,14 +306,11 @@ $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&fi
 }
 ```
 
-**type**: `boolean`|`string`<br>
-**default** `false`
-
-Take a screenshot of the website. The image will be hosted at [imgur.com](https://imgur.com).
-
-With a **Professional** plan, we can store the images in your own image hosting solution (S3, Cloudinary, whatever). Just contact [hello@microlink.io](mailto:hello@microlink.io?subject=Custom image storage).
-
 ### Device emulation
+
+<aside class="notice">You can provide device name in lower case.</aside>
+
+The specific parameter `device` is a helper to setup determinate viewport settings based on a device name. To use it just provide one of the supported device names.
 
 > Providing a device name supported as value for `screenshot`, we will take the screenshot using the specific device settings (viewport, width, height, etc).
 
@@ -285,10 +323,6 @@ With a **Professional** plan, we can store the images in your own image hosting 
 
 > <img style="max-width: 250px" src="https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot=iphone%206&embed=screenshot.url"
 />
-
-The specific parameter `device` is a helper to setup determinate viewport settings based on a device name. To use it just provide one of the supported device names.
-
-<aside class="notice">You can provide device name in lower case.</aside>
 
 The devices supported are:
 
@@ -352,10 +386,32 @@ The devices supported are:
 
 ### Specific parameters
 
-> Without providing any extra configuration, the screenshot will be taken with a `8:5` aspect ratio resolution. If you want to use a different aspect ratio (for example `16:9`) just provide a resolution to do that as extra parameters:
+> Without providing any extra configuration, the screenshot will be taken with a `8:5` aspect ratio resolution. 
+
+> If you want to use a different aspect ratio (for example `16:9`) just provide a resolution to do that as extra parameters:
 
 ```shell
 $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&filter=screenshot&width=2560&height=1440
+```
+
+```javascript
+microlink('.link-preview, {
+  url: 'https://producthunt.com',
+  screenshot: true,  
+  width: 2560,  
+  height: 1440,
+  filter: ['screenshot']
+})
+```
+
+```jsx
+<MicrolinkCard 	
+	url='https://producthunt.com'
+	screenshot
+	width={2560}  
+	height={1440},
+	filter={['screenshot']} 
+/>
 ```
 
 > The output will be:
@@ -380,6 +436,28 @@ $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&fi
 $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&filter=screenshot&width=2560&height=1440&device_scale_factor=0.5
 ```
 
+```javascript
+microlink('.link-preview, {
+	url: 'https://producthunt.com'
+	screenshot: true,  
+	width: 2560,  
+	height: 1440,
+	filter: ['screenshot'],  
+	device_scale_factor: 0.5
+})
+```
+
+```jsx
+<MicrolinkCard 	
+	url='https://producthunt.com'
+	width={2560}  
+	height={1440},
+	filter={['screenshot']}
+	device_scale_factor={0.5}
+	screenshot
+/>
+```
+
 > Now screenshot is `16:9` and file size is enough:
 
 ```json
@@ -395,8 +473,6 @@ $ curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&fi
   }
 }
 ```
-
-Additionally you can setup a set of variables related with screenshot properties.
 
 Parameter    | Description                                           |
 ------------ | ----------------------------------------------------- |
@@ -414,10 +490,31 @@ Parameter    | Description                                           |
 
 ## palette
 
+**type**: `boolean`<br>
+**default** `false`
+
+Enabling it will return you more information related with color schema of the images detected:
+
 > Adding `palette` as query string parameter in your API call makes it possible to get more information about your images color composition:
 
-```bash
+```shell
 $ curl https://api.microlink.io/?url=https://news.ycombinator.com&palette&filter=image
+```
+
+```javascript
+microlink('.link-preview, {
+	url: 'https://news.ycombinator.com'
+	palette: true,  
+	filter: ['image']
+})
+```
+
+```jsx
+<MicrolinkCard 	
+	url='https://news.ycombinator.com'
+	filter={['image']}
+	palette
+/>
 ```
 
 ```json
@@ -442,11 +539,6 @@ $ curl https://api.microlink.io/?url=https://news.ycombinator.com&palette&filter
 }
 ```
 
-**type**: `boolean`<br>
-**default** `false`
-
-Enabling it will return you more information related with color schema of the images detected:
-
 | Field             | Description                                                                                                                                                                                                |
 | ----------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | palette           | **array** A collection of hexadecimal colors from most dominant color to least.                                                                                                                            |
@@ -456,10 +548,30 @@ Enabling it will return you more information related with color schema of the im
 
 ## filter
 
+**type**: `string`
+
+A comma-separated list of the requested values.
+
+Possibly you don't want to consume all the response data, this parameter is designed to make the response as tiny as possible.
+
 > It's a good practice to filter just the values that you're going to consume:
 
-```bash
+```shell
 $ curl https://api.microlink.io/?url=https://news.ycombinator.com&filter=url,title
+```
+
+```javascript
+microlink('.link-preview, {
+	url: 'https://news.ycombinator.com',
+	filter: ['url', 'title']
+})
+```
+
+```jsx
+<MicrolinkCard 	
+	url='https://news.ycombinator.com'
+	filter: ['url', 'title']
+/>
 ```
 
 ```json
@@ -474,13 +586,19 @@ $ curl https://api.microlink.io/?url=https://news.ycombinator.com&filter=url,tit
 
 > This reduces bandwidth and improves response times.
 
+## embed
+
+<aside class="notice">
+Use dotted notation to reference nested data of the payload.
+</aside>
+
 **type**: `string`
 
-A comma-separated list of the requested values.
+The embed parameter is for embedding a field directly in your HTML markup.
 
-Possibly you don't want to consume all the response data, this parameter is designed to make the response as tiny as possible.
+It supports dot paths; This means that if you want to embed a nested field, just provide the absolute path of the field using dotted notation.
 
-## embed
+For example, if you want to embed an image just provide `embed=image.src` and the image will be rendered.
 
 > You can call the API directly from a html `<img/>` tag - images are returned inline:
 
@@ -495,18 +613,6 @@ Possibly you don't want to consume all the response data, this parameter is desi
 > <img
   src="https://api.microlink.io?url=https://news.ycombinator.com&embed=logo" style="width:64px; margin-top:.5rem;"
 />
-
-<aside class="notice">
-Use dotted notation to reference nested data of the payload.
-</aside>
-
-**type**: `string`
-
-The embed parameter is for embedding a field directly in your HTML markup.
-
-It supports dot paths; This means that if you want to embed a nested field, just provide the absolute path of the field using dotted notation.
-
-For example, if you want to embed an image just provide `embed=image.src` and the image will be rendered.
 
 ## force
 
