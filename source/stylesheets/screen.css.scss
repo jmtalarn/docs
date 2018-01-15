@@ -748,11 +748,33 @@ body {
   background-color: transparent;
 }
 
+.highlight .o {
+  color: white;
+}
+
+.highlight .nx {
+  color: #f92672;
+}
+
+.highlight .jsx .nx + .nx {
+  color: #b4c973;
+}
+
+.highlight .shell .nv {
+  color: #f92672;
+}
+
+.highlight .shell .nt {
+  color: white;
+}
+
 /* custom */
 
-// #status, #data, #message {
-//   border-top: 0;
-//   padding: 0 28px;
-//   margin-top: 2.5em;
-//   margin-bottom: 0.8em;
-// }
+.microlink_card {
+  margin-top: 1em;
+}
+
+.microlink_card__content_description,
+.microlink_card__content_url {
+  font-weight: normal;
+}
