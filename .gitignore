@@ -1,25 +1,14 @@
-*.gem
-*.rbc
-.bundle
-.config
-coverage
-node_modules
-InstalledFiles
-lib/bundler/man
-pkg
-rdoc
-spec/reports
-test/tmp
-test/version_tmp
-tmp
-*.DS_STORE
-build/
-.cache
-.vagrant
-.sass-cache
+# build output
+.next
+out
 
-# YARD artifacts
-.yardoc
-_yardoc
-doc/
-.idea/
+# dependencies
+node_modules
+deploy-server/node_modules
+package-lock.json
+
+# logs
+npm-debug.log
+
+# other
+.DS_Store
