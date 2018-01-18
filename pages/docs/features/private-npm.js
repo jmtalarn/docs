@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { rase, leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink } from '../../../components/text/link'
 import { Code } from '../../../components/text/code'
@@ -12,7 +12,7 @@ import Image from '../../../components/image'
 export default withDoc({
   title: 'Using Private npm Dependencies',
   date: '12 Mar 2017',
-  authors: [rase, leo],
+  authors: [kiko],
 })(markdown(components)`
 
 If your application is using projects with dependencies hosted in private npm scopes, you can deploy such with - true to our style - just one command (and a flag):

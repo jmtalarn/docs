@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { sergio } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink } from '../../../components/text/link'
 import { Code } from '../../../components/text/code'
@@ -11,7 +11,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'Building a Single Page Application with Create React App',
   date: '23 Feb 2017',
-  authors: [sergio],
+  authors: [kiko],
 })(markdown(components)`
 
 [Create React App](https://github.com/facebookincubator/create-react-app) is a boilerplate tool used to create Single Page Applications with React.js without build configuration. Facebook created CRA and made it the official way to start a new React application.

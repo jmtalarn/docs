@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { rase, rauchg, jamo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import Image from '../../../components/image'
 import { TerminalInput } from '../../../components/text/terminal'
@@ -10,7 +10,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'App Lifecycle and Scalability',
   date: '09 March 2017',
-  authors: [rase, rauchg, jamo],
+  authors: [kiko],
 })(markdown(components)`
 
 In this guide, we are going to have a look at how ${<Now color="#000"/>} deploy and manage your app inside it's infrastructure.

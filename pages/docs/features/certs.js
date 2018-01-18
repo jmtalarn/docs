@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink } from '../../../components/text/link'
 import { TerminalInput } from '../../../components/text/terminal'
@@ -10,7 +10,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'Managing SSL Certificates',
   date: '15 Mar 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
 
 Each time you create a new deployment, you will get a new unique subdomain. For this address (just like for the custom domains you've added using \`now alias\` or \`now alias\`), we're automatically provisioning an SSL certificate for you.

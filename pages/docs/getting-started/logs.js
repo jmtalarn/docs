@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { arunoda } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
 import Image from '../../../components/image'
 import Now from '../../../components/now/now'
@@ -10,7 +10,7 @@ import Now from '../../../components/now/now'
 export default withDoc({
   title: 'Logs',
   date: '4 August 2017',
-  authors: [arunoda],
+  authors: [kiko],
 })(markdown(components)`
 
 Logs are important because it allows you to see what's happening inside the app, especially when a crisis happens. ${<Now color="#000"/>} keeps logs of all of your deployments and allows you to search them.

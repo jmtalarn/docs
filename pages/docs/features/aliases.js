@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { rauchg } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink } from '../../../components/text/link'
 import { P } from '../../../components/text/paragraph'
@@ -17,7 +17,7 @@ import {
 export default withDoc({
   title: 'Aliases and Domains',
   date: '21 Feb 2017',
-  authors: [rauchg],
+  authors: [kiko],
 })(markdown(components)`
 
 This guide covers how to assign two types of domains to your ${<Now color="#000" />} deployments.

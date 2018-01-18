@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo, jamo, rauchg } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { Code, InlineCode } from '../../../components/text/code'
 import { TerminalInput } from '../../../components/text/terminal'
@@ -10,7 +10,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'Deploying Static Apps',
   date: '09 March 2017',
-  authors: [leo, jamo, rauchg],
+  authors: [kiko],
 })(markdown(components)`
 
 ${<Now color="#000"/>} comes with a native support for static deployments. It considers all projects that don't have a \`Dockerfile\`, nor a \`package.json\` as a static deployment.

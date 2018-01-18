@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo, jamo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { Code } from '../../../components/text/code'
 import { TerminalInput } from '../../../components/text/terminal'
@@ -10,7 +10,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'Simplifying Microservices with Path Alias',
   date: '15 Mar 2017',
-  authors: [leo, jamo],
+  authors: [kiko],
 })(markdown(components)`
 With the microservices architecture, we break down the whole app into multiple independent programs: microservices. This architecture gives us a lot of benefits including:
 

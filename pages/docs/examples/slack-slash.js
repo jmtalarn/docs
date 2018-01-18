@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import Image from '../../../components/image'
 import { Code } from '../../../components/text/code'
@@ -12,7 +12,7 @@ import { InternalLink } from '../../../components/text/link'
 export default withDoc({
   title: 'Building a Slash Command for Slack',
   date: '28 Feb 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
 
 For most people in the web community, [Slack](https://slack.com/) has become an essential part of their everyday life. It has turned into a wonderful tool for sharing text, sending files around and building a community (a great example for this is [our public Slack team](https://zeit.chat/)).

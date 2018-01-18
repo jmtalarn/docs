@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { Code } from '../../../components/text/code'
 
@@ -9,7 +9,7 @@ import { Code } from '../../../components/text/code'
 export default withDoc({
   title: 'Deploying Docker Apps',
   date: '09 March 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
 
 If your project contains a \`Dockerfile\` file, it will always be treated as a [Docker](https://www.docker.com/) deployment.

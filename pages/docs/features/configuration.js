@@ -8,13 +8,13 @@ import { Code, InlineCode } from '../../../components/text/code'
 
 // Utilities
 import withDoc, { components } from '../../../lib/with-doc'
-import { rauchg, leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 
 // prettier-ignore
 export default withDoc({
   title: 'Configuring Now',
   date: '22 Feb 2017',
-  authors: [rauchg, leo],
+  authors: [kiko],
 })(markdown(components)`
 
 This guide explains how to use these methods to configure and customize the default behavior of Now CLI and Now Desktop.

@@ -1,6 +1,6 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
-import { arunoda } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import { InternalLink } from '../../../components/text/link'
 import Now from '../../../components/now/now'
 
@@ -8,7 +8,7 @@ import Now from '../../../components/now/now'
 export default withDoc({
   title: 'What\'s Next',
   date: '10 August 2017',
-  authors: [arunoda],
+  authors: [kiko],
 })(markdown(components)`
 
 As you've gone through the getting started guide, you are ready to do production deployments with ${<Now color="#000"/>}.

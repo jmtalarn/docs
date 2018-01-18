@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { arunoda } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
 import { InternalLink } from '../../../components/text/link'
 import Image from '../../../components/image'
@@ -11,7 +11,7 @@ import Now from '../../../components/now/now'
 export default withDoc({
   title: 'Scaling',
   date: '10 August 2017',
-  authors: [arunoda],
+  authors: [kiko],
 })(markdown(components)`
 
 Deploying an app is just the start. We need to scale our app as our user base grows. It could be a linear growth or random spikes in certain times. 

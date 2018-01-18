@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { arunoda } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import Image from '../../../components/image'
 import { TerminalInput } from '../../../components/text/terminal'
@@ -10,7 +10,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'How to Use Cloudflare with Now',
   date: '11 Jan 2018 11:34 AM PDT',
-  authors: [arunoda],
+  authors: [kiko],
 })(markdown(components)`
 
 In this guide, we are looking at how we can use [Cloudflare](https://www.cloudflare.com/) with ${<Now color="#000"/>}.

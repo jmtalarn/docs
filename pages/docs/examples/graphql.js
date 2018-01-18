@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import Image from '../../../components/image'
 import { Code } from '../../../components/text/code'
@@ -13,7 +13,7 @@ import { P } from '../../../components/text/paragraph'
 export default withDoc({
   title: 'Building a Basic GraphQL Application',
   date: '01 March 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
 
 Since Facebook released their [GraphQL](http://graphql.org/) technology back in 2015, it has evolved into a wonderful query language perfectly suited for all kinds of today's API endpoints. Why?

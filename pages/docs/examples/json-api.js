@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink } from '../../../components/text/link'
 import { P } from '../../../components/text/paragraph'
@@ -16,7 +16,7 @@ import {
 export default withDoc({
   title: 'Building a Basic JSON API',
   date: '20 Feb 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
 
 Nowadays, every properly built application requires at least one API endpoint where it can load data from.

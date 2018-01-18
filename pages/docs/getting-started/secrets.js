@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { arunoda } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
 import { Code } from '../../../components/text/code'
 import { InternalLink } from '../../../components/text/link'
@@ -12,7 +12,7 @@ import Now from '../../../components/now/now'
 export default withDoc({
   title: 'Secrets',
   date: '6 August 2017',
-  authors: [arunoda],
+  authors: [kiko],
 })(markdown(components)`
 
 If multiple people deploy your app or utilize a CI service, it's a better idea to use ${<InternalLink href="/docs/getting-started/environment-variables#via-“now.json”">now.json</InternalLink>} to expose environment variables. 

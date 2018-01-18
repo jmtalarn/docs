@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink, AnchorLink } from '../../../components/text/link'
 import Image from '../../../components/image'
@@ -12,7 +12,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'Building a Super Basic Next.js Application',
   date: '24 Feb 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
 
 When it comes to complex, dynamic applications which need to serve a lot of purposes, we were always driven by finding the easiest and most efficient way of handling the process of creating such a new app.

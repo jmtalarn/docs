@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { arunoda } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
 import Image from '../../../components/image'
 import { Code } from '../../../components/text/code'
@@ -12,7 +12,7 @@ import Now from '../../../components/now/now'
 export default withDoc({
   title: 'Deployment',
   date: '1 August 2017',
-  authors: [arunoda],
+  authors: [kiko],
 })(markdown(components)`
 
 With ${<Now color="#000"/>}, you can deploy any kind of web app by using a single command. ${<Now color="#000"/>} supports three types of deployments:

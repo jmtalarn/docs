@@ -6,13 +6,13 @@ import { InlineCode } from '../../../components/text/code'
 
 // Utilities
 import withDoc, { components } from '../../../lib/with-doc'
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 
 // prettier-ignore
 export default withDoc({
   title: 'Billing',
   date: '21 Jul 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
   This page describes the part of our platform
   that is responsible for payments, subscriptions and

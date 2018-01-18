@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { jamo, rauchg } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink } from '../../../components/text/link'
 import {
@@ -13,7 +13,7 @@ import {
 export default withDoc({
   title: 'Migrate Your App to Now Without a Downtime',
   date: '04 Apr 2017 9:42 AM PDT',
-  authors: [jamo, rauchg],
+  authors: [kiko],
 })(markdown(components)`
 
 Migrations between different hosting services can be a daunting task. To help you migrate your current deployments to ${<Now color="#000"/>}, we have prepared this step-by-step guide.

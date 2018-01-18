@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo, rauchg } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink } from '../../../components/text/link'
 import { Code, InlineCode } from '../../../components/text/code'
@@ -12,7 +12,7 @@ import { Table, Row, Column } from '../../../components/table'
 export default withDoc({
   title: 'Now\'s Command Line Interface',
   date: '09 Mar 2017',
-  authors: [leo, rauchg],
+  authors: [kiko],
 })(markdown(components)`
 
 The \`now\` CLI is the main interface to the now cloud.

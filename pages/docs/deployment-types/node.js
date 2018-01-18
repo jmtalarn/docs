@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { Code } from '../../../components/text/code'
 import { InternalLink } from '../../../components/text/link'
@@ -11,7 +11,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'Deploying Node.js Apps',
   date: '09 March 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
 
 If your project contains a \`package.json\` (and no \`Dockerfile\`) file, it will always be treated as a [Node.js](https://nodejs.org/en/) deployment.

@@ -1,13 +1,13 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { sergio } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 
 // prettier-ignore
 export default withDoc({
   title: 'Support Channels',
   date: '21 Jul 2017',
-  authors: [sergio],
+  authors: [kiko],
 })(markdown(components)`
 We have a few support channels you can use to clarify doubts and solve issues.
 

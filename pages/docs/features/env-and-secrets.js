@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink } from '../../../components/text/link'
 import { P } from '../../../components/text/paragraph'
@@ -12,7 +12,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'Environment Variables and Secrets',
   date: '21 Feb 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
 
 

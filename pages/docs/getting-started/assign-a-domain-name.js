@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { arunoda } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
 import Image from '../../../components/image'
 import { InternalLink } from '../../../components/text/link'
@@ -12,7 +12,7 @@ import Now from '../../../components/now/now'
 export default withDoc({
   title: 'Assign a Domain Name',
   date: '2 August 2017',
-  authors: [arunoda],
+  authors: [kiko],
 })(markdown(components)`
 
 When you deploy an app with ${<Now color="#000"/>}, you will have a unique deployment URL like this: <https://my-web-app-avvuiuuwto.now.sh>.

@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { sergio } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import { Code } from '../../../components/text/code'
 import { TerminalInput } from '../../../components/text/terminal'
 
@@ -9,7 +9,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 export default withDoc({
   title: 'Setting up a Redirect with Now',
   date: '5 Nov 2017',
-  authors: [sergio],
+  authors: [kiko],
 })(markdown(components)`
 You usually want your users to access your site with or without \`www\`. The best way to achieve this is to redirect all the traffic coming to the \`www\` domain to your app's naked domain.
 

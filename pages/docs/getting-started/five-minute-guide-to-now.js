@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo, arunoda } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
 import { Code } from '../../../components/text/code'
 import { HR } from '../../../components/text/paragraph'
@@ -12,7 +12,7 @@ import Now from '../../../components/now/now'
 export default withDoc({
   title: 'Five Minute Guide',
   date: '30 July 2017',
-  authors: [leo, arunoda],
+  authors: [kiko],
 })(markdown(components)`
 
 With Now's help, you can deploy and publish any kind of web application (or service) in

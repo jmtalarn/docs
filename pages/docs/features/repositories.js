@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { leo } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import Now from '../../../components/now/now'
 import { InternalLink } from '../../../components/text/link'
 import { TerminalInput } from '../../../components/text/terminal'
@@ -12,7 +12,7 @@ import { P } from '../../../components/text/paragraph'
 export default withDoc({
   title: 'Deploying Git Repositories',
   date: '12 Mar 2017',
-  authors: [leo],
+  authors: [kiko],
 })(markdown(components)`
 
 If you're developing a project that requires local changes before it can be deployed (like a regular application), running just now is the right way to move your code into the cloud.

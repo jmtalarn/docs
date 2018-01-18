@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
 import withDoc, { components } from '../../../lib/with-doc'
 
-import { arunoda } from '../../../lib/data/team'
+import { kiko } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
 import { Code } from '../../../components/text/code'
 import { InternalLink } from '../../../components/text/link'
@@ -11,7 +11,7 @@ import Now from '../../../components/now/now'
 export default withDoc({
   title: 'Environment Variables',
   date: '6 August 2017',
-  authors: [arunoda],
+  authors: [kiko],
 })(markdown(components)`
 
 Almost every app needs to get configurations at runtime. These configurations could be anything, including:
