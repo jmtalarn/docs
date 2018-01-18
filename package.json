@@ -1,24 +1,22 @@
 {
   "name": "microlink-docs",
-  "version": "1.0.0",
-  "description": "<p align=\"center\">   <img src=\"https://raw.githubusercontent.com/lord/img/master/logo-slate.png\" alt=\"Slate: API Documentation Generator\" width=\"226\">   <br>   <a href=\"https://travis-ci.org/lord/slate\"><img src=\"https://travis-ci.org/lord/slate.svg?branch=master\" alt=\"Build Status\"></a> </p>",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bundle exec middleman server"
-  },
+  "description": "microlink API documentation",
+  "homepage": "https://docs.microlink.io",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microlinkhq/microlink-docs.git"
+    "url": "git+https://github.com/microlinkhq/docs.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/microlinkhq/microlink-docs/issues"
+    "url": "https://github.com/microlinkhq/docs/issues"
   },
-  "homepage": "https://github.com/microlinkhq/microlink-docs#readme"
+  "keywords": [
+    "microlink",
+    "documentation"
+  ],
+  "scripts": {
+    "test": "exit 0"
+  },
+  "private": true,
+  "license": "ISC"
 }
