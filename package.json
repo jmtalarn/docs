@@ -2,7 +2,7 @@
   "name": "microlink-docs",
   "description": "microlink API documentation",
   "homepage": "https://docs.microlink.io",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/microlinkhq/docs.git"
@@ -11,8 +11,8 @@
     "url": "https://github.com/microlinkhq/docs/issues"
   },
   "keywords": [
-    "microlink",
-    "documentation"
+    "documentation",
+    "microlink"
   ],
   "scripts": {
     "test": "exit 0"
