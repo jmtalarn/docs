@@ -19,7 +19,7 @@ RouterEvents.on('routeChangeError', () => {
 if (global.document) {
   const info = [
     `Version: ${VERSION}`,
-    `Check out our code here: https://zeit.co/oss`,
+    `Check out our code here: https://github.com/microlinkhq`,
     `Have a great day! 📣🐢`
   ]
 
@@ -31,43 +31,26 @@ if (global.document) {
 
 class Head extends React.PureComponent {
   render() {
-    const titlePrefix =
-      null != this.props.titlePrefix ? this.props.titlePrefix : 'ZEIT – '
+    const titlePrefix = null != this.props.titlePrefix ? this.props.titlePrefix : 'Microlink – '
     const ogDescription = this.props.ogDescription || this.props.description
     const { darkBg } = this.context
     return (
       <div>
         <NextHead>
           <title>{titlePrefix + this.props.title}</title>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta
             name="twitter:card"
             content={this.props.image ? 'summary_large_image' : 'summary'}
           />
-          <meta name="twitter:site" content="@zeithq" />
-          <meta
-            name="og:title"
-            content={this.props.ogTitle || this.props.title}
-          />
-          <meta
-            name="og:url"
-            content={this.props.url || 'https://zeit.co/now'}
-          />
+          <meta name="twitter:site" content="@microlinkio" />
+          <meta name="og:title" content={this.props.ogTitle || this.props.title} />
+          <meta name="og:url" content={this.props.url || 'https://docs.microlink.io'} />
           {this.props.description ? (
             <meta name="description" content={this.props.description} />
           ) : null}
-          {ogDescription ? (
-            <meta name="og:description" content={ogDescription} />
-          ) : null}
-          <meta
-            name="og:image"
-            content={
-              this.props.image || 'https://cdn.zeit.co/zeit/twitter-card.png'
-            }
-          />
+          {ogDescription ? <meta name="og:description" content={ogDescription} /> : null}
+          <meta name="og:image" content={this.props.image || 'https://microlink.io/preview.png'} />
           {this.props.video
             ? [
                 <meta name="og:type" content="video" key="0" />,
@@ -75,89 +58,7 @@ class Head extends React.PureComponent {
                 <meta name="og:video:type" content="video/mp4" key="2" />
               ]
             : null}
-          <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="https://cdn.zeit.co/favicon/apple-touch-icon-57x57.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="https://cdn.zeit.co/favicon/apple-touch-icon-60x60.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="https://cdn.zeit.co/favicon/apple-touch-icon-72x72.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="https://cdn.zeit.co/favicon/apple-touch-icon-76x76.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="https://cdn.zeit.co/favicon/apple-touch-icon-114x114.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="https://cdn.zeit.co/favicon/apple-touch-icon-120x120.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="https://cdn.zeit.co/favicon/apple-touch-icon-144x144.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="https://cdn.zeit.co/favicon/apple-touch-icon-152x152.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="https://cdn.zeit.co/favicon/apple-touch-icon-180x180.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            href="https://cdn.zeit.co/favicon/favicon-32x32.png"
-            sizes="32x32"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            href="https://cdn.zeit.co/favicon/android-chrome-192x192.png"
-            sizes="192x192"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            href="https://cdn.zeit.co/favicon/favicon-96x96.png"
-            sizes="96x96"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            href="https://cdn.zeit.co/favicon/favicon-16x16.png"
-            sizes="16x16"
-          />
-          <link
-            rel="manifest"
-            href="https://cdn.zeit.co/favicon/manifest.json"
-          />
-          <link
-            rel="mask-icon"
-            href="https://cdn.zeit.co/favicon/safari-pinned-tab.svg"
-            color="#ffffff"
-          />
-          <link
-            rel="shortcut icon"
-            href="https://cdn.zeit.co/favicon/favicon.ico"
-          />
-          <meta name="theme-color" content="#000" />
+          <link rel="shortcut icon" href="https://microlink.io/favicon.ico" />
           {this.props.children}
         </NextHead>
         <style jsx global>
@@ -192,11 +93,7 @@ class Head extends React.PureComponent {
             }
 
             #nprogress .peg {
-              box-shadow: ${
-                darkBg
-                  ? '0 0 10px #fff, 0 0 5px #fff'
-                  : '0 0 10px #ccc, 0 0 5px #ccc'
-              };
+              box-shadow: ${darkBg ? '0 0 10px #fff, 0 0 5px #fff' : '0 0 10px #ccc, 0 0 5px #ccc'};
             }
           `}
           </style>
