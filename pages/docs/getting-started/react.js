@@ -47,12 +47,12 @@ In order to make easy adapt *look and feel*, we provide different approach for c
 
 Each component of the card has been assigned a [BEM](http://getbem.com/introduction) class name:
 
-- \`microlink_card\`: The root \`div\` of the card.
-- \`microlink_card__image\`: The wrapper \`div\` around the image preview of the link.
-- \`microlink_card__content\`: The wrapper \`div\` around the content preview of the link.
-- \`microlink_card__content_title\`: The \`p\` tag of the card title.
-- \`microlink_card__content_description\`: The \`p\` tag of the card description.
-- \`microlink_card__content_url\`: The \`span\` tag of the card url link.
+- **microlink_card**: The root \`div\` of the card.
+- **microlink_card__image**: The wrapper \`div\` around the image preview of the link.
+- **microlink_card__content**: The wrapper \`div\` around the content preview of the link.
+- **microlink_card__content_title**: The \`p\` tag of the card title.
+- **microlink_card__content_description**: The \`p\` tag of the card description.
+- **microlink_card__content_url**: The \`span\` tag of the card url link.
 
 This is the approach used for support customization using [CSS Modules](https://github.com/css-modules/css-modules) or similar approach on React ecosystem using CSS class names:
 
@@ -82,6 +82,7 @@ import styled from 'styled-components'
 
 const myCustomCard = styled(MicrolinkCard)\`
   font-family: 'Nitti, "Microsoft YaHei", 微软雅黑, monospace';
+  max-width: 100%;
 \`
 `}</Code>}
 
@@ -89,6 +90,9 @@ and voilá!
 
 ${<MicrolinkCard
   url="https://vimeo.com/188175573"
-  style={{fontFamily: 'Nitti, "Microsoft YaHei", 微软雅黑, monospace'}}
+  style={{
+    fontFamily: 'Nitti, "Microsoft YaHei", 微软雅黑, monospace',
+    maxWidth: '100%'
+  }}
 />}
 `)

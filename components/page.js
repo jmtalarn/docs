@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Head from 'next/head'
-import { FONT_FAMILY_SANS } from './css-config'
+import { FONT_FAMILY_SANS, COLOR_SELECTION, COLOR_BG_SELECTION } from './css-config'
 
 class Page extends React.Component {
   getChildContext() {
@@ -58,8 +58,8 @@ class Page extends React.Component {
             `
                 : `
               ::selection {
-                background-color: #79FFE1;
-                color: #000;
+                background-color: ${COLOR_BG_SELECTION};
+                color: ${COLOR_SELECTION};
               }
             `
             }

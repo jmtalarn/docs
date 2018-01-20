@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { CODE_INLINE_STYLE, CODE_STYLE } from '../css-config'
 
 export const Code = ({ children, syntax }, { darkBg } = {}) => (
   <pre className={(darkBg ? 'dark' : '') + (syntax ? ` ${syntax}` : '')}>
@@ -6,20 +7,7 @@ export const Code = ({ children, syntax }, { darkBg } = {}) => (
     <style jsx>
       {`
         pre {
-          border: 1px solid #eaeaea;
-          padding: 20px;
-          margin: 40px 0;
-          white-space: pre;
-          overflow: auto;
-          -webkit-overflow-scrolling: touch;
-        }
-        code {
-          color: #bd10e0;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-            serif;
-          font-size: 13px;
-          line-height: 20px;
+          ${CODE_STYLE};
         }
         pre.dark {
           border-color: #333;
@@ -45,24 +33,11 @@ export const InlineCode = ({ children, noWrap }) => (
     <style jsx>
       {`
         code {
-          color: #bd10e0;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-            serif;
-          font-size: 0.9em;
-          white-space: pre-wrap;
+          ${CODE_INLINE_STYLE};
         }
 
         code.no-wrap {
           white-space: nowrap;
-        }
-
-        code::before {
-          content: '\`';
-        }
-
-        code::after {
-          content: '\`';
         }
       `}
     </style>

@@ -1,3 +1,5 @@
+import { COLOR_CODE } from '../css-config'
+
 export const H1 = ({ children }) => (
   <h1>
     {children}
@@ -6,6 +8,7 @@ export const H1 = ({ children }) => (
         h1 {
           font-weight: 200;
           font-size: 32px;
+          margin: 0 0 1rem;
         }
       `}
     </style>
@@ -35,6 +38,7 @@ export const H2 = ({ children }) => (
         h2 {
           font-weight: normal;
           font-size: 24px;
+          margin: 45px 0 0.8rem;
         }
       `}
     </style>
@@ -49,6 +53,7 @@ export const H3 = ({ children }) => (
         h3 {
           font-weight: bold;
           font-size: 18px;
+          margin: 40px 0 0.6rem;
         }
       `}
     </style>
@@ -66,10 +71,9 @@ export const H4 = ({ children, isCommand }) => (
         }
 
         .command {
-          color: #bd10e0;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-            serif;
+          color: ${COLOR_CODE};
+          font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+            Bitstream Vera Sans Mono, Courier New, monospace, serif;
           font-size: 0.9em;
         }
       `}

@@ -20,7 +20,7 @@ Using it, you can convert simply links, like that:
 
 into fancy previews
 
-${<MicrolinkCard url="https://vimeo.com/188175573" large />}
+${<MicrolinkCard url="https://vimeo.com/188175573" />}
 
 It is a perfect complement to improve the engagement of your articles or blog publications, bringing your user to see what is behind any link.
 

@@ -1,3 +1,5 @@
+import { CODE_STYLE } from '../css-config'
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import { GenericLink } from './link'
@@ -7,26 +9,13 @@ export const TerminalInput = ({ children }, { darkBg = false }) => (
     {Array.isArray(children) ? (
       <span>{children}</span>
     ) : (
-      children
-        .split(/\r?\n/)
-        .map((item, index) => <span key={index}>{item}</span>)
+      children.split(/\r?\n/).map((item, index) => <span key={index}>{item}</span>)
     )}
 
     <style jsx>
       {`
         div {
-          border: 1px solid #eaeaea;
-          color: #bd10e0;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
-            serif;
-          font-size: 13px;
-          line-height: 20px;
-          margin: 40px 0;
-          padding: 20px;
-          -webkit-overflow-scrolling: touch;
-          white-space: pre;
-          overflow: auto;
+          ${CODE_STYLE};
         }
 
         div span {
@@ -69,9 +58,8 @@ export class TerminalOutput extends React.Component {
             .output {
               background: #000;
               color: #fff;
-              font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-                DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
-                monospace, serif;
+              font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+                Bitstream Vera Sans Mono, Courier New, monospace, serif;
               font-size: 13px;
               line-height: 20px;
               margin: 40px 0;

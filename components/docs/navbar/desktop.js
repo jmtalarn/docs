@@ -4,15 +4,11 @@ import qs from 'querystring'
 import { parse } from 'url'
 import _scrollIntoViewIfNeeded from 'scroll-into-view-if-needed'
 
+import { COLOR_PRIMARY } from '../../css-config'
+
 function scrollIntoViewIfNeeded(elem, centerIfNeeded, options, config) {
   const finalElement = findClosestScrollableElement(elem)
-  return _scrollIntoViewIfNeeded(
-    elem,
-    centerIfNeeded,
-    options,
-    finalElement,
-    config
-  )
+  return _scrollIntoViewIfNeeded(elem, centerIfNeeded, options, finalElement, config)
 }
 
 function findClosestScrollableElement(_elem) {
@@ -92,10 +88,7 @@ export class NavLink extends React.Component {
     const { selected } = this.state
 
     return (
-      <div
-        ref={ref => (this.node = ref)}
-        className={selected ? 'selected' : ''}
-      >
+      <div ref={ref => (this.node = ref)} className={selected ? 'selected' : ''}>
         {// NOTE: use just anchor element for triggering `hashchange` event
         this.onlyHashChange() ? (
           <a className={selected ? 'selected' : ''} href={info.as || info.href}>
@@ -121,13 +114,13 @@ export class NavLink extends React.Component {
           a {
             text-decoration: none;
             font-size: 14px;
-            color: #000;
+            color: ${COLOR_PRIMARY};
             box-sizing: border-box;
           }
 
           a.selected {
             font-weight: 600;
-            color: #000;
+            color: ${COLOR_PRIMARY};
           }
 
           span {
@@ -208,12 +201,7 @@ export default class DocsNavbarDesktop extends React.PureComponent {
       <div className={`category ${levelClass}`} key={info.name || ''}>
         <div className={'label' + (info.href ? ' link' : '')}>
           {info.href ? (
-            <NavLink
-              info={info}
-              url={this.props.url}
-              hash={this.props.hash}
-              level={level}
-            />
+            <NavLink info={info} url={this.props.url} hash={this.props.hash} level={level} />
           ) : (
             info.name
           )}
@@ -275,10 +263,6 @@ export default class DocsNavbarDesktop extends React.PureComponent {
   }
 
   render() {
-    return (
-      <div>
-        {this.props.data.map(categoryInfo => this.renderCategory(categoryInfo))}
-      </div>
-    )
+    return <div>{this.props.data.map(categoryInfo => this.renderCategory(categoryInfo))}</div>
   }
 }
