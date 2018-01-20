@@ -8,6 +8,8 @@ import { InternalLink } from '../../../components/text/link'
 import { Code } from '../../../components/text/code'
 import { kiko } from '../../../lib/data/team'
 
+const DEMO_LINK = 'https://www.youtube.com/watch?v=hwMkbaS_M_c'
+
 // prettier-ignore
 export default withDoc({
   title: 'React',
@@ -26,14 +28,36 @@ Then you can interact with him in your code as react component:
 ${<Code>{`import MicrolinkCard from 'react-microlink'
 
 // Just provide a URL to create a card
-<MicrolinkCard url='https://github.com' />
+<MicrolinkCard url='${DEMO_LINK}' />
+`}</Code>}
+
+${<MicrolinkCard
+  url={`${DEMO_LINK}`}
+  style={{margin: 'auto'}}
+/>}
+
+${<Code>{`import MicrolinkCard from 'react-microlink'
 
 // Customizing the card
-<MicrolinkCard url='https://reactjs.org' contrast />
+<MicrolinkCard url='${DEMO_LINK}' contrast />
+`}</Code>}
+
+${<MicrolinkCard
+  url={`${DEMO_LINK}`}
+  style={{margin: 'auto'}}
+  contrast
+/>}
+
+${<Code>{`import MicrolinkCard from 'react-microlink'
 
 // You can pass extra props
-<MicrolinkCard url='https://stackoverflow.com' target='_blank' />
+<MicrolinkCard url='${DEMO_LINK}' target='_blank' />
 `}</Code>}
+
+${<MicrolinkCard
+  url={`${DEMO_LINK}`}
+  style={{margin: 'auto'}}
+/>}
 
 Check ${<InternalLink href="#static-deployment">API reference</InternalLink>} in order to know what options you can use.
 
@@ -89,7 +113,7 @@ const myCustomCard = styled(MicrolinkCard)\`
 and voilá!
 
 ${<MicrolinkCard
-  url="https://vimeo.com/188175573"
+  url={`${DEMO_LINK}`}
   style={{
     fontFamily: 'Nitti, "Microsoft YaHei", 微软雅黑, monospace',
     maxWidth: '100%'

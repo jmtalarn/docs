@@ -8,7 +8,7 @@ export const P = ({ children }) => (
         p {
           font-weight: 400;
           font-size: 14px;
-          line-height: 24px;
+          line-height: 1.9;
         }
       `}
     </style>
@@ -23,7 +23,7 @@ export const PDIV = ({ children }) => (
         div {
           font-weight: 400;
           font-size: 14px;
-          line-height: 24px;
+          line-height: 1.9;
           margin-bottom: 20px;
         }
       `}

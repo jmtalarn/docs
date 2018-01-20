@@ -8,6 +8,9 @@ import { TerminalInput } from '../../../components/text/terminal'
 import { Code } from '../../../components/text/code'
 import { InternalLink } from '../../../components/text/link'
 
+const DEMO_LINK =
+  'https://www.theverge.com/2017/11/16/16667366/tesla-semi-truck-announced-price-release-date-electric-self-driving'
+
 // prettier-ignore
 export default withDoc({
   title: 'Vanilla',
@@ -58,6 +61,11 @@ ${<Code>{`<script>
 </script>
 `}</Code>}
 
+${<MicrolinkCard
+  url={`${DEMO_LINK}`}
+  style={{margin: 'auto'}}
+/>}
+
 ## Don't runt it too late!
 
 You need to add **microlink** to the page early in the page load.
@@ -98,11 +106,22 @@ microlink('.link-previews', {
 </script>
 `}</Code>}
 
-These options will be applied for all the microlink cards.
+${<MicrolinkCard
+  url={`${DEMO_LINK}`}
+  style={{margin: 'auto'}}
+  round
+/>}
 
 If you want to provide specific options, you can provide it as \`data-attribute\` in the HTML markup of each element:
 
-${<Code>{`<a class="link" data-round="true" href="http://microlink.js.org">microlink.js.org</a>`}</Code>}
+${<Code>{`<a class="link" data-size="large" href="http://microlink.js.org">microlink.js.org</a>`}</Code>}
+
+${<MicrolinkCard
+  url={`${DEMO_LINK}`}
+  style={{margin: 'auto'}}
+  size='large'
+  round
+/>}
 
 Check ${<InternalLink href="#static-deployment">API parameters</InternalLink>} reference in order to know what options you can use.
 
@@ -134,7 +153,7 @@ ${<Code>{`<style>
 and voilá!
 
 ${<MicrolinkCard
-  url="https://vimeo.com/188175573"
+  url={`${DEMO_LINK}`}
   style={{
     fontFamily: 'Nitti, "Microsoft YaHei", 微软雅黑, monospace',
     maxWidth: '100%'
