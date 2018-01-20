@@ -97,6 +97,12 @@ class Head extends React.PureComponent {
             #nprogress .peg {
               box-shadow: ${darkBg ? '0 0 10px #fff, 0 0 5px #fff' : '0 0 10px #ccc, 0 0 5px #ccc'};
             }
+
+            #HW_badge_cont {
+              width: 0 !important;
+              height: 0 !important;
+              bottom: 8px !important;
+            }
           `}
           </style>
         </NextHead>

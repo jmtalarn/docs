@@ -5,6 +5,7 @@ import { parse } from 'url'
 import _scrollIntoViewIfNeeded from 'scroll-into-view-if-needed'
 
 import { COLOR_PRIMARY } from '../../css-config'
+import Changelog from '../../changelog'
 
 function scrollIntoViewIfNeeded(elem, centerIfNeeded, options, config) {
   const finalElement = findClosestScrollableElement(elem)
@@ -199,12 +200,13 @@ export default class DocsNavbarDesktop extends React.PureComponent {
 
     return (
       <div className={`category ${levelClass}`} key={info.name || ''}>
-        <div className={'label' + (info.href ? ' link' : '')}>
+        <div className={'label' + (info.href ? ' link' : '')} style={{ display: 'flex' }}>
           {info.href ? (
             <NavLink info={info} url={this.props.url} hash={this.props.hash} level={level} />
           ) : (
             info.name
           )}
+          <Changelog />
         </div>
         {!info.href || this.isCategorySelected(info) ? (
           <div className="posts">
