@@ -39,13 +39,13 @@ ${<MicrolinkCard
 ${<Code>{`import MicrolinkCard from 'react-microlink'
 
 // Customizing the card
-<MicrolinkCard url='${DEMO_LINK}' contrast />
+<MicrolinkCard url='${DEMO_LINK}' round />
 `}</Code>}
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
   style={{margin: 'auto'}}
-  contrast
+  round
 />}
 
 ${<Code>{`import MicrolinkCard from 'react-microlink'
