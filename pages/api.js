@@ -45,9 +45,7 @@ class API extends React.PureComponent {
 
       if (!intersectingTargets.size) return
 
-      const sorted = [...intersectingTargets].sort(
-        (a, b) => nodes.indexOf(a) - nodes.indexOf(b)
-      )
+      const sorted = [...intersectingTargets].sort((a, b) => nodes.indexOf(a) - nodes.indexOf(b))
       const hash = '#' + (sorted[0].id || '')
       if (location.hash !== hash) {
         changeHash(hash)
@@ -80,7 +78,7 @@ class API extends React.PureComponent {
 
     return (
       <Page dayBanner={false}>
-        <Head titlePrefix="" title={`ZEIT API`} />
+        <Head titlePrefix="" title={`Microlink API`} />
         <div className="header-wrapper">
           <div className="header">
             <BGContainer darkBg={true}>
@@ -117,12 +115,7 @@ class API extends React.PureComponent {
         <div>
           <div className="doc-layout">
             <div className="topbar">
-              <DocsNavbarMobile
-                data={data}
-                url={props.url}
-                hash={hash}
-                sticky={true}
-              />
+              <DocsNavbarMobile data={data} url={props.url} hash={hash} sticky={true} />
             </div>
             <div className="content" ref={ref => (this.contentNode = ref)}>
               {data.map(({ id, posts }) => {
@@ -131,15 +124,8 @@ class API extends React.PureComponent {
                     {posts.map(post => {
                       const Section = (sections[id] || {})[post.id]
                       return Section ? (
-                        <SectionContainer
-                          key={post.id}
-                          hash={post.hash}
-                          name={post.name}
-                        >
-                          <Section
-                            user={props.user}
-                            testingToken={props.testingToken}
-                          />
+                        <SectionContainer key={post.id} hash={post.hash} name={post.name}>
+                          <Section user={props.user} testingToken={props.testingToken} />
                         </SectionContainer>
                       ) : null
                     })}
@@ -287,9 +273,5 @@ function changeHash(hash) {
   const parsedUrl = parse(location.href)
   parsedUrl.hash = hash
 
-  Router.router.changeState(
-    'replaceState',
-    format({ pathname, query }),
-    format(parsedUrl)
-  )
+  Router.router.changeState('replaceState', format({ pathname, query }), format(parsedUrl))
 }

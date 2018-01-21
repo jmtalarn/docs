@@ -1,7 +1,10 @@
-# ZEIT Documentation
+# Microlink Documentation
 
-This is the public documentation for **ZEIT now** all other related services.<br/>
-You can access this documentation online at https://zeit.co/docs .
+This is the public documentation for **microlink** all other related services.<br/>
+
+You can access this documentation online at [docs.microlink.io](https://docs.microlink.io).
+
+It's based on [ZEIT docs repository](https://github.com/zeit/docs).
 
 ### Running Locally
 

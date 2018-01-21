@@ -61,7 +61,7 @@ Complementing the information obtained, we provide you a set of extra features t
 - Get a predominant color [palette](#palette) per each image detected.
 - Make easy [embed](#embed) content directly in your HTML markup.
 - [Prerendering](#prerender) mode, useful for getting more information from websites that use client-side frameworks.
-- Export to PDF (*soon*, [ping us](https://twitter.com/microlinkio) if you are interested!)
+- Export to PDF (*soon*, [ping us](https://twitter.com/microlinkhq) if you are interested!)
 `,
     markdown(components)`
 Entering a URL, you will receive the information behind the link.
