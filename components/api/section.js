@@ -62,7 +62,7 @@ export default class Section extends React.PureComponent {
           }
 
           .copy {
-            background: #fafafa;
+            background: #fafbfc;
             display: flex;
             flex-direction: column;
           }
@@ -174,11 +174,7 @@ class DocH2 extends React.PureComponent {
   render() {
     const { children, id } = this.props
     return (
-      <Heading
-        lean={true}
-        offsetTop={175}
-        id={generateId(this.context.id, { children, id })}
-      >
+      <Heading lean={true} offsetTop={175} id={generateId(this.context.id, { children, id })}>
         <H3>{children}</H3>
       </Heading>
     )
@@ -193,11 +189,7 @@ class DocH3 extends React.PureComponent {
   render() {
     const { children, id } = this.props
     return (
-      <Heading
-        lean={true}
-        offsetTop={175}
-        id={generateId(this.context.id, { children, id })}
-      >
+      <Heading lean={true} offsetTop={175} id={generateId(this.context.id, { children, id })}>
         <H4>{children}</H4>
       </Heading>
     )

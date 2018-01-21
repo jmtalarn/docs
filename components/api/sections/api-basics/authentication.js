@@ -1,12 +1,11 @@
 import markdown from 'markdown-in-js'
 import Section, { components } from '../../section'
-import { Code } from '../../../text/code'
+import { Code, InlineCode } from '../../../text/code'
+import { TerminalInput } from '../../../text/terminal'
+import immutable from '../../../../lib/immutable-component'
 import { ExternalLink } from '../../../text/link'
-import pure from '../../../../lib/pure-component'
 
-function Authentication(props) {
-  const TOKEN = props.testingToken ? props.testingToken.token : '$TOKEN'
-
+function Authentication() {
   return (
     <Section
       contents={
@@ -14,20 +13,24 @@ function Authentication(props) {
         [
   [
     markdown(components)`
-Provide your API token as part of the \`Authorization\` header.
+We apply different API quota based [pricing](https://microlink.io#pricing) plans.
 
-To act on resources owned by a team add \`teamId\` query string at the end of an API URL and use the teamId as the value.
+Unauthenticated requests use **Free** plans. It doesn't need to do nothing additional.
 
-If the authentication is unsuccessful, the status code **403** is returned.
+Under a **Professional** plans, you need to authenticated your requests.
+
+It should be done providing the header \`x-api-key\` with your API Key as value in all your requests.
+
+If you have any trouble, please ${<ExternalLink href="mailto:hello@microlink.io?subject=Problem with API Authentication">contact us</ExternalLink>}.
 `,
     markdown(components)`
-${<Code>Authorization: Bearer {TOKEN}</Code>}
+The authentication will be done adding your API Key as value of the  ${<InlineCode>x-api-key</InlineCode>} header on your requests:
 
-${<Code>https://api.zeit.co/example?teamId=team_123</Code>}
+${<TerminalInput>curl --header "x-api-key: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda -i | grep "X-Pricing-Plan"</TerminalInput>}
 
-> **NOTE:** ${props.user ? 'Since you\'re logged in, ' : ['When ', <ExternalLink href="/login" key="loggedin">logged in</ExternalLink>, ',']} the examples in the API will contain your secret token. Don't share them! For example, to get a [list of deployments](/api/endpoints/get-endpoint) try the following:
+You can check the pricing plan associated with the request with \`x-pricing-plan\` header on the response:
 
-${<Code syntax="shell">curl -H "Authorization: Bearer {TOKEN}" https://api.zeit.co/v2/now/deployments</Code>}
+${<Code syntax="json">{`x-pricing-plan: pro`}</Code>}
 `
   ]
 ]
@@ -36,4 +39,4 @@ ${<Code syntax="shell">curl -H "Authorization: Bearer {TOKEN}" https://api.zeit.
   )
 }
 
-export default pure(Authentication)
+export default immutable(Authentication)

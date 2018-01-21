@@ -19,8 +19,6 @@ export const COLOR_BG_CODE = '#FAFBFC'
 export const COLOR_CODE = COLOR_SELECTION
 
 export const CODE_STYLE = `
-  background: ${COLOR_BG_CODE};
-  color: ${COLOR_CODE};
   padding: 30px;
   border-radius: 2px;
   overflow-x: auto;
@@ -30,12 +28,10 @@ export const CODE_STYLE = `
 `
 
 export const CODE_INLINE_STYLE = `
-  border: 1px solid #DEE2E6;
   font-size: 13px;
   padding: 3px 10px;
   border-radius: 3px;
   white-space: nowrap;
   font-weight: 600;
   font-family: inherit;
-  color: ${COLOR_PRIMARY};
 `

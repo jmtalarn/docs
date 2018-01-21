@@ -1,4 +1,4 @@
-import { CODE_STYLE } from '../css-config'
+import { CODE_STYLE, COLOR_BG_CODE, COLOR_CODE } from '../css-config'
 
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -16,6 +16,8 @@ export const TerminalInput = ({ children }, { darkBg = false }) => (
       {`
         div {
           ${CODE_STYLE};
+          background: ${COLOR_BG_CODE};
+          color: ${COLOR_CODE};
         }
 
         div span {
@@ -27,8 +29,9 @@ export const TerminalInput = ({ children }, { darkBg = false }) => (
         }
 
         div.dark {
-          border-color: #333;
-          color: #5ce6cd;
+          border: 1px solid #333;
+          background: #000;
+          color: white;
         }
       `}
     </style>

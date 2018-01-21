@@ -1,15 +1,13 @@
-import contentType from './content-type'
+import endpoint from './endpoint'
 import authentication from './authentication'
-import errors from './errors'
-import rateLimits from './rate-limits'
-import versioning from './versioning'
-import types from './types'
+import format from './format'
+import rateLimit from './rate-limit'
+import cache from './cache'
 
 export default {
-  contentType,
   authentication,
-  errors,
-  rateLimits,
-  versioning,
-  types
+  endpoint,
+  format,
+  rateLimit,
+  cache
 }

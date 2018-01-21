@@ -16,9 +16,7 @@ class ScrollerContainer extends React.PureComponent {
 
   updateScrollState() {
     const hasMoreScroll =
-      this.scrollerNode.scrollWidth -
-        this.scrollerNode.clientWidth -
-        this.scrollerNode.scrollLeft >
+      this.scrollerNode.scrollWidth - this.scrollerNode.clientWidth - this.scrollerNode.scrollLeft >
       10
     if (this.state.hasMoreScroll !== hasMoreScroll) {
       this.setState({ hasMoreScroll })
@@ -38,11 +36,7 @@ class ScrollerContainer extends React.PureComponent {
     const { hasMoreScroll } = this.state
     return (
       <main className={hasMoreScroll ? 'has-more-scroll' : null}>
-        <div
-          className="scroller"
-          ref={ref => (this.scrollerNode = ref)}
-          onScroll={this.onScroll}
-        >
+        <div className="scroller" ref={ref => (this.scrollerNode = ref)} onScroll={this.onScroll}>
           {this.props.children}
         </div>
         <div className="gradient" />
@@ -55,11 +49,7 @@ class ScrollerContainer extends React.PureComponent {
             overflow-x: auto;
           }
           .gradient {
-            background: linear-gradient(
-              to right,
-              rgba(255, 255, 255, 0),
-              rgba(255, 255, 255, 1)
-            );
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
             opacity: 0;
             pointer-events: none;
             position: absolute;
@@ -122,19 +112,14 @@ export function OutputTable({ children }) {
   )
 }
 
-export function HeadersTable({ children }) {
-  return (
-    <Table
-      head={
-        <Row>
-          <Cell isHead>Header</Cell>
-          <Cell isHead>Description</Cell>
-        </Row>
-      }
-    >
-      {children}
-    </Table>
-  )
+export function HeadersTable({ children, headers = ['Header', 'Description'] }) {
+  const head = headers.map(header => (
+    <Cell key={header.toString()} isHead>
+      {header}
+    </Cell>
+  ))
+
+  return <Table head={<Row>{head}</Row>}>{children}</Table>
 }
 
 export function Row({ children }) {
