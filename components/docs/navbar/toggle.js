@@ -9,8 +9,7 @@ const ActivePageButton = withRouter(({ children, router, href }) => {
         {children}
         <style jsx>{`
           .active-button :global(button) {
-            color: ${router.pathname === href ||
-            router.pathname.startsWith(href)
+            color: ${router.pathname === href || router.pathname.startsWith(href)
               ? '#000'
               : '#999'};
           }
@@ -25,8 +24,8 @@ export default class DocsNavbarToggle extends React.Component {
     return (
       <div className="toggle-container">
         <div className="toggle">
-          <ActivePageButton href="/docs">
-            <button>Docs</button>
+          <ActivePageButton href="/sdk">
+            <button>SDK</button>
           </ActivePageButton>
           <ActivePageButton href="/api">
             <button>API Reference</button>
