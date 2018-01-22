@@ -1,9 +1,12 @@
 import React from 'react'
 import markdown from 'markdown-in-js'
 import MicrolinkCard from 'react-microlink'
+import { ExternalLink } from '../../../components/text/link'
 
 import withDoc, { components } from '../../../lib/with-doc'
 import { kiko } from '../../../lib/data/team'
+
+const DEMO_LINK = 'https://youtu.be/hwMkbaS_M_c'
 
 // prettier-ignore
 export default withDoc({
@@ -16,12 +19,12 @@ export default withDoc({
 
 Using it, you can convert simply links, like that:
 
-<a href="https://vimeo.com/188175573">https://vimeo.com/188175573</a>
+${<ExternalLink href={`${DEMO_LINK}`}>{`${DEMO_LINK}`}</ExternalLink>}
 
 into fancy previews
 
 ${<MicrolinkCard
-  url="https://vimeo.com/188175573"
+  url={`${DEMO_LINK}`}
 />}
 
 It is a perfect complement to improve the engagement of your articles or blog publications, bringing your user to see what is behind any link.
