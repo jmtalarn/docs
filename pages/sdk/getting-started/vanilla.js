@@ -66,11 +66,11 @@ ${<MicrolinkCard
   style={{margin: 'auto'}}
 />}
 
-## Don't runt it too late!
+## Don't run it too late!
 
 You need to add **microlink** to the page early in the page load.
 
-We recommend call \`microlink\` method before the DOM finishes loading:
+We recommend calling \`microlink\` method before the DOM finishes loading:
 
 ${<Code>{`<!-- Add microlink before the closing body tag. -->
 <script type="text/javascript" src="//unpkg.com/microlinkjs@latest/umd/microlink.min.js"></script>
