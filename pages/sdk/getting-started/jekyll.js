@@ -6,6 +6,7 @@ import withDoc, { components } from '../../../lib/with-doc'
 import { kiko } from '../../../lib/data/team'
 import { Code } from '../../../components/text/code'
 import { InternalLink } from '../../../components/text/link'
+import CardClassNames from '../../../components/card-classnames'
 
 const DEMO_LINK = 'http://overwatch.wikia.com/wiki/Sombra'
 
@@ -54,16 +55,7 @@ ${<MicrolinkCard
 
 ## Styling
 
-We don't inject any CSS in your application. The card previsualization is shipped with a default minimal inline style.
-
-If you need to adapt the *look and feel*, each component of the card has been assigned a [BEM](http://getbem.com/introduction) class name:
-
-- **microlink_card**: The root \`div\` of the card.
-- **microlink_card__image**: The wrapper \`div\` around the image preview of the link.
-- **microlink_card__content**: The wrapper \`div\` around the content preview of the link.
-- **microlink_card__content_title**: The \`p\` tag of the card title.
-- **microlink_card__content_description**: The \`p\` tag of the card description.
-- **microlink_card__content_url**: The \`span\` tag of the card url link.
+${<CardClassNames />}
 
 In order to apply your specific style, just declare your custom CSS rules using the properly class name.
 
