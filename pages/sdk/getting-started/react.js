@@ -3,10 +3,11 @@ import MicrolinkCard from 'react-microlink'
 
 import withDoc, { components } from '../../../lib/with-doc'
 
+import { kiko } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
 import { InternalLink } from '../../../components/text/link'
 import { Code } from '../../../components/text/code'
-import { kiko } from '../../../lib/data/team'
+import CardClassNames from '../../../components/card-classnames'
 
 const DEMO_LINK = 'https://www.youtube.com/watch?v=hwMkbaS_M_c'
 
@@ -69,16 +70,9 @@ In order to make easy adapt *look and feel*, we provide different approach for c
 
 ### Using CSS Selectors
 
-Each component of the card has been assigned a [BEM](http://getbem.com/introduction) class name:
+${<CardClassNames />}
 
-- **microlink_card**: The root \`div\` of the card.
-- **microlink_card__image**: The wrapper \`div\` around the image preview of the link.
-- **microlink_card__content**: The wrapper \`div\` around the content preview of the link.
-- **microlink_card__content_title**: The \`p\` tag of the card title.
-- **microlink_card__content_description**: The \`p\` tag of the card description.
-- **microlink_card__content_url**: The \`span\` tag of the card url link.
-
-This is the approach used for support customization using [CSS Modules](https://github.com/css-modules/css-modules) or similar approach on React ecosystem using CSS class names:
+This is the approach used to support customization using [CSS Modules](https://github.com/css-modules/css-modules) or similar approaches in the React ecosystem using CSS class names:
 
 ${<Code>{`<style>
   .microlink-card {
