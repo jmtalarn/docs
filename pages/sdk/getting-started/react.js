@@ -72,7 +72,9 @@ In order to make easy adapt *look and feel*, we provide different approach for c
 Each component of the card has been assigned a [BEM](http://getbem.com/introduction) class name:
 
 - **microlink_card**: The root \`div\` of the card.
-- **microlink_card__image**: The wrapper \`div\` around the image preview of the link.
+- **microlink_card__media_image**: The \`div\` holding the \`background-image\` of the image preview of the link.
+- **microlink_card__media_video_wrapper**: The wrapper \`div\` around the video preview of the link.
+- **microlink_card__media_video**: The \`video\` element for the video preview of the link.
 - **microlink_card__content**: The wrapper \`div\` around the content preview of the link.
 - **microlink_card__content_title**: The \`p\` tag of the card title.
 - **microlink_card__content_description**: The \`p\` tag of the card description.
