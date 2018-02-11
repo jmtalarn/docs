@@ -9,7 +9,8 @@ import { InternalLink } from '../../../components/text/link'
 import { Code } from '../../../components/text/code'
 import CardClassNames from '../../../components/card-classnames'
 
-const DEMO_LINK = 'https://www.youtube.com/watch?v=hwMkbaS_M_c'
+const DEMO_LINK =
+  'https://www.theverge.com/tldr/2018/2/7/16984284/tesla-space-falcon-heavy-launch-elon-musk'
 
 // prettier-ignore
 export default withDoc({
@@ -29,7 +30,9 @@ Then you can interact with him in your code as react component:
 ${<Code>{`import MicrolinkCard from 'react-microlink'
 
 // Just provide a URL to create a card
-<MicrolinkCard url='${DEMO_LINK}' />
+<MicrolinkCard
+  url='${DEMO_LINK}'
+/>
 `}</Code>}
 
 ${<MicrolinkCard
@@ -40,7 +43,10 @@ ${<MicrolinkCard
 ${<Code>{`import MicrolinkCard from 'react-microlink'
 
 // Customizing the card
-<MicrolinkCard url='${DEMO_LINK}' round />
+<MicrolinkCard
+  url='${DEMO_LINK}'
+  round
+/>
 `}</Code>}
 
 ${<MicrolinkCard
@@ -52,7 +58,10 @@ ${<MicrolinkCard
 ${<Code>{`import MicrolinkCard from 'react-microlink'
 
 // You can pass extra props
-<MicrolinkCard url='${DEMO_LINK}' target='_blank' />
+<MicrolinkCard
+  url='${DEMO_LINK}'
+  target='_blank'
+/>
 `}</Code>}
 
 ${<MicrolinkCard

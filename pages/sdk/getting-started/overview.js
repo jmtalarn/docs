@@ -6,7 +6,7 @@ import { ExternalLink } from '../../../components/text/link'
 import withDoc, { components } from '../../../lib/with-doc'
 import { kiko } from '../../../lib/data/team'
 
-const DEMO_LINK = 'https://youtu.be/hwMkbaS_M_c'
+const DEMO_LINK = 'https://www.instagram.com/p/BeV6tOhFUor/'
 
 // prettier-ignore
 export default withDoc({
@@ -17,7 +17,7 @@ export default withDoc({
 
 **microlink** lets you create beautiful link previews from any website.
 
-Using it, you can convert simply links, like that:
+Using it, you can convert simply links
 
 ${<ExternalLink href={`${DEMO_LINK}`}>{`${DEMO_LINK}`}</ExternalLink>}
 
@@ -30,7 +30,6 @@ ${<MicrolinkCard
 It is a perfect complement to improve the engagement of your articles or blog publications, bringing your user to see what is behind any link.
 
 In this documentation you can find the official API clients to consume our API.
-
 
 The following steps show you how to integrate **microlink** in your web page.
 `)

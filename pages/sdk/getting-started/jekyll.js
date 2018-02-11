@@ -8,7 +8,7 @@ import { Code } from '../../../components/text/code'
 import { InternalLink } from '../../../components/text/link'
 import CardClassNames from '../../../components/card-classnames'
 
-const DEMO_LINK = 'http://overwatch.wikia.com/wiki/Sombra'
+const DEMO_LINK = 'https://www.theverge.com/2016/4/1/11342104/tesla-model-3-announcement-photos'
 
 // prettier-ignore
 export default withDoc({
@@ -36,7 +36,7 @@ ${<Code>{`
 
 In the code above, we are associating microlink cards with the class \`card-preview\`, so now, when we write a new markdown post, we are going to use the \`card-preview\` class to associate the link:
 
-${<Code>{`[](https://blog.codinghorror.com/computers-are-lousy-random-number-generators){:.card-preview}`}</Code>}
+${<Code>{`[](${DEMO_LINK}){:.card-preview}`}</Code>}
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
@@ -45,7 +45,7 @@ ${<MicrolinkCard
 
 You can pass custom option as well:
 
-${<Code>{`[](https://www.random.org/randomness){:.card-preview data-image="logo"}`}</Code>}
+${<Code>{`[](${DEMO_LINK}){:.card-preview data-image="logo"}`}</Code>}
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
