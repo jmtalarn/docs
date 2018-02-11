@@ -56,12 +56,10 @@ Complementing the information obtained, we provide you a set of extra features t
 - Make easy ${<InternalLink href="#embed">embed</InternalLink>} content directly in your HTML markup.
 - ${<InternalLink href="#prerender">Prerendering</InternalLink>} mode, useful for getting more information from websites that use client-side frameworks.
 - Export to PDF (*soon*, [ping us](https://twitter.com/microlinkhq) if you are interested!)
-
 - Take a [screenshot](#screenshot) of the website (partial or full page).
 - Get a predominant color [palette](#palette) per each image detected.
 - Make easy [embed](#embed) content directly in your HTML markup.
 - [Prerendering](#prerender) mode, useful for getting more information from websites that use client-side frameworks.
-- Export to PDF (*soon*, [ping us](https://twitter.com/microlinkhq) if you are interested!)
 `,
     markdown(components)`
 Entering a URL, you will receive the information behind the link.
