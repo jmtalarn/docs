@@ -6,6 +6,7 @@ import _scrollIntoViewIfNeeded from 'scroll-into-view-if-needed'
 
 import { COLOR_PRIMARY } from '../../css-config'
 import Changelog from '../../changelog'
+import ExternalIcon from '../../external-icon'
 
 function scrollIntoViewIfNeeded(elem, centerIfNeeded, options, config) {
   const finalElement = findClosestScrollableElement(elem)
@@ -97,8 +98,9 @@ export class NavLink extends React.Component {
           </a>
         ) : (
           <Link href={info.href} as={info.as || info.href} prefetch>
-            <a className={selected ? 'selected' : ''}>
+            <a className={selected ? 'selected' : ''} target={info.external ? '_blank' : '_self'}>
               {level > 2 && <span>-</span>} {info.name}
+              {info.external && <ExternalIcon style={{ marginLeft: '5px' }} />}
             </a>
           </Link>
         )}
