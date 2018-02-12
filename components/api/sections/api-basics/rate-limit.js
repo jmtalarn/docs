@@ -55,9 +55,8 @@ ${<TerminalInput>curl --header "x-api-key: MyApiToken" https://pro.microlink.io?
 It should be looks like:
 
 ${<Code syntax="json">{`x-rate-limit-reset: 86400
-  x-rate-limit-remaining: 497
-  x-rate-limit-limit: 500
-`}</Code>}
+x-rate-limit-remaining: 497
+x-rate-limit-limit: 500`}</Code>}
     `
   ]
 ]
