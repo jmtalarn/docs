@@ -70,7 +70,7 @@ If you provided a \`string\` value, it will be passed as the \`border-radius\`.
 ## size
 
 Type: \`string\`<br/>
-Default: \`''\`
+Default: \`'normal'\`
 
 It determines the card layout. Currently we have two layouts supported:
 
@@ -90,4 +90,25 @@ Type: \`boolean|string\`<br/>
 Default: \`false\`
 
 Take a [screenshot](https://docs.microlink.io/#screenshot) of the target url and use it as card image.
+
+## autoPlay
+
+Type: \`boolean\`<br/>
+Default: \`true\`
+
+Determinate if the video will automatically start playing as soon as it can do so without stopping.
+
+## muted
+
+Type: \`boolean\`<br/>
+Default: \`true\`
+
+It specifies that the audio output of the video should be muted.
+
+## loop
+
+Type: \`boolean\`<br/>
+Default: \`true\`
+
+It specifies that the video will start over again, every time it is finished.
 `)
