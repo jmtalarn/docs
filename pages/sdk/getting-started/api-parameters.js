@@ -17,13 +17,6 @@ Type: \`string\`
 
 The URL for which to retrieve Microlink data.
 
-## apiEndpoint
-
-Type: \`string\`<br/>
-Default: \`'https://api.microlink.io'\`
-
-The API endpoint where the request is made.
-
 ## apiKey
 
 Type: \`string\`<br/>
