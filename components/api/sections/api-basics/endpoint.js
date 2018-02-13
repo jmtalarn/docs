@@ -13,10 +13,12 @@ function Endpoint() {
     markdown(components)`
 The API is shipped as a microservice exposed as an HTTP service over SSL.
 
-Just call \`/\` with method GET. Nothing else.
+For the **Free** plan, the endpoint is \`https://api.microlink.io\`
 
-All request and response bodies, including errors, are encoded in \`Content-Type: application/json\`.
-    `
+Under a **Professional** plans, the endpoint is \`https://pro.microlink.io\`.
+
+Just call \`/\` with method \`GET\`. Nothing else.
+`
   ]
 ]
       }
