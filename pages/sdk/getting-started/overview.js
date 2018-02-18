@@ -15,7 +15,7 @@ export default withDoc({
   authors: [kiko],
 })(markdown(components)`
 
-**microlink** lets you create beautiful link previews from any website.
+**microlink** lets you create beautiful link previews from any link.
 
 Using it, you can convert simply links
 
