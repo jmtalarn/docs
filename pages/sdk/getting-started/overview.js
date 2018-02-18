@@ -6,7 +6,7 @@ import { ExternalLink } from '../../../components/text/link'
 import withDoc, { components } from '../../../lib/with-doc'
 import { kiko } from '../../../lib/data/team'
 
-const DEMO_LINK = 'https://www.instagram.com/p/BeV6tOhFUor/'
+const DEMO_LINK = 'https://www.amazon.com/dp/B06XCM9LJ4'
 
 // prettier-ignore
 export default withDoc({
