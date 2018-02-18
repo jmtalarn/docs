@@ -72,10 +72,12 @@ It determines the card layout. Currently we have two layouts supported:
 
 ## prerender
 
-Type: \`boolean\`<br/>
-Default: \`true\`
+Type: \`boolean\`|\`string\`<br/>
+Default: \`auto\`
 
-Perform an API call using [prerender](https://docs.microlink.io/#prerender) feature.
+It determines the technique used to get content from the target URL.
+
+Read more about [prerender](https://docs.microlink.io/#prerender).
 
 ## screenshot
 
