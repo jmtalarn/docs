@@ -18,7 +18,7 @@ function Introduction() {
 
 Welcome to microlink API!
 
-You can use it for Get relevant information from any link. The service is oriented for build embed previsualizations of third party links in your site.
+You can use it to retrieve relevant information from any link. The service is oriented to build embed previsualizations of third-party links in your project.
 
 From the ${<InternalLink href="#url">url</InternalLink>} provided as input, we can detect the following information:
 

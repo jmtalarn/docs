@@ -14,20 +14,14 @@ export default withDoc({
 
 ## API Clients Design
 
-We even provided different ways to integrate **microlink** with your site and your code, our API Libraries is isomorphic: All of them follow the same interface.
-
-Even we provide a different ways to integrate **microlink** in your web page, our API clients follow an isomorphic API: All of them have the same parameters interface based in your ${<InternalLink href="/api">API</InternalLink>} endpoint.
+We've provided multiple ways to integrate **microlink** with your site and your code. Our API Libraries are isomorphic, they all follow the same interface with the same parameter interface (based on our ${<InternalLink href="/api">API</InternalLink>} endpoint).
 
 ## Pollyfills
 
 Our API clients use the standard [fetch API](https://developer.mozilla.org/es/docs/Web/API/Fetch_API) in order to perform asynchronous HTTP calls to our ${<InternalLink href="/api">API</InternalLink>} endpoint.
 
-Each connector is developed to be as tiny possible, targeting modern browsers.
+Each connector is developed to be as tiny possible, targeting modern browsers. This means that **we don't ship any polyfill with the API clients**.
 
-This means that **we don't ship any polyfill with the API connectors**.
-
-If you want to support older browsers versions, you need to attach your own polyfill first.
-
-If you're looking for a tiny \`fetch\` polyfill, we recommend you use [unfetch](https://github.com/developit/unfetch).
+In order to support older browsers versions, you'll need to attach your own polyfill first. Looking for a tiny \`fetch\` polyfill? We suggest [unfetch](https://github.com/developit/unfetch).
 
 `)

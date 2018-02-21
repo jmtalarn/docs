@@ -19,12 +19,11 @@ export default withDoc({
 
 ## Installation
 
-The Jekyll integration is pretty similar to ${<InternalLink href="/docs/getting-started/vanilla">vanilla</InternalLink>} approach.
+The Jekyll integration is pretty similar to the ${<InternalLink href="/docs/getting-started/vanilla">vanilla</InternalLink>} approach.
 
-Just you need to be sure to load the script. For example, at the end of \`_layouts/default.html\`:
+You just need to be sure to load the script. For example, at the end of \`_layouts/default.html\`:
 
-${<Code>{`
-<script type="text/javascript" src="//unpkg.com/microlinkjs@latest"></script>
+${<Code>{`<script type="text/javascript" src="//unpkg.com/microlinkjs@latest"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     microlink('.card-preview', {round: true})
@@ -34,7 +33,7 @@ ${<Code>{`
 
 ## Basic Usage
 
-In the code above, we are associating microlink cards with the class \`card-preview\`, so now, when we write a new markdown post, we are going to use the \`card-preview\` class to associate the link:
+In the code above, we are associating microlink cards with the class \`card-preview\`. So now, when we write a new markdown post, we are going to use the \`card-preview\` class to associate the link:
 
 ${<Code>{`[](${DEMO_LINK}){:.card-preview}`}</Code>}
 
@@ -43,7 +42,7 @@ ${<MicrolinkCard
   style={{margin: 'auto'}}
 />}
 
-You can pass custom option as well:
+You can pass custom options too:
 
 ${<Code>{`[](${DEMO_LINK}){:.card-preview data-image="logo"}`}</Code>}
 
@@ -57,7 +56,7 @@ ${<MicrolinkCard
 
 ${<CardClassNames />}
 
-In order to apply your specific style, just declare your custom CSS rules using the properly class name.
+In order to apply your custom styles, just define your CSS rules using the appropriate class name.
 
 For example, lets modify the font family used in the preview cards:
 

@@ -1,7 +1,7 @@
 import markdown from 'markdown-in-js'
-import {components} from '../lib/with-doc'
+import { components } from '../lib/with-doc'
 export default () => markdown(components)`
-  We don't inject any CSS in your application. The card previsualization is shipped with a default minimal inline style.
+  We don't inject any CSS into your application. The card previsualization is shipped with a default minimal inline style.
 
   If you need to adapt the *look and feel*, each component of the card has been assigned a [BEM](http://getbem.com/introduction) class name:
 
