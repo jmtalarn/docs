@@ -25,7 +25,7 @@ It is available as a [npm package](https://www.npmjs.com/package/react-microlink
 
 ${<TerminalInput>{`npm install react-microlink --save`}</TerminalInput>}
 
-Then you can interact with him in your code as react component:
+Then you can interact with it as a regular React component:
 
 ${<Code>{`import MicrolinkCard from 'react-microlink'
 
@@ -69,7 +69,7 @@ ${<MicrolinkCard
   style={{margin: 'auto'}}
 />}
 
-Check ${<InternalLink href="#static-deployment">API reference</InternalLink>} in order to know what options you can use.
+Check the ${<InternalLink href="#static-deployment">API reference</InternalLink>} in order to know what options you can use.
 
 ## Styling
 
@@ -92,9 +92,9 @@ ${<Code>{`<style>
 
 ### Using inline style
 
-By default, the cards components are shipped with a default and minimal inline style.
+By default, the card's components are shipped with a default and minimal style.
 
-The component accept a \`style\` property. You can use this property to specify your custom style, like:
+The component itself accepts a \`style\` property. You can use this to add your own inline styles, like:
 
 ${<Code>{`<MicrolinkCard
   url="https://vimeo.com/188175573"
@@ -102,7 +102,7 @@ ${<Code>{`<MicrolinkCard
 />
 `}</Code>}
 
-Also, this is the approach used for more high level abstraction like [fela](http://fela.js.org), [styled components](https://www.styled-components.com) or similar built in styles solutions:
+Also, this is the approach used for more high level abstraction; like [fela](http://fela.js.org), [styled components](https://www.styled-components.com) or other similar JSS solutions:
 
 ${<Code>{`import MicrolinkCard from 'react-microlink'
 import styled from 'styled-components'

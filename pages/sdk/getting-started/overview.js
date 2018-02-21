@@ -15,19 +15,19 @@ export default withDoc({
   authors: [kiko],
 })(markdown(components)`
 
-**microlink** lets you create beautiful link previews from any link.
+**microlink** enables you to create beautiful previews, from any link.
 
-Using it, you can convert simply links
+Using it, you can simply convert
 
 ${<ExternalLink href={`${DEMO_LINK}`}>{`${DEMO_LINK}`}</ExternalLink>}
 
-into fancy previews
+into 👇
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
 />}
 
-It is a perfect complement to improve the engagement of your articles or blog publications, bringing your user to see what is behind any link.
+It's the perfect complement to improve the engagement of your articles or blog publications, bringing your user to see what's behind any link.
 
 In this documentation you can find the official API clients to consume our API.
 

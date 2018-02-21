@@ -41,7 +41,7 @@ ${<Code>{`<!-- Microlink SDK CJS bundle -->
 
 ## Basic Usage
 
-Microlink SDK provides the \`microlink\` method which takes a CSS selector (similar to jQuery/Zepto) for targeting elements you want to convert into beautiful preview cards.
+Microlink SDK provides the \`microlink\` method which takes a CSS selector (similar to jQuery/Zepto) to target elements you want to convert into beautiful preview cards.
 
 Here are some usage examples:
 
@@ -71,12 +71,12 @@ ${<MicrolinkCard
 
 You need to add **microlink** to the page early in the page load.
 
-We recommend calling \`microlink\` method before the DOM finishes loading:
+We recommend calling the \`microlink\` method before the DOM finishes loading:
 
 ${<Code>{`<!-- Add microlink before the closing body tag. -->
 <script type="text/javascript" src="//unpkg.com/microlinkjs@latest/umd/microlink.min.js"></script>
 
-<!-- Call microlink for replacing links for cards previews -->
+<!-- Call microlink to replace links with cards previews -->
 <script>
   microlink('.link-preview')
 </script>
@@ -96,7 +96,7 @@ ${<Code>{`<script>
 
 ## Customization
 
-You can pass specific ${<InternalLink href="/api">API parameters</InternalLink>} to \`microlink\` as second argument:
+You can pass specific ${<InternalLink href="/api">API parameters</InternalLink>} to \`microlink\` as a second argument:
 
 ${<Code>{`<script>
 // Replace all elements with \`link-preview\` class
@@ -113,7 +113,7 @@ ${<MicrolinkCard
   round
 />}
 
-If you want to provide specific options, you can provide it as \`data-attribute\` in the HTML markup of each element:
+You can also pass parameters as a \`data-attribute\` in the HTML markup of each element:
 
 ${<Code>{`<a class="link" data-size="large" href="http://microlink.js.org">microlink.js.org</a>`}</Code>}
 
