@@ -44,6 +44,16 @@ Setup the image to use for the card.
 
 The value will be determined the property to get from the [API response](https://docs.microlink.io). If you set up the value as an \`array\` of values, then they will be applied as fallback values until finding the first value that resolves.
 
+## reverse
+
+Type: \`boolean\`<br/>
+Default: \`false\`
+
+Reverses the (flex) direction of the card:
+
+- On a \`normal\` card, the media will appear to the right of the content.
+- On a \`large\` card, the media will appear below the content.
+
 ## is
 
 Type: \`string\`<br/>
@@ -67,8 +77,8 @@ Default: \`'normal'\`
 
 It determines the card layout. Currently we have two layouts supported:
 
-- \`'normal'\` (default, no parameter required).
-- \`'large'\`
+- \`'normal'\`: Displays the regular summary card (default, no parameter required).
+- \`'large'\`: Displays the large summary card.
 
 ## prerender
 
