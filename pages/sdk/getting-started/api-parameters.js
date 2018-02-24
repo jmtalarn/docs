@@ -28,6 +28,16 @@ See more at [docs.microlink.io#authentication](https://docs.microlink.io/#authen
 
 The API endpoint where the request is made.
 
+## data
+
+Type: \`object\`<br/>
+Default: \`undefined\`
+
+The content rendered onto the card. This property can be used for two purposes:
+
+- If you made an API call outside of the microlink component - and you want to render _that_ data - pass the payload response here in order to avoid making the request again.
+- If you want to render custom content inside the card, pass it following the [API payload schema](https://docs.microlink.io/api/#introduction).
+
 ## contrast
 
 Type: \`boolean\`<br/>
