@@ -27,7 +27,7 @@ ${<MicrolinkCard
   url={`${DEMO_LINK}`}
 />}
 
-It's the perfect complement to improve the user interaction in your site, bringing your user to see what's behind any link.
+It's the perfect complement to improve the user interaction on your site, bringing your users to see what's behind any link.
 
 In this documentation you can find the official API clients to consume our API.
 
