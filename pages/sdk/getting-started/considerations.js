@@ -14,7 +14,9 @@ export default withDoc({
 
 ## API Clients Design
 
-We've provided multiple ways to integrate **microlink** with your site and your code. Our API Libraries are isomorphic, they all follow the same interface with the same parameter interface (based on our ${<InternalLink href="/api">API</InternalLink>} endpoint).
+We've provided multiple ways to integrate **microlink** with your site and your code. 
+
+Our API Libraries are isomorphic, they all follow the same interface with the same parameter interface (based on our ${<InternalLink href="/api">API</InternalLink>} endpoint).
 
 ## Pollyfills
 
