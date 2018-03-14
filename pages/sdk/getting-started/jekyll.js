@@ -23,7 +23,8 @@ The Jekyll integration is pretty similar to the ${<InternalLink href="/docs/gett
 
 You just need to be sure to load the script. For example, at the end of \`_layouts/default.html\`:
 
-${<Code>{`<script type="text/javascript" src="//unpkg.com/microlinkjs@latest"></script>
+${<Code>{`
+<script src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     microlink('.card-preview', {round: true})

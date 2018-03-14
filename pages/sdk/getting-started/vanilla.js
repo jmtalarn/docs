@@ -28,15 +28,15 @@ ${<TerminalInput>{`npm install microlinkjs --save`}</TerminalInput>}
 Optionally you can link it directly from the **CDN** as well:
 
 ${<Code>{`<!-- Microlink SDK Vanilla/UMD bundle -->
-<script type="text/javascript" src="//unpkg.com/microlinkjs@latest/umd/microlink.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
 `}</Code>}
 
 ${<Code>{`<!-- Microlink SDK AMD bundle -->
-<script type="text/javascript" src="//unpkg.com/microlinkjs@latest/amd/microlink.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/microlinkjs@latest/amd/microlink.min.js"></script>
 `}</Code>}
 
 ${<Code>{`<!-- Microlink SDK CJS bundle -->
-<script type="text/javascript" src="//unpkg.com/microlinkjs@latest/cjs/microlink.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/microlinkjs@latest/cjs/microlink.min.js"></script>
 `}</Code>}
 
 ## Basic Usage
@@ -74,7 +74,7 @@ You need to add **microlink** to the page early in the page load.
 We recommend calling the \`microlink\` method before the DOM finishes loading:
 
 ${<Code>{`<!-- Add microlink before the closing body tag. -->
-<script type="text/javascript" src="//unpkg.com/microlinkjs@latest/umd/microlink.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
 
 <!-- Call microlink to replace links with cards previews -->
 <script>
