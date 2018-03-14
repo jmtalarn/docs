@@ -9,10 +9,10 @@ export const COLOR_SUCCESS = '#067DF7'
 
 export const COLOR_PRIMARY = '#303A52'
 export const COLOR_SECONDARY = '#654EA3'
-export const COLOR_COMPLEMENTARY = '#F76698'
+export const COLOR_COMPLEMENTARY = '#ffe079'
 
 export const COLOR_BG_SELECTION = COLOR_COMPLEMENTARY
-export const COLOR_SELECTION = '#4a4c4b'
+export const COLOR_SELECTION = '#000'
 
 export const FONT_FAMILY_CODE = 'Nitti, "Microsoft YaHei", 微软雅黑, monospace'
 export const COLOR_BG_CODE = '#FAFBFC'

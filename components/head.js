@@ -5,7 +5,7 @@ import NProgress from 'nprogress'
 import debounce from 'lodash.debounce'
 import RouterEvents from '../lib/router-events'
 
-import { COLOR_PRIMARY } from './css-config'
+import { COLOR_SUCCESS } from './css-config'
 
 const start = debounce(NProgress.start, 200)
 RouterEvents.on('routeChangeStart', start)
@@ -91,7 +91,7 @@ class Head extends React.PureComponent {
           <style>
             {`
             #nprogress .bar {
-              background: ${darkBg ? '#fff' : COLOR_PRIMARY};
+              background: ${darkBg ? '#fff' : COLOR_SUCCESS};
             }
 
             #nprogress .peg {
