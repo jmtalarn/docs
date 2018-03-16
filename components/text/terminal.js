@@ -1,10 +1,11 @@
-import { CODE_STYLE, COLOR_BG_CODE, COLOR_CODE } from '../css-config'
-
-import React from 'react'
+import { Component } from 'react'
 import PropTypes from 'prop-types'
+import { createCodeCopy } from 'react-codecopy'
+
+import { CODE_STYLE, COLOR_BG_CODE, COLOR_CODE } from '../css-config'
 import { GenericLink } from './link'
 
-export const TerminalInput = ({ children }, { darkBg = false }) => (
+export const TerminalInput = createCodeCopy(({ children }, { darkBg = false }) => (
   <div className={darkBg ? 'dark' : ''}>
     {Array.isArray(children) ? (
       <span>{children}</span>
@@ -36,13 +37,13 @@ export const TerminalInput = ({ children }, { darkBg = false }) => (
       `}
     </style>
   </div>
-)
+))
 
 TerminalInput.contextTypes = {
   darkBg: PropTypes.bool
 }
 
-export class TerminalOutput extends React.Component {
+export class TerminalOutput extends Component {
   static childContextTypes = {
     darkBg: PropTypes.bool
   }

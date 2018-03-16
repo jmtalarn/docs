@@ -1,4 +1,6 @@
+import { createCodeCopy } from 'react-codecopy'
 import PropTypes from 'prop-types'
+
 import {
   CODE_INLINE_STYLE,
   CODE_STYLE,
@@ -7,31 +9,33 @@ import {
   COLOR_PRIMARY
 } from '../css-config'
 
-export const Code = ({ children, syntax }, { darkBg } = {}) => (
-  <pre className={(darkBg ? 'dark' : '') + (syntax ? ` ${syntax}` : '')}>
-    <code>{children}</code>
-    <style jsx>
-      {`
-        pre {
-          ${CODE_STYLE};
-          background: ${COLOR_BG_CODE};
-          color: ${COLOR_CODE};
-        }
-        pre.dark {
-          border: 1px solid #333;
-          background: #000;
-          color: white;
-        }
-        .dark code {
-          color: #fff;
-        }
-        .dark.json code {
-          color: #f1fa8c;
-        }
-      `}
-    </style>
-  </pre>
-)
+export const Code = createCodeCopy(({ children, syntax }, { darkBg } = {}) => {
+  return (
+    <pre className={(darkBg ? 'dark' : '') + (syntax ? ` ${syntax}` : '')}>
+      <code>{children}</code>
+      <style jsx>
+        {`
+          pre {
+            ${CODE_STYLE};
+            background: ${COLOR_BG_CODE};
+            color: ${COLOR_CODE};
+          }
+          pre.dark {
+            border: 1px solid #333;
+            background: #000;
+            color: white;
+          }
+          .dark code {
+            color: #fff;
+          }
+          .dark.json code {
+            color: #f1fa8c;
+          }
+        `}
+      </style>
+    </pre>
+  )
+})
 
 Code.contextTypes = {
   darkBg: PropTypes.bool

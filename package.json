@@ -41,6 +41,7 @@
     "react-dom": "16.2.0",
     "react-microlink": "~1.4.0",
     "scroll-into-view-if-needed": "1.4.0",
+    "react-codecopy": "~1.0.3",
     "unfetch": "~3.0.0"
   },
   "devDependencies": {
