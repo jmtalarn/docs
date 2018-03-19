@@ -4,7 +4,7 @@ import qs from 'querystring'
 import { parse } from 'url'
 import _scrollIntoViewIfNeeded from 'scroll-into-view-if-needed'
 
-import { COLOR_PRIMARY } from '../../css-config'
+import { COLOR_PRIMARY, COLOR_SUCCESS } from '../../css-config'
 import Changelog from '../../changelog'
 import ExternalIcon from '../../external-icon'
 
@@ -104,6 +104,13 @@ export class NavLink extends React.Component {
             </a>
           </Link>
         )}
+        <style jsx global>
+          {`
+          .link a:hover > svg {
+            stroke: ${COLOR_SUCCESS};
+        `}
+        </style>
+
         <style jsx>{`
           div {
             padding: 4px 10px 4px 30px;
