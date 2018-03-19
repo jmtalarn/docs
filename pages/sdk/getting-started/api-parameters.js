@@ -92,7 +92,7 @@ It determines the card layout. Currently we have two layouts supported:
 
 ## prerender
 
-Type: \`boolean\`|\`string\`<br/>
+Type: \`boolean|string\`<br/>
 Default: \`auto\`
 
 It determines the technique used to get content from the target URL.
@@ -125,5 +125,19 @@ It specifies that the audio output of the video should be muted.
 Type: \`boolean\`<br/>
 Default: \`true\`
 
-It specifies that the video will start over again, every time it is finished.
+It specifies that the video will start over again, every time it finishes.
+
+## controls
+
+Type: \`boolean\`<br/>
+Default: \`true\`
+
+Display UI controls to handle playing/pausing the cards video.
+
+## playsInline
+
+Type: \`boolean\`<br/>
+Default: \`true\`
+
+Whether the video should play _inline_, on supported devices (<a href="https://webkit.org/blog/6784/new-video-policies-for-ios/" target="_blank">read more</a>).
 `)
