@@ -1,43 +1,42 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import { createCodeCopy } from 'react-codecopy'
+import CodeCopy from 'react-codecopy'
 
 import { CODE_STYLE, COLOR_BG_CODE, COLOR_CODE } from '../css-config'
 import { GenericLink } from './link'
 
-export const TerminalInput = createCodeCopy(({ children }, { darkBg = false }) => (
-  <div className={darkBg ? 'dark' : ''}>
-    {Array.isArray(children) ? (
-      <span>{children}</span>
-    ) : (
-      children.split(/\r?\n/).map((item, index) => <span key={index}>{item}</span>)
-    )}
+export const TerminalInput = ({ children }, { darkBg = false }) => (
+  <CodeCopy>
+    <div className={darkBg ? 'dark' : ''}>
+      {Array.isArray(children) ? (
+        <span>{children}</span>
+      ) : (
+        children.split(/\r?\n/).map((item, index) => <span key={index}>{item}</span>)
+      )}
 
-    <style jsx>
-      {`
-        div {
-          ${CODE_STYLE};
-          background: ${COLOR_BG_CODE};
-          color: ${COLOR_CODE};
-        }
-
-        div span {
-          display: block;
-        }
-
-        div span::before {
-          content: '$ ';
-        }
-
-        div.dark {
-          border: 1px solid #333;
-          background: #000;
-          color: white;
-        }
-      `}
-    </style>
-  </div>
-))
+      <style jsx>
+        {`
+          div {
+            ${CODE_STYLE};
+            background: ${COLOR_BG_CODE};
+            color: ${COLOR_CODE};
+          }
+          div span {
+            display: block;
+          }
+          div span::before {
+            content: '$ ';
+          }
+          div.dark {
+            border: 1px solid #333;
+            background: #000;
+            color: white;
+          }
+        `}
+      </style>
+    </div>
+  </CodeCopy>
+)
 
 TerminalInput.contextTypes = {
   darkBg: PropTypes.bool

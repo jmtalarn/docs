@@ -1,4 +1,4 @@
-import { createCodeCopy } from 'react-codecopy'
+import CodeCopy from 'react-codecopy'
 import PropTypes from 'prop-types'
 
 import {
@@ -9,8 +9,8 @@ import {
   COLOR_PRIMARY
 } from '../css-config'
 
-export const Code = createCodeCopy(({ children, syntax }, { darkBg } = {}) => {
-  return (
+export const Code = ({ children, syntax }, { darkBg }) => (
+  <CodeCopy>
     <pre className={(darkBg ? 'dark' : '') + (syntax ? ` ${syntax}` : '')}>
       <code>{children}</code>
       <style jsx>
@@ -34,8 +34,8 @@ export const Code = createCodeCopy(({ children, syntax }, { darkBg } = {}) => {
         `}
       </style>
     </pre>
-  )
-})
+  </CodeCopy>
+)
 
 Code.contextTypes = {
   darkBg: PropTypes.bool
