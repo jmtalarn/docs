@@ -40,7 +40,7 @@
     "nprogress": "0.2.0",
     "prop-types": "15.6.1",
     "react": "16.2.0",
-    "react-codecopy": "~2.0.1",
+    "react-codecopy": "~2.1.0",
     "react-dom": "16.2.0",
     "react-microlink": "~1.8.1",
     "scroll-into-view-if-needed": "1.5.0",

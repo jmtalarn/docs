@@ -10,7 +10,7 @@ import {
 } from '../css-config'
 
 export const Code = ({ children, syntax }, { darkBg }) => (
-  <CodeCopy>
+  <CodeCopy theme={darkBg ? 'dark' : 'light'}>
     <pre className={(darkBg ? 'dark' : '') + (syntax ? ` ${syntax}` : '')}>
       <code>{children}</code>
       <style jsx>
