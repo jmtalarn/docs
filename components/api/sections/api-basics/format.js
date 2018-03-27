@@ -12,7 +12,7 @@ function Format() {
         [
   [
     markdown(components)`
-All the responses as served as **JSON** – unless you use the [embedded support](#embedded).
+All the responses are served as **JSON** – unless you use the [embedded support](#embedded).
 
 Our response format is based on [JSend](https://labs.omniti.com/labs/jsend) specification.
 
