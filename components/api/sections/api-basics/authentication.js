@@ -17,7 +17,7 @@ We apply different API quota based [pricing](https://microlink.io#pricing) plans
 
 Unauthenticated requests use **Free** plans. It doesn't need to do nothing additional.
 
-Under a **Professional** plans, you need to authenticated your requests.
+Under a **Professional** plans, you need to authenticate your requests.
 
 It should be done providing the header \`x-api-key\` with your API Key as value in all your requests.
 
