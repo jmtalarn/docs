@@ -27,7 +27,7 @@ ${<Code>{`
 <script src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
-    microlink('.card-preview', {round: true})
+    microlink('.card-preview')
   });
 </script>
 `}</Code>}

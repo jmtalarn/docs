@@ -58,7 +58,7 @@ ${<Code>{`<script>
   // Example 3
   // Replace all elements with \`link-preview\` class
   // for microlink cards, passing API specific options
-  microlink('.link-previews', { rounded: true })
+  microlink('.link-previews')
 </script>
 `}</Code>}
 
@@ -101,9 +101,7 @@ You can pass specific ${<InternalLink href="/api">API parameters</InternalLink>}
 ${<Code>{`<script>
 // Replace all elements with \`link-preview\` class
 // for microlink round cards
-microlink('.link-previews', {
-  round: true
-})
+microlink('.link-previews')
 </script>
 `}</Code>}
 
