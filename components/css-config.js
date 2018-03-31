@@ -1,8 +1,6 @@
-export const FONT_FAMILY_SANS =
-  '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif'
-
+export const FONT_FAMILY_SANS = "'Inter UI', sans-serif"
 export const FONT_FAMILY_MONO =
-  'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif'
+  "'Operator Mono', 'Fira Code', 'SF Mono', 'Roboto Mono', Menlo, monospace"
 
 export const COLOR_ERROR = '#FF001F'
 export const COLOR_SUCCESS = '#067DF7'
@@ -13,25 +11,25 @@ export const COLOR_COMPLEMENTARY = '#ffe079'
 
 export const COLOR_BG_SELECTION = COLOR_COMPLEMENTARY
 export const COLOR_SELECTION = '#000'
-
-export const FONT_FAMILY_CODE = 'Nitti, "Microsoft YaHei", 微软雅黑, monospace'
 export const COLOR_BG_CODE = '#FAFBFC'
-export const COLOR_CODE = COLOR_SELECTION
+export const COLOR_CODE = '#EA407B'
 
 export const CODE_STYLE = `
   padding: 30px;
   border-radius: 2px;
   overflow-x: auto;
-  font-family: ${FONT_FAMILY_CODE};
+  font-family: ${FONT_FAMILY_MONO};
   font-size: 13px;
   line-height: 20px;
 `
 
 export const CODE_INLINE_STYLE = `
-  font-size: 13px;
+  display: inline;
+  font-size: 0.75rem;
   padding: 3px 10px;
   border-radius: 3px;
   white-space: nowrap;
   font-weight: 600;
-  font-family: inherit;
+  font-family: ${FONT_FAMILY_MONO};
+  -webkit-font-smoothing: antialiased;
 `

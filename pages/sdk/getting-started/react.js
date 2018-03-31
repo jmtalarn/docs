@@ -23,7 +23,7 @@ export default withDoc({
 
 It is available as a [npm package](https://www.npmjs.com/package/react-microlink):
 
-${<TerminalInput>{`npm install react-microlink --save`}</TerminalInput>}
+${<TerminalInput>{`npm install react-microlink styled-components --save`}</TerminalInput>}
 
 Then you can interact with it as a regular React component:
 

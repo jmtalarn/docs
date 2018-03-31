@@ -1,12 +1,9 @@
 import NativeLink from 'next/link'
 import PropTypes from 'prop-types'
+import { createElement } from 'react'
 
-export const GenericLink = props => {
-  if (props.href.startsWith('/')) {
-    return <InternalLink {...props} />
-  }
-  return <ExternalLink {...props} />
-}
+export const GenericLink = props =>
+  createElement(props.href.startsWith('/') ? InternalLink : ExternalLink, props)
 
 export const InternalLink = ({ href, as, children }, { darkBg } = {}) => (
   <NativeLink prefetch href={href} as={as}>
@@ -58,12 +55,7 @@ export const AnchorLink = ({ href, onClick, children }) => (
 )
 
 export const ExternalLink = ({ href, children }, { darkBg } = {}) => (
-  <a
-    className={darkBg ? 'dark' : ''}
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
+  <a className={darkBg ? 'dark' : ''} href={href} target="_blank" rel="noopener noreferrer">
     {children}
 
     <style jsx>

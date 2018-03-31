@@ -1,13 +1,7 @@
 import CodeCopy from 'react-codecopy'
 import PropTypes from 'prop-types'
 
-import {
-  CODE_INLINE_STYLE,
-  CODE_STYLE,
-  COLOR_BG_CODE,
-  COLOR_CODE,
-  COLOR_PRIMARY
-} from '../css-config'
+import { CODE_INLINE_STYLE, CODE_STYLE, COLOR_BG_CODE, COLOR_CODE } from '../css-config'
 
 export const Code = ({ children, syntax }, { darkBg }) => (
   <CodeCopy theme={darkBg ? 'dark' : 'light'}>
@@ -49,7 +43,7 @@ export const InlineCode = ({ children, noWrap }, { darkBg } = {}) => {
         {`
           code {
             ${CODE_INLINE_STYLE};
-            color: ${COLOR_PRIMARY};
+            color: ${COLOR_CODE};
             border: 1px solid #dee2e6;
           }
 
