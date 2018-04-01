@@ -24,6 +24,11 @@ class Page extends React.Component {
               box-sizing: border-box;
             }
 
+            * {
+              -webkit-font-smoothing: antialiased;
+              text-rendering: optimizeLegibility;
+            }
+
             *,
             *:before,
             *:after {

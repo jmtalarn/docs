@@ -20,6 +20,7 @@ export const CODE_STYLE = `
   overflow-x: auto;
   font-family: ${FONT_FAMILY_MONO};
   font-size: 13px;
+  font-weight: 500;
   line-height: 20px;
 `
 
@@ -31,5 +32,5 @@ export const CODE_INLINE_STYLE = `
   white-space: nowrap;
   font-weight: 600;
   font-family: ${FONT_FAMILY_MONO};
-  -webkit-font-smoothing: antialiased;
+  font-weight: 500;
 `
