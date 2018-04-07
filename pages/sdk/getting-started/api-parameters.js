@@ -7,7 +7,7 @@ import { kiko } from '../../../lib/data/team'
 export default withDoc({
   title: 'API Parameters',
   date: '19 January 2018',
-  authors: [kiko],
+  authors: [kiko]
 })(markdown(components)`
 
 ## url
@@ -70,15 +70,6 @@ Type: \`string\`<br/>
 Default: \`'a'\`
 
 Determine the type of the root node element for rendering the card.
-
-## round
-
-Type: \`boolean|string\`<br/>
-Default: \`false\`
-
-Determine if the card preview should have round corners or not.
-
-If you provided a \`string\` value, it will be passed as the \`border-radius\`.
 
 ## size
 

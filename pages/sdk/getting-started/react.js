@@ -16,7 +16,7 @@ const DEMO_LINK =
 export default withDoc({
   title: 'React',
   date: '19 January 2018',
-  authors: [kiko],
+  authors: [kiko]
 })(markdown(components)`
 
 ## Installation
@@ -45,14 +45,14 @@ ${<Code>{`import MicrolinkCard from 'react-microlink'
 // Customizing the card
 <MicrolinkCard
   url='${DEMO_LINK}'
-  round
+  size='large'
 />
 `}</Code>}
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
   style={{margin: 'auto'}}
-  round
+  size='large'
 />}
 
 ${<Code>{`import MicrolinkCard from 'react-microlink'
@@ -69,7 +69,7 @@ ${<MicrolinkCard
   style={{margin: 'auto'}}
 />}
 
-Check the ${<InternalLink href="#static-deployment">API reference</InternalLink>} in order to know what options you can use.
+Check the ${<InternalLink href='#static-deployment'>API reference</InternalLink>} in order to know what options you can use.
 
 ## Styling
 
@@ -110,6 +110,7 @@ import styled from 'styled-components'
 const myCustomCard = styled(MicrolinkCard)\`
   font-family: 'Nitti, "Microsoft YaHei", 微软雅黑, monospace';
   max-width: 100%;
+  border-radius: .42857em;
 \`
 `}</Code>}
 
@@ -119,7 +120,8 @@ ${<MicrolinkCard
   url={`${DEMO_LINK}`}
   style={{
     fontFamily: 'Nitti, "Microsoft YaHei", 微软雅黑, monospace',
-    maxWidth: '100%'
+    maxWidth: '100%',
+    borderRadius: '.42857em'
   }}
 />}
 `)

@@ -16,7 +16,7 @@ const DEMO_LINK =
 export default withDoc({
   title: 'Vanilla',
   date: '19 January 2018',
-  authors: [kiko],
+  authors: [kiko]
 })(markdown(components)`
 
 ## Installation
@@ -96,12 +96,14 @@ ${<Code>{`<script>
 
 ## Customization
 
-You can pass specific ${<InternalLink href="/api">API parameters</InternalLink>} to \`microlink\` as a second argument:
+You can pass specific ${<InternalLink href='/api'>API parameters</InternalLink>} to \`microlink\` as a second argument:
 
 ${<Code>{`<script>
 // Replace all elements with \`link-preview\` class
-// for microlink round cards
-microlink('.link-previews')
+// for microlink large cards
+microlink('.link-previews', {
+  size: 'large'
+})
 </script>
 `}</Code>}
 
@@ -122,7 +124,7 @@ ${<MicrolinkCard
   round
 />}
 
-Check ${<InternalLink href="#static-deployment">API parameters</InternalLink>} reference in order to know what options you can use.
+Check ${<InternalLink href='#static-deployment'>API parameters</InternalLink>} reference in order to know what options you can use.
 
 ## Styling
 
