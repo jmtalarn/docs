@@ -78,12 +78,12 @@ class API extends React.PureComponent {
 
     return (
       <Page dayBanner={false}>
-        <Head titlePrefix="" title={`Microlink API`} />
+        <Head title="API Reference" />
         <div className="header-wrapper">
           <div className="header">
-            <BGContainer darkBg={true}>
+            <BGContainer darkBg>
               <Header
-                clean={true}
+                clean
                 logo={
                   <BGContainer darkBg={false}>
                     <Logo />
@@ -104,18 +104,13 @@ class API extends React.PureComponent {
           <div className="sidebar">
             <DocsNavbarToggle />
 
-            <DocsNavbarDesktop
-              data={data}
-              url={props.url}
-              hash={hash}
-              scrollSelectedIntoView={true}
-            />
+            <DocsNavbarDesktop data={data} url={props.url} hash={hash} scrollSelectedIntoView />
           </div>
         </FreezePageScroll>
         <div>
           <div className="doc-layout">
             <div className="topbar">
-              <DocsNavbarMobile data={data} url={props.url} hash={hash} sticky={true} />
+              <DocsNavbarMobile data={data} url={props.url} hash={hash} sticky />
             </div>
             <div className="content" ref={ref => (this.contentNode = ref)}>
               {data.map(({ id, posts }) => {

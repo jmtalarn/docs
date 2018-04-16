@@ -20,9 +20,8 @@ RouterEvents.on('routeChangeError', () => {
 
 if (global.document) {
   const info = [
-    `Version: ${VERSION}`,
     `Check out our code here: https://github.com/microlinkhq`,
-    `Have a great day! 📣🐢`
+    `Have a good (hack) day!`
   ]
 
   for (const message of info) {
@@ -33,13 +32,13 @@ if (global.document) {
 
 class Head extends React.PureComponent {
   render() {
-    const titlePrefix = null != this.props.titlePrefix ? this.props.titlePrefix : 'Microlink – '
     const ogDescription = this.props.ogDescription || this.props.description
     const { darkBg } = this.context
+
     return (
       <div>
         <NextHead>
-          <title>{titlePrefix + this.props.title}</title>
+          <title>{`${this.props.title} | Microlink Documentation`}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta
             name="twitter:card"
