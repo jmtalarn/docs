@@ -5,7 +5,6 @@ import { parse } from 'url'
 import _scrollIntoViewIfNeeded from 'scroll-into-view-if-needed'
 
 import { COLOR_PRIMARY, COLOR_SUCCESS } from '../../css-config'
-import Changelog from '../../changelog'
 import ExternalIcon from '../../external-icon'
 
 function scrollIntoViewIfNeeded(elem, centerIfNeeded, options, config) {
@@ -215,7 +214,6 @@ export default class DocsNavbarDesktop extends React.PureComponent {
           ) : (
             info.name
           )}
-          <Changelog />
         </div>
         {!info.href || this.isCategorySelected(info) ? (
           <div className="posts">
