@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { CODE_INLINE_STYLE, CODE_STYLE, COLOR_BG_CODE, COLOR_CODE } from '../css-config'
 
 export const Code = ({ children, syntax }, { darkBg }) => (
-  <CodeCopy theme={darkBg ? 'dark' : 'light'}>
+  <CodeCopy theme={darkBg ? 'dark' : 'light'} text={children}>
     <pre className={(darkBg ? 'dark' : '') + (syntax ? ` ${syntax}` : '')}>
       <code>{children}</code>
       <style jsx>

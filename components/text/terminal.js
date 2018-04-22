@@ -6,7 +6,7 @@ import { CODE_STYLE, COLOR_BG_CODE, COLOR_CODE } from '../css-config'
 import { GenericLink } from './link'
 
 export const TerminalInput = ({ children }, { darkBg = false }) => (
-  <CodeCopy theme={darkBg ? 'dark' : 'light'}>
+  <CodeCopy theme={darkBg ? 'dark' : 'light'} text={children}>
     <div className={darkBg ? 'dark' : ''}>
       {Array.isArray(children) ? (
         <span>{children}</span>
