@@ -151,4 +151,42 @@ ${<MicrolinkCard
     maxWidth: '100%'
   }}
 />}
+
+## Recipes
+
+### Specifying a selector
+
+You need to pass a selector to \`microlink\` in order to replace them with beautiful link previews.
+
+Probably if you do that for all \`a\` present in the site, the result will not be as you expected: The selector's too generic.
+
+A better strategy could be use a class and associate the class with the elements that you want to convert into links previews.
+
+For example, you can use \`.link-preview\` for this purpose in your HTML markup:
+
+${<Code>{`<p>
+  <a class="link-preview" href="https://github.com/zeit/next.js/"></a>
+</p>`}</Code>}
+
+and then initialize \`microlink\` for these links:
+
+${<Code>{`<script>
+microlink('.link-preview')
+</script>
+`}</Code>}
+
+Also, you can associate a minimal CSS style for these links.
+
+The following CSS adds some basic style resets to your link previews, also center aligning them horizontally:
+
+${<Code>{`<style>
+  .link-preview {
+    margin: auto;
+    display: block;
+    font-weight: normal;
+    text-decoration: none;
+    max-width: 500px;
+  }
+</style>
+`}</Code>}
 `)
