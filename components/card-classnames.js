@@ -9,6 +9,10 @@ export default () => markdown(components)`
 
   The root \`div\` of the card.
 
+  ### microlink_card__media
+
+  The media element, regardless of whether it's \`video\` or \`image\`.
+
   ### microlink_card__media_image
 
   The \`div\` holding the \`background-image\` of the image preview of the link.
