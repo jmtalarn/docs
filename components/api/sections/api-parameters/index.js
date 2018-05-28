@@ -5,6 +5,7 @@ import force from './force'
 import palette from './palette'
 import prerender from './prerender'
 import screenshot from './screenshot'
+import userAgent from './user-agent'
 
 export default {
   url,
@@ -13,5 +14,6 @@ export default {
   palette,
   filter,
   embed,
+  userAgent,
   force
 }
