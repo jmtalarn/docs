@@ -526,6 +526,24 @@ ${<HeadersTable
     <Cell>true</Cell>
     <Cell>true</Cell>
   </Row>
+  <Row>
+    <BoldCell>iphone x</BoldCell>
+    <Cell>375</Cell>
+    <Cell>812</Cell>
+    <Cell>3</Cell>
+    <Cell>true</Cell>
+    <Cell>true</Cell>
+    <Cell>false</Cell>
+  </Row>
+  <Row>
+    <BoldCell>iphone x landscape</BoldCell>
+    <Cell>812</Cell>
+    <Cell>375</Cell>
+    <Cell>3</Cell>
+    <Cell>true</Cell>
+    <Cell>true</Cell>
+    <Cell>true</Cell>
+  </Row>
 
 </HeadersTable>}
 
