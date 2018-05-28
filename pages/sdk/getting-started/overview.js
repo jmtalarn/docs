@@ -1,7 +1,7 @@
 import React from 'react'
 import markdown from 'markdown-in-js'
-import MicrolinkCard from 'react-microlink'
 import { ExternalLink } from '../../../components/text/link'
+import MicrolinkCard from '../../../components/microlink'
 
 import withDoc, { components } from '../../../lib/with-doc'
 import { kiko } from '../../../lib/data/team'

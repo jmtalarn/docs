@@ -1,5 +1,4 @@
 import markdown from 'markdown-in-js'
-import MicrolinkCard from 'react-microlink'
 
 import withDoc, { components } from '../../../lib/with-doc'
 
@@ -7,6 +6,7 @@ import { kiko } from '../../../lib/data/team'
 import { Code } from '../../../components/text/code'
 import { InternalLink } from '../../../components/text/link'
 import CardClassNames from '../../../components/card-classnames'
+import MicrolinkCard from '../../../components/microlink'
 
 const DEMO_LINK = 'https://www.theverge.com/2016/4/1/11342104/tesla-model-3-announcement-photos'
 

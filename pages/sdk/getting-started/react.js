@@ -1,5 +1,4 @@
 import markdown from 'markdown-in-js'
-import MicrolinkCard from 'react-microlink'
 
 import withDoc, { components } from '../../../lib/with-doc'
 
@@ -8,6 +7,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 import { InternalLink } from '../../../components/text/link'
 import { Code } from '../../../components/text/code'
 import CardClassNames from '../../../components/card-classnames'
+import MicrolinkCard from '../../../components/microlink'
 
 const DEMO_LINK =
   'https://www.theverge.com/tldr/2018/2/7/16984284/tesla-space-falcon-heavy-launch-elon-musk'
