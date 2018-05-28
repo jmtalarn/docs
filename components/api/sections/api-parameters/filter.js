@@ -14,7 +14,9 @@ function Parameters() {
     markdown(components)`
 **type**: \`string\`
 
-A comma-separated list of the requested values.
+A comma-separated list of property paths to pick from response payload.
+
+It supports nested path as well using dot notation.
 
 This parameter has been designed to make API payload tiny as possible, improving response bandwidth timing.
 `,
