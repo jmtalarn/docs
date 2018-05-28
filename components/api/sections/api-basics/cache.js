@@ -4,6 +4,7 @@ import { Code } from '../../../text/code'
 import { TerminalInput } from '../../../text/terminal'
 import immutable from '../../../../lib/immutable-component'
 import { ExternalLink, InternalLink } from '../../../text/link'
+import { B } from '../../../text/paragraph'
 
 function Cache() {
   return (
@@ -29,7 +30,7 @@ If you want to invalidate a response cache and regenerate the cache value you sh
   , markdown(components)`
 The first time an uncached resource is queried, the API will extract the information from the link:
 
-${<TerminalInput>curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com | grep -i "x-cache"</TerminalInput>}
+${<TerminalInput>curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com | grep -i "<B>x-cache</B>"</TerminalInput>}
 
 You can check that from \`x-cache\` headers of the response. First time, the value will be \`MISS\`:
 

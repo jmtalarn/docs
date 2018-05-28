@@ -2,6 +2,7 @@ import markdown from 'markdown-in-js'
 import Section, { components } from '../../section'
 import { TerminalInput } from '../../../text/terminal'
 import immutable from '../../../../lib/immutable-component'
+import { B } from '../../../text/paragraph'
 
 function Parameters() {
   return (
@@ -25,7 +26,7 @@ In order to improve the response timing, we provide an **auto** value by default
     markdown(components)`
 If you want to enable/disable prerendering, do it explicitly
 
-${<TerminalInput>curl https://api.microlink.io/?url=https://reddit.com&prerender=false</TerminalInput>}
+${<TerminalInput>curl https://api.microlink.io/?url=https://reddit.com&<B>prerender</B>=false</TerminalInput>}
 `
   ]
 ]

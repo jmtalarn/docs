@@ -6,6 +6,7 @@ import immutable from '../../../../lib/immutable-component'
 import { InternalLink } from '../../../text/link'
 import { Code } from '../../../text/code'
 import { TerminalInput } from '../../../text/terminal'
+import { B } from '../../../text/paragraph'
 
 function Introduction() {
   return (
@@ -61,38 +62,33 @@ Complementing the information obtained, we provide you a set of extra features t
 - Export to PDF (*soon*, [ping us](https://twitter.com/microlinkhq) if you are interested!)
 `,
     markdown(components)`
-Entering a URL, you will receive the information behind the link.
+Entering an URL, you will receive the information behind the link.
 
-${<TerminalInput>{`curl https://api.microlink.io?url=https://www.instagram.com/p/BeV6tOhFUor`}</TerminalInput>}
+${<TerminalInput>curl https://api.microlink.io?<B>url</B>=https://instagram.com/p/BeV6tOhFUor</TerminalInput>}
 
 The above API request generate the following response:
 
 ${<Code syntax="json">{`{
   "status": "success",
   "data": {
-    "lang": "en",
-    "author": "spacex",
-    "title": "SpaceX on Instagram: “First static fire test of Falcon Heavy complete—one step closer to first test flight!”",
-    "publisher": "Instagram",
     "image": {
       "width": 1080,
       "height": 607,
       "type": "jpg",
-      "url": "https://scontent-iad3-1.cdninstagram.com/vp/68093557a1e21266afd48b71782770fc/5A837225/t51.2885-15/s1080x1080/e15/fr/26867070_171196260320789_7698587573655961600_n.jpg"
+      "url": "https://scontent-iad3-1.cdninstagram.com/vp/0fcf1dab423d08d7d52349ed049a74be/5B0E8865/t51.2885-15/s1080x1080/e15/fr/26867070_171196260320789_7698587573655961600_n.jpg"
     },
-    "description": "“First static fire test of Falcon Heavy complete—one step closer to first test flight!”",
+    "video": "https://scontent-iad3-1.cdninstagram.com/vp/20510acf81c3f07c17095bc722cfd3fe/5B0E7D92/t50.2886-16/26680591_1497085977080751_971884209264132096_n.mp4",
+    "author": "SpaceX",
+    "publisher": "Instagram",
+    "title": "Video by spacex",
     "date": "2018-01-24T18:39:47.000Z",
-    "video": {
-      "width": 640,
-      "height": 360,
-      "type": "h264",
-      "url": "https://scontent-iad3-1.cdninstagram.com/vp/8b8a3ca167df137bb67cc4c3025b754b/5A836752/t50.2886-16/26680591_1497085977080751_971884209264132096_n.mp4"
-    },
+    "lang": "en",
+    "description": "169.6k Likes, 2,846 Comments - SpaceX (@spacex) on Instagram: “First static fire test of Falcon Heavy complete—one step closer to first test flight!”",
     "logo": {
       "width": 192,
       "height": 192,
       "type": "png",
-      "url": "https://www.instagram.com/static/images/ico/favicon-192.png/b407fa101800.png"
+      "url": "https://www.instagram.com/static/images/ico/favicon-192.png/68d99ba29cc8.png"
     },
     "url": "https://www.instagram.com/p/BeV6tOhFUor"
   }

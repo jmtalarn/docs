@@ -6,6 +6,7 @@ import { ExternalLink } from '../../../text/link'
 import { HeadersTable, Row, Cell, BoldCell } from '../../table'
 import immutable from '../../../../lib/immutable-component'
 import { TerminalInput } from '../../../text/terminal'
+import { B } from '../../../text/paragraph'
 
 function RateLimit() {
   return (
@@ -50,7 +51,7 @@ If you already have a **Professional** plan but you need to increment your daily
 
 You can check your rate limit quota with \`x-rate\` header on the response:
 
-${<TerminalInput>curl --header "x-api-key: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda -i | grep -i "x-pricing-plan"</TerminalInput>}
+${<TerminalInput>curl --header "x-api-key: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda -i | grep -i "<B>x-rate</B>"</TerminalInput>}
 
 It should be looks like:
 

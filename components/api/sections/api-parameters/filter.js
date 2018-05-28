@@ -3,6 +3,7 @@ import Section, { components } from '../../section'
 import { Code } from '../../../text/code'
 import { TerminalInput } from '../../../text/terminal'
 import immutable from '../../../../lib/immutable-component'
+import { B } from '../../../text/paragraph'
 
 function Parameters() {
   return (
@@ -24,7 +25,7 @@ This parameter has been designed to make API payload tiny as possible, improving
 
 It's a good practice to filter just the values that you're going to consume:
 
-${<TerminalInput>curl curl https://api.microlink.io/?url=https://news.ycombinator.com&filter=url,title</TerminalInput>}
+${<TerminalInput>curl curl https://api.microlink.io/?url=https://news.ycombinator.com&<B>filter</B>=url,title</TerminalInput>}
 
 ${<Code syntax="json">{`{
   "status": "success",

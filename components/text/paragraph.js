@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 
+import { COLOR_CODE } from '../css-config'
+
 export const P = ({ children }) => (
   <p>
     {children}
@@ -31,18 +33,23 @@ export const PDIV = ({ children }) => (
   </div>
 )
 
-const B = ({ children }) => (
+export const B = ({ children }, { darkBg } = {}) => (
   <span>
     {children}
     <style jsx>
       {`
         span {
           font-weight: 600;
+          color: ${darkBg ? COLOR_CODE : 'inherit'};
         }
       `}
     </style>
   </span>
 )
+
+B.contextTypes = {
+  darkBg: PropTypes.bool
+}
 
 export const HR = () => (
   <div>

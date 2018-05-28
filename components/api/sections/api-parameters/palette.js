@@ -5,6 +5,7 @@ import { TerminalInput } from '../../../text/terminal'
 import immutable from '../../../../lib/immutable-component'
 import { HeadersTable, Row, Cell, BoldCell } from '../../table'
 import { ExternalLink } from '../../../text/link'
+import { B } from '../../../text/paragraph'
 
 function Parameters() {
   return (
@@ -51,7 +52,7 @@ ${<HeadersTable headers={['Field', 'Description']}>
 
 Adding \`palette\` as query string parameter in your API call makes it possible to get more information about your images color composition:
 
-${<TerminalInput>curl https://api.microlink.io/?url=https://news.ycombinator.com&palette&filter=image</TerminalInput>}
+${<TerminalInput>curl https://api.microlink.io/?url=https://news.ycombinator.com&<B>palette</B>&filter=image</TerminalInput>}
 
 ${<Code syntax="json">{`{
   "status": "success",

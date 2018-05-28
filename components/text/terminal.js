@@ -1,12 +1,17 @@
-import { Component } from 'react'
+import { Children, Component } from 'react'
 import PropTypes from 'prop-types'
 import CodeCopy from 'react-codecopy'
 
 import { CODE_STYLE, COLOR_BG_CODE, COLOR_CODE } from '../css-config'
 import { GenericLink } from './link'
 
+const serializeComponent = children =>
+  Children.map(children, child => (typeof child === 'string' ? child : child.props.children)).join(
+    ''
+  )
+
 export const TerminalInput = ({ children }, { darkBg = false }) => (
-  <CodeCopy theme={darkBg ? 'dark' : 'light'} text={children}>
+  <CodeCopy theme={darkBg ? 'dark' : 'light'} text={serializeComponent(children)}>
     <div className={darkBg ? 'dark' : ''}>
       {Array.isArray(children) ? (
         <span>{children}</span>
@@ -88,7 +93,7 @@ export const TerminalLink = props => (
     <GenericLink {...props} />
     <style jsx>
       {`
-        span :gloabl(a) {
+        span :global(a) {
           text-decoration: underline;
         }
       `}

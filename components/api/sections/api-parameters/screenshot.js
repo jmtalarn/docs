@@ -4,6 +4,7 @@ import { Code, InlineCode } from '../../../text/code'
 import { TerminalInput } from '../../../text/terminal'
 import immutable from '../../../../lib/immutable-component'
 import { HeadersTable, Row, Cell, BoldCell } from '../../table'
+import { B } from '../../../text/paragraph'
 
 const { strong } = components
 
@@ -625,7 +626,7 @@ ${<HeadersTable headers={['Parameter', 'Description']}>
 
 When you take a screenshot snapshot such as
 
-${<TerminalInput>curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&screenshot&filter=screenshot</TerminalInput>}
+${<TerminalInput>curl https://api.microlink.io/?url=https%3A%2F%2Fproducthunt.com&<B>screenshot</B>&filter=screenshot</TerminalInput>}
 
 The image will be hosted at  [imgur.com](https://imgur.com) as \`png\` by default.
 

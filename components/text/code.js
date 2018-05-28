@@ -1,10 +1,16 @@
+import { Children } from 'react'
 import CodeCopy from 'react-codecopy'
 import PropTypes from 'prop-types'
 
 import { CODE_INLINE_STYLE, CODE_STYLE, COLOR_BG_CODE, COLOR_CODE } from '../css-config'
 
+const serializeComponent = children =>
+  Children.map(children, child => (typeof child === 'string' ? child : child.props.children)).join(
+    ''
+  )
+
 export const Code = ({ children, syntax }, { darkBg }) => (
-  <CodeCopy theme={darkBg ? 'dark' : 'light'} text={children}>
+  <CodeCopy theme={darkBg ? 'dark' : 'light'} text={serializeComponent(children)}>
     <pre className={(darkBg ? 'dark' : '') + (syntax ? ` ${syntax}` : '')}>
       <code>{children}</code>
       <style jsx>
