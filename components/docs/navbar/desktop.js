@@ -37,7 +37,7 @@ export class NavLink extends React.Component {
     this.scrollIntoViewIfNeeded()
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ selected: this.isSelected(nextProps) })
   }
 
