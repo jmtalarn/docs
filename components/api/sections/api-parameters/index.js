@@ -6,6 +6,7 @@ import palette from './palette'
 import prerender from './prerender'
 import screenshot from './screenshot'
 import userAgent from './user-agent'
+import video from './video'
 
 export default {
   url,
@@ -15,5 +16,6 @@ export default {
   filter,
   embed,
   userAgent,
+  video,
   force
 }
