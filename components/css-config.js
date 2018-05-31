@@ -20,7 +20,7 @@ export const CODE_STYLE = `
   overflow-x: auto;
   font-family: ${FONT_FAMILY_MONO};
   font-size: 13px;
-  font-weight: 500;
+  font-weight: normal;
   line-height: 20px;
 `
 

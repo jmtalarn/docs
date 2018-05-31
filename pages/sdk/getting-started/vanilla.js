@@ -1,5 +1,4 @@
 import markdown from 'markdown-in-js'
-import MicrolinkCard from 'react-microlink'
 
 import withDoc, { components } from '../../../lib/with-doc'
 
@@ -8,6 +7,7 @@ import { TerminalInput } from '../../../components/text/terminal'
 import { Code } from '../../../components/text/code'
 import { InternalLink } from '../../../components/text/link'
 import CardClassNames from '../../../components/card-classnames'
+import MicrolinkCard from '../../../components/microlink'
 
 const DEMO_LINK =
   'https://www.theverge.com/2017/11/16/16667366/tesla-semi-truck-announced-price-release-date-electric-self-driving'
