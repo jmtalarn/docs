@@ -5,6 +5,7 @@ import withDoc, { components } from '../../../lib/with-doc'
 import { kiko } from '../../../lib/data/team'
 import { TerminalInput } from '../../../components/text/terminal'
 import { Code } from '../../../components/text/code'
+import CodeEditor from '../../../components/text/code-editor'
 import { InternalLink } from '../../../components/text/link'
 import CardClassNames from '../../../components/card-classnames'
 import MicrolinkCard from '../../../components/microlink'
@@ -45,7 +46,7 @@ Microlink SDK provides the \`microlink\` method which takes a CSS selector (simi
 
 Here are some usage examples:
 
-${<Code>{`<script>
+${<CodeEditor language="html">{`<script>
   // Example 1
   // Replace all \`a\` tags for microlink cards
   microlink('a')
@@ -60,7 +61,7 @@ ${<Code>{`<script>
   // for microlink cards, passing API specific options
   microlink('.link-previews')
 </script>
-`}</Code>}
+`}</CodeEditor >}
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
@@ -73,7 +74,7 @@ You need to add **microlink** to the page early in the page load.
 
 We recommend calling the \`microlink\` method before the DOM finishes loading:
 
-${<Code>{`<!-- Add microlink before the closing body tag. -->
+${<CodeEditor language="html">{`<!-- Add microlink before the closing body tag. -->
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
 
 <!-- Call microlink to replace links with cards previews -->
@@ -81,31 +82,31 @@ ${<Code>{`<!-- Add microlink before the closing body tag. -->
   microlink('.link-preview')
 </script>
 </body>
-`}</Code>}
+`}</CodeEditor>}
 
 ...or on DOMContentLoaded:
 
-${<Code>{`<script>
+${<CodeEditor language="html">{`<script>
   // Replace all elements with \`link-preview\` class
   // after DOM loaded
   document.addEventListener('DOMContentLoaded', function (event) {
     microlink('.link-previews')
   })
 </script>
-`}</Code>}
+`}</CodeEditor>}
 
 ## Customization
 
 You can pass specific ${<InternalLink href='/api'>API parameters</InternalLink>} to \`microlink\` as a second argument:
 
-${<Code>{`<script>
+${<CodeEditor language="html">{`<script>
 // Replace all elements with \`link-preview\` class
 // for microlink large cards
 microlink('.link-previews', {
   size: 'large'
 })
 </script>
-`}</Code>}
+`}</CodeEditor>}
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
@@ -179,7 +180,7 @@ Also, you can associate a minimal CSS style for these links.
 
 The following CSS adds some basic style resets to your link previews, also center aligning them horizontally:
 
-${<Code>{`<style>
+${<CodeEditor language="html">{`<style>
   .link-preview {
     margin: auto;
     display: block;
@@ -188,5 +189,5 @@ ${<Code>{`<style>
     max-width: 500px;
   }
 </style>
-`}</Code>}
+`}</CodeEditor>}
 `)

@@ -8,6 +8,7 @@ import { InternalLink } from '../../../components/text/link'
 import { Code } from '../../../components/text/code'
 import CardClassNames from '../../../components/card-classnames'
 import MicrolinkCard from '../../../components/microlink'
+import CodeEditor from '../../../components/text/code-editor'
 
 const DEMO_LINK =
   'https://www.theverge.com/tldr/2018/2/7/16984284/tesla-space-falcon-heavy-launch-elon-musk'
@@ -27,27 +28,27 @@ ${<TerminalInput>{`npm install react-microlink styled-components --save`}</Termi
 
 Then you can interact with it as a regular React component:
 
-${<Code>{`import MicrolinkCard from 'react-microlink'
+${<CodeEditor language="jsx">{`import MicrolinkCard from 'react-microlink'
 
 // Just provide a URL to create a card
 <MicrolinkCard
   url='${DEMO_LINK}'
 />
-`}</Code>}
+`}</CodeEditor>}
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
   style={{margin: 'auto'}}
 />}
 
-${<Code>{`import MicrolinkCard from 'react-microlink'
+${<CodeEditor language="jsx">{`import MicrolinkCard from 'react-microlink'
 
 // Customizing the card
 <MicrolinkCard
   url='${DEMO_LINK}'
   size='large'
 />
-`}</Code>}
+`}</CodeEditor>}
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
@@ -55,14 +56,14 @@ ${<MicrolinkCard
   size='large'
 />}
 
-${<Code>{`import MicrolinkCard from 'react-microlink'
+${<CodeEditor language="jsx">{`import MicrolinkCard from 'react-microlink'
 
 // You can pass extra props
 <MicrolinkCard
   url='${DEMO_LINK}'
   target='_blank'
 />
-`}</Code>}
+`}</CodeEditor>}
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
@@ -104,7 +105,7 @@ ${<Code>{`<MicrolinkCard
 
 Also, this is the approach used for more high level abstraction; like [fela](http://fela.js.org), [styled components](https://www.styled-components.com) or other similar JSS solutions:
 
-${<Code>{`import MicrolinkCard from 'react-microlink'
+${<CodeEditor language="jsx">{`import MicrolinkCard from 'react-microlink'
 import styled from 'styled-components'
 
 const myCustomCard = styled(MicrolinkCard)\`
@@ -112,7 +113,7 @@ const myCustomCard = styled(MicrolinkCard)\`
   max-width: 100%;
   border-radius: .42857em;
 \`
-`}</Code>}
+`}</CodeEditor>}
 
 and voilá!
 

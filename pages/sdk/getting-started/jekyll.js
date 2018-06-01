@@ -7,6 +7,7 @@ import { Code } from '../../../components/text/code'
 import { InternalLink } from '../../../components/text/link'
 import CardClassNames from '../../../components/card-classnames'
 import MicrolinkCard from '../../../components/microlink'
+import CodeEditor from '../../../components/text/code-editor'
 
 const DEMO_LINK = 'https://www.theverge.com/2016/4/1/11342104/tesla-model-3-announcement-photos'
 
@@ -23,14 +24,13 @@ The Jekyll integration is pretty similar to the ${<InternalLink href="/docs/gett
 
 You just need to be sure to load the script. For example, at the end of \`_layouts/default.html\`:
 
-${<Code>{`
-<script src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
+${<CodeEditor language="html">{`<script src="//cdn.jsdelivr.net/npm/microlinkjs@latest/umd/microlink.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     microlink('.card-preview')
   });
 </script>
-`}</Code>}
+`}</CodeEditor>}
 
 ## Basic Usage
 

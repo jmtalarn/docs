@@ -130,5 +130,5 @@ Display UI controls to handle playing/pausing the cards video.
 Type: \`boolean\`<br/>
 Default: \`true\`
 
-Whether the video should play _inline_, on supported devices (<a href="https://webkit.org/blog/6784/new-video-policies-for-ios/" target="_blank">read more</a>).
+Whether the video should play _inline_, on supported devices ([read more](https://webkit.org/blog/6784/new-video-policies-for-ios/)).
 `)
