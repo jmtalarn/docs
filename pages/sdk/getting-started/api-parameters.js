@@ -131,4 +131,13 @@ Type: \`boolean\`<br/>
 Default: \`true\`
 
 Whether the video should play _inline_, on supported devices ([read more](https://webkit.org/blog/6784/new-video-policies-for-ios/)).
+
+## video
+
+Type: \`boolean\`<br/>
+Default: \`true\`
+
+It enables to detect the original streaming video source.
+
+Read more about [video](https://docs.microlink.io/api/#api-parameters/video).
 `)
