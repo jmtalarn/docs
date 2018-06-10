@@ -2,7 +2,7 @@ import { Children, Component } from 'react'
 import PropTypes from 'prop-types'
 import CodeCopy from 'react-codecopy'
 
-import styled, { keyframes } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 import { CODE_STYLE, COLOR_CODE } from '../css-config'
 import { GenericLink } from './link'
@@ -15,10 +15,16 @@ const serializeComponent = children =>
 const TerminalWindow = styled.div`
   border-radius: 5px;
   margin: 50px 0;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 20px 50px 0px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${({ dark }) => (dark ? '#333' : '#eee')};
+
+  ${({ dark }) =>
+    !dark &&
+    css`
+      box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1);
+    `} ${({ dark }) =>
+    dark &&
+    css`
+      border: 1px solid #333;
+    `};
 `
 
 const TerminalHeader = styled.div`
