@@ -30,15 +30,15 @@ If you want to invalidate a response cache and regenerate the cache value you sh
   , markdown(components)`
 The first time an uncached resource is queried, the API will extract the information from the link:
 
-${<TerminalInput>curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com | grep -i "<B>x-cache</B>"</TerminalInput>}
+${<TerminalInput>curl https://api.microlink.io/?url=https%3A%2F%2Fwww.reddit.com | grep -i "<B>x-microlink-cache</B>"</TerminalInput>}
 
-You can check that from \`x-cache\` headers of the response. First time, the value will be \`MISS\`:
+You can check that from \`x-microlink-cache\` headers of the response. First time, the value will be \`MISS\`:
 
-${<Code syntax="json">{`x-cache: MISS`}</Code>}
+${<Code syntax="json">{`x-microlink-cache: MISS`}</Code>}
 
-Now if you query again for the same resource, a cached version will be served based on the first request, and \`X-Cache\` value will be \`HIT\`:
+Now if you query again for the same resource, a cached version will be served based on the first request, and \`x-microlink-cache\` value will be \`HIT\`:
 
-${<Code syntax="json">{`x-cache: HIT`}</Code>}
+${<Code syntax="json">{`x-microlink-cache: HIT`}</Code>}
   `
   ]
 ]
