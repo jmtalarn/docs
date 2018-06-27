@@ -27,7 +27,7 @@ If you have any trouble, please ${<ExternalLink href="mailto:hello@microlink.io?
     markdown(components)`
 The authentication will be done adding your API Key as value of the  ${<InlineCode>x-api-key</InlineCode>} header on your requests:
 
-${<TerminalInput>curl --header "<B>x-api-key</B>: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda -i | grep -i "x-pricing-plan"</TerminalInput>}
+${<TerminalInput>curl -H "<B>x-api-key</B>: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda -i | grep -i "x-pricing-plan"</TerminalInput>}
 
 You can check the pricing plan associated with the request with \`x-pricing-plan\` header on the response:
 

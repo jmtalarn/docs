@@ -17,7 +17,7 @@ function RateLimit() {
   [
     markdown(components)`
 
-For the **Free** plan, we allow a maximum of **500 requests every 24 hours** and **one request per second**.
+For the **Free** plan, we allow a maximum of **250 requests every 24 hours** and **one request per second**.
 
 We limit the number of calls you can make over a certain period of time.
 Rate limits vary and are specified by the following header in all responses:
@@ -51,13 +51,13 @@ If you already have a **Professional** plan but you need to increment your daily
 
 You can check your rate limit quota with \`x-rate\` header on the response:
 
-${<TerminalInput>curl --header "x-api-key: MyApiToken" https://pro.microlink.io?url=http://a.co/cWDWLda -i | grep -i "<B>x-rate</B>"</TerminalInput>}
+${<TerminalInput>curl https://api.microlink.io?url=http://a.co/cWDWLda -i | grep -i "<B>x-rate</B>"</TerminalInput>}
 
 It should be looks like:
 
-${<Code syntax="json">{`x-rate-limit-reset: 86400
-x-rate-limit-remaining: 497
-x-rate-limit-limit: 500`}</Code>}
+${<Code syntax="json">{`x-rate-limit-reset: 1530172275
+x-rate-limit-remaining: 249
+x-rate-limit-limit: 250`}</Code>}
     `
   ]
 ]
