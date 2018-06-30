@@ -8,6 +8,26 @@ import styled from 'styled-components'
 
 import { CODE_STYLE } from '../css-config'
 
+const CustomSyntaxHighlighter = styled(SyntaxHighlighter)`
+  margin-top: 0px;
+  padding-bottom: 12px !important;
+  margin-bottom: 12px;
+
+  &::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+`
+
 const serializeComponent = children =>
   Children.map(children, child => (typeof child === 'string' ? child : child.props.children)).join(
     ''
@@ -48,7 +68,7 @@ const TerminalTitle = styled.div`
 
 const TerminalText = styled.div`
   ${CODE_STYLE};
-  padding: 10px 30px;
+  padding: 0 20px;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   background: #282a36;
@@ -86,14 +106,14 @@ const CodeEditor = (
       <div style={{ width: '100%' }}>
         <CustomCodeCopy theme={'dark'} text={serializeComponent(children)}>
           <TerminalTextWrapper dark={darkBg}>
-            <SyntaxHighlighter
+            <CustomSyntaxHighlighter
               lineNumberStyle={{ color: '#6272A4' }}
               showLineNumbers={showLineNumbers}
               language={language}
               style={dracula}
             >
               {children}
-            </SyntaxHighlighter>
+            </CustomSyntaxHighlighter>
           </TerminalTextWrapper>
         </CustomCodeCopy>
       </div>
