@@ -614,12 +614,6 @@ ${<HeadersTable headers={['Parameter', 'Description']}>
     <strong style={{display: 'block'}}>number</strong> Page width in pixels.
     </Cell>
   </Row>
-  <Row>
-    <BoldCell>user_agent</BoldCell>
-    <Cell>
-    <strong style={{display: 'block'}}>string</strong> Specify the user agent to use.
-    </Cell>
-  </Row>
 </HeadersTable>}
 `,
     markdown(components)`
