@@ -24,7 +24,7 @@ Default: \`undefined\`
 
 The API Key used for authenticating your requests as \`x-api-key\` header.
 
-See more at [docs.microlink.io#authentication](https://docs.microlink.io/#authentication).
+See more at [authentication](https://docs.microlink.io/api/#api-basics/authentication).
 
 The API endpoint where the request is made.
 
