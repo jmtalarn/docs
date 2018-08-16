@@ -2,8 +2,10 @@ import NativeLink from 'next/link'
 import PropTypes from 'prop-types'
 import { createElement } from 'react'
 
+const isInternal = href => href.startsWith('/') || href.startsWith('#')
+
 export const GenericLink = props =>
-  createElement(props.href.startsWith('/') ? InternalLink : ExternalLink, props)
+  createElement(isInternal(props.href) ? InternalLink : ExternalLink, props)
 
 export const InternalLink = ({ href, as, children }, { darkBg } = {}) => (
   <NativeLink prefetch href={href} as={as}>

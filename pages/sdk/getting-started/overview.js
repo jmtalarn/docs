@@ -25,6 +25,7 @@ into 👇
 
 ${<MicrolinkCard
   url={`${DEMO_LINK}`}
+  video
 />}
 
 It's the perfect complement to improve the user interaction on your site, bringing your users to see what's behind any link.

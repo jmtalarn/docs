@@ -38,6 +38,8 @@ The content rendered onto the card. This property can be used for two purposes:
 - If you made an API call outside of the microlink component - and you want to render _that_ data - pass the payload response here in order to avoid making the request again.
 - If you want to render custom content inside the card, pass it following the [API payload schema](https://docs.microlink.io/api/#introduction).
 
+Additionally you can complement using [noFetch](#nofetch).
+
 ## contrast
 
 Type: \`boolean\`<br/>
@@ -84,7 +86,7 @@ It determines the card layout. Currently we have two layouts supported:
 ## prerender
 
 Type: \`boolean|string\`<br/>
-Default: \`auto\`
+Default: \`'auto'\`
 
 It determines the technique used to get content from the target URL.
 
@@ -135,9 +137,28 @@ Whether the video should play _inline_, on supported devices ([read more](https:
 ## video
 
 Type: \`boolean\`<br/>
-Default: \`true\`
+Default: \`false\`
 
 It enables to detect the original streaming video source.
 
 Read more about [video](https://docs.microlink.io/api/#api-parameters/video).
+
+## noFetch
+
+Type: \`boolean\`<br/>
+Default: \`false\`
+
+It avoid fetch content from the API endpoint.
+
+It is uses complementary to [data](#data) in the case you want to specify your own data visualization without merging it with the data obtained from microlink API.
+
+## loading
+
+Type: \`boolean\`<br/>
+Default: \`false\`
+
+It forces to see the UI component into loading state.
+
+Normally you don't need to pass this property.
+
 `)
