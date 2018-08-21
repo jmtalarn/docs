@@ -11,7 +11,7 @@ export const COLOR_COMPLEMENTARY = '#ffe079'
 
 export const COLOR_BG_SELECTION = COLOR_COMPLEMENTARY
 export const COLOR_SELECTION = '#000'
-export const COLOR_BG_CODE = '#FAFBFC'
+export const COLOR_BG_CODE = '#FAF9FC'
 export const COLOR_CODE = '#EA407B'
 
 export const CODE_STYLE = `
