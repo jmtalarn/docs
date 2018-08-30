@@ -97,7 +97,7 @@ ${<CodeEditor language="html">{`<script>
 
 ## Customization
 
-You can pass specific ${<InternalLink href='/api'>API parameters</InternalLink>} to \`microlink\` as a second argument:
+You can pass specific ${<InternalLink href='/sdk/getting-started/api-parameters'>API parameters</InternalLink>} to \`microlink\` as a second argument:
 
 ${<CodeEditor language="html">{`<script>
 // Replace all elements with \`link-preview\` class
@@ -125,7 +125,7 @@ ${<MicrolinkCard
   round
 />}
 
-Check ${<InternalLink href='#static-deployment'>API parameters</InternalLink>} reference in order to know what options you can use.
+Check ${<InternalLink href='/sdk/getting-started/api-parameters'>API parameters</InternalLink>} reference in order to know what options you can use.
 
 ## Styling
 
